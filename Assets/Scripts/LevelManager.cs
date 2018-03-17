@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour {
 	public static LevelManager levelManager; 
 
 	private int Coin = 0;
-	private bool gameOver = false;
+//	private bool gameOver = false;
 	public Text CoinText;
 	public int iSede;
 	public Text sedeText;
