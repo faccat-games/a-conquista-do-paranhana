@@ -23,19 +23,18 @@ public class InteracaoCasa : MonoBehaviour {
 
 
 	void FixedUpdate (){
-
 		if (isHome) {
-
-
 			_home.sortingOrder = -1;
 			insideHome.sortingOrder = 1;
-			bed.sortingOrder = 3;
-
+			if (bed) {
+				bed.sortingOrder = 3;
+			}
 		} else {
-
+			if (bed) {
+				bed.sortingOrder = -1;
+			}
 			_home.sortingOrder = 2;
 			insideHome.sortingOrder = -1;
-			bed.sortingOrder = -1;
 		}
 	}
 

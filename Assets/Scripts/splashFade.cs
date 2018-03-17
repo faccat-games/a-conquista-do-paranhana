@@ -9,6 +9,7 @@ public class splashFade : MonoBehaviour {
 
 	public Image splashImage;
 	public Image splashImage2;
+	public Canvas canvas;
 	public string loadScene;
 
 	IEnumerator Start () {
@@ -42,12 +43,15 @@ public class splashFade : MonoBehaviour {
 	void FadeOutFirst(){
 
 		splashImage.CrossFadeAlpha (0.0f, 2.5f, false);
+		//CrossFadeColor\
 
 	}
 
 	void FadeInSecond(){
 	
 		splashImage2.CrossFadeAlpha (1.0f, 1.5f, false);
+		canvas.GetComponent<Image>().color = new Color32(14,9,69,100);
+
 	}
 
 	void FadeOutSecond(){
