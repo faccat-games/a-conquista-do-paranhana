@@ -33,7 +33,7 @@ public class Movimento : MonoBehaviour {
 
 		myAnimator = GetComponent<Animator> ();
 		mySprite = GetComponent<SpriteRenderer> ();
-		_data = GameObject.Find("PlayerData").GetComponent<PlayerData> ();
+		_data = GameObject.Find("PlayerData").GetComponent<PlayerData> ();             
 
 //		Debug.Log (exit);
 		talkBalloon = GameObject.Find ("Balao");
@@ -43,11 +43,12 @@ public class Movimento : MonoBehaviour {
 		//Debug.Log (shopPanel.GetComponent<Image>().enabled);
 		//Debug.Log (painelFade.GetComponent<Image>().enabled);
 
-		if (talkBalloon.GetComponent<Image> ().enabled == false && shopPanel.GetComponent<Image> ().enabled == false && painelFade.GetComponent<Image> ().enabled == false) {
-			isMove = true;
-		} else {
-			isMove = false;
-		}
+		isMove = true;
+//		if (talkBalloon.GetComponent<Image> ().enabled == false && shopPanel.GetComponent<Image> ().enabled == false && painelFade.GetComponent<Image> ().enabled == false) {
+//			isMove = true;
+//		} else {
+//			isMove = false;
+//		}
 	}
 
 	void FixedUpdate () {

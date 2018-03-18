@@ -17,7 +17,7 @@ public class Inventario : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_playerData = GameObject.FindGameObjectWithTag ("Data").GetComponent<PlayerData> ();
+		_playerData = GameObject.FindGameObjectWithTag ("Data").GetComponent<PlayerData> ();        
 	}
 	
 	// Update is called once per frame
