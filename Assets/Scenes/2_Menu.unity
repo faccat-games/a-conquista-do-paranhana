@@ -784,7 +784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1424ef48b707dd541a949308d455088d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newGame: CriarPersonagem
+  newGame: 3_CriarPersonagem
   loadGame: 
   options: 
   exitGame: 

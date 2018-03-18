@@ -477,7 +477,7 @@ MonoBehaviour:
   splashImage: {fileID: 584524431}
   splashImage2: {fileID: 1335226677}
   canvas: {fileID: 270868747}
-  loadScene: Menu
+  loadScene: 2_Menu
 --- !u!1 &1335226675
 GameObject:
   m_ObjectHideFlags: 0

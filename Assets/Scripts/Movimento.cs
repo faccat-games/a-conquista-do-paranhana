@@ -36,9 +36,9 @@ public class Movimento : MonoBehaviour {
 		talkBalloon = GameObject.Find ("Balao");
 		shopPanel = GameObject.Find ("Panel");
 
-		Debug.Log (talkBalloon.GetComponent<Image>().enabled);
-		Debug.Log (shopPanel.GetComponent<Image>().enabled);
-		Debug.Log (painelFade.GetComponent<Image>().enabled);
+		//Debug.Log (talkBalloon.GetComponent<Image>().enabled);
+		//Debug.Log (shopPanel.GetComponent<Image>().enabled);
+		//Debug.Log (painelFade.GetComponent<Image>().enabled);
 
 		if (talkBalloon.GetComponent<Image> ().enabled == false && shopPanel.GetComponent<Image> ().enabled == false && painelFade.GetComponent<Image> ().enabled == false) {
 			isMove = true;
@@ -76,12 +76,12 @@ public class Movimento : MonoBehaviour {
 
 	void Move(){
 		if (Input.GetKey (KeyCode.DownArrow)) {
-			transform.Translate (0, -.1f, 0);
+			transform.Translate (Vector3.down * Time.deltaTime);
 			myAnimator.SetBool ("walkDown", true);
 		}
 
 		if (Input.GetKey (KeyCode.UpArrow)) {
-			transform.Translate (0, .1f, 0);
+			transform.Translate (Vector3.up * Time.deltaTime);
 			myAnimator.SetBool ("walkUp", true);
 		}
 
@@ -90,7 +90,7 @@ public class Movimento : MonoBehaviour {
 				mySprite.flipX = true;
 				isFlip = true;
 			}
-			transform.Translate (-.1f, 0, 0);
+			transform.Translate (Vector3.left * Time.deltaTime);
 			myAnimator.SetBool ("walkRight", true);
 		}
 
@@ -99,7 +99,7 @@ public class Movimento : MonoBehaviour {
 				mySprite.flipX = false;
 				isFlip = false;
 			}
-			transform.Translate (.1f, 0, 0);
+			transform.Translate (Vector3.right * Time.deltaTime);
 			myAnimator.SetBool ("walkRight", true);
 		}
 
