@@ -1418,7 +1418,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelInventario: {fileID: 1641500161777244}
+  _playerData: {fileID: 0}
   axeItem: {fileID: 1913722257252560}
+  hoeItem: {fileID: 1149069828419468}
   isMenuOpen: 0
   activeItem: 0
 --- !u!114 &114398723987496268
@@ -1750,6 +1752,7 @@ MonoBehaviour:
   terraArada: {fileID: 1320871452282896, guid: b4946706652b79e4f9b6259ff7621b8f, type: 2}
   _data: {fileID: 0}
   overPlow: 0
+  walkSpeed: 3
 --- !u!114 &114510054108100478
 MonoBehaviour:
   m_ObjectHideFlags: 1

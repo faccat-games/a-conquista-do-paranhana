@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114098854578419820}
   m_Layer: 0
   m_Name: PlayerData
-  m_TagString: Untagged
+  m_TagString: Data
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,3 +54,9 @@ MonoBehaviour:
   playerName: 
   playerSurname: 
   playerMoney: 0
+  hasAxe: 0
+  hasHoe: 0
+  woodLog: 0
+  corn: 0
+  cornSeeds: 0
+  itemHand: 0

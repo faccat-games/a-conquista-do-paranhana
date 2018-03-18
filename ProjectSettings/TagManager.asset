@@ -8,6 +8,7 @@ TagManager:
   - NPC
   - Gold
   - Terra
+  - Data
   layers:
   - Default
   - TransparentFX

@@ -24,6 +24,9 @@ public class Movimento : MonoBehaviour {
 
 	public bool overPlow;
 
+
+	public int walkSpeed;
+
 	void Start(){
 		DontDestroyOnLoad (this);
 
@@ -76,21 +79,21 @@ public class Movimento : MonoBehaviour {
 
 	void Move(){
 		if (Input.GetKey (KeyCode.DownArrow)) {
-			transform.Translate (Vector3.down * Time.deltaTime);
+			transform.Translate (Vector3.down * Time.deltaTime * walkSpeed);
 			myAnimator.SetBool ("walkDown", true);
 		}
 
 		if (Input.GetKey (KeyCode.UpArrow)) {
-			transform.Translate (Vector3.up * Time.deltaTime);
+			transform.Translate (Vector3.up * Time.deltaTime * walkSpeed);
 			myAnimator.SetBool ("walkUp", true);
 		}
 
-		if (Input.GetKey (KeyCode.LeftArrow)) {
+		if (Input.GetKey (KeyCode.LeftArrow )) {
 			if (!isFlip) {
 				mySprite.flipX = true;
 				isFlip = true;
 			}
-			transform.Translate (Vector3.left * Time.deltaTime);
+			transform.Translate (Vector3.left * Time.deltaTime * walkSpeed);
 			myAnimator.SetBool ("walkRight", true);
 		}
 
@@ -99,7 +102,7 @@ public class Movimento : MonoBehaviour {
 				mySprite.flipX = false;
 				isFlip = false;
 			}
-			transform.Translate (Vector3.right * Time.deltaTime);
+			transform.Translate (Vector3.right * Time.deltaTime * walkSpeed);
 			myAnimator.SetBool ("walkRight", true);
 		}
 

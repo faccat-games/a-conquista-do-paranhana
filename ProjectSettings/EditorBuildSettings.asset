@@ -6,19 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Splash.unity
+    path: Assets/Scenes/1_Inicio.unity
     guid: 3b1e970ac16d63f49a176279bbfbb46f
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/2_Menu.unity
     guid: de2c871542016a049910b9b0116ca1c2
   - enabled: 1
-    path: Assets/Scenes/CriarPersonagem.unity
+    path: Assets/Scenes/3_CriarPersonagem.unity
     guid: 1124cb24f6932b54097be28cd85789c7
-  - enabled: 1
-    path: Assets/Scenes/prototipo.unity
+  - enabled: 0
+    path: Assets/Scenes/_tests/prototipo.unity
     guid: bc718cabb76608d4b94821c2911b99fd
-  - enabled: 1
-    path: Assets/Scenes/prototipo 1.unity
+  - enabled: 0
+    path: Assets/Scenes/_tests/prototipo 1.unity
     guid: 5b9f90ca98b5fa04e8990813a5eeb9f4
   - enabled: 1
     path: Assets/Scenes/map_01.unity

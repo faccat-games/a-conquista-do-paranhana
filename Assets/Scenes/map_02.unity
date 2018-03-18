@@ -920,6 +920,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114468284527350424, guid: 8d1459421d5ac1646afc15be3922ada3,
+        type: 2}
+      propertyPath: phrases.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468284527350424, guid: 8d1459421d5ac1646afc15be3922ada3,
+        type: 2}
+      propertyPath: itemPhrases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4336915992260006, guid: 8d1459421d5ac1646afc15be3922ada3, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2.8894496
@@ -952,6 +962,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 224392195986422592, guid: 8d1459421d5ac1646afc15be3922ada3,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -284
+      objectReference: {fileID: 0}
     - target: {fileID: 224554783936776246, guid: 8d1459421d5ac1646afc15be3922ada3,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -961,6 +976,52 @@ Prefab:
         type: 2}
       propertyPath: m_LocalPosition.y
       value: 542.74774
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135722678446782, guid: 8d1459421d5ac1646afc15be3922ada3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468284527350424, guid: 8d1459421d5ac1646afc15be3922ada3,
+        type: 2}
+      propertyPath: giveAxe
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468284527350424, guid: 8d1459421d5ac1646afc15be3922ada3,
+        type: 2}
+      propertyPath: isItemGiver
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468284527350424, guid: 8d1459421d5ac1646afc15be3922ada3,
+        type: 2}
+      propertyPath: itemPhrases.Array.data[0]
+      value: "Ol\xE1 ! Voc\xEA deve ser o novo colono."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468284527350424, guid: 8d1459421d5ac1646afc15be3922ada3,
+        type: 2}
+      propertyPath: itemPhrases.Array.data[1]
+      value: "Esses caminhos s\xE3o muito trai\xE7oeiros \xE9 sempre bom ter uma ferramenta
+        em m\xE3os."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468284527350424, guid: 8d1459421d5ac1646afc15be3922ada3,
+        type: 2}
+      propertyPath: itemPhrases.Array.data[2]
+      value: "Pegue esse machado, n\xE3o \xE9 novo, mas vai ajudar."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468284527350424, guid: 8d1459421d5ac1646afc15be3922ada3,
+        type: 2}
+      propertyPath: phrases.Array.data[1]
+      value: "Esses caminhos s\xE3o muito trai\xE7oeiros \xE9 sempre bom ter uma ferramenta
+        em m\xE3os."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468284527350424, guid: 8d1459421d5ac1646afc15be3922ada3,
+        type: 2}
+      propertyPath: phrases.Array.data[2]
+      value: "Pegue esse machado, n\xE3o \xE9 novo, mas vai ajudar."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468284527350424, guid: 8d1459421d5ac1646afc15be3922ada3,
+        type: 2}
+      propertyPath: phrases.Array.data[0]
+      value: Tenha cuidado e boa viagem.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d1459421d5ac1646afc15be3922ada3, type: 2}
