@@ -18,6 +18,7 @@ public class EventTriggerNewYear : MonoBehaviour {
 			nextActionTime += updateInterval;
 			currentYear += 1;
 			EventManager.TriggerEvent ("newYear",currentYear.ToString());
+			Debug.Log ("newYear: " + currentYear);
 		}
 		//if (Input.GetKeyDown ("q"))
 		//{
