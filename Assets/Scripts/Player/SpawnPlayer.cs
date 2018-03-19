@@ -23,7 +23,7 @@ public class SpawnPlayer : MonoBehaviour {
 			clone.GetComponent<Movimento> ().exit = -1;
 
 			_helpPanel.SetActive (true);
-			Debug.Log ("Não achou");
+			//Debug.Log ("Não achou");
 		}
 	}
 	

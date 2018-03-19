@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 224939310338365882}
   - component: {fileID: 222537010243273610}
   - component: {fileID: 114000983050898350}
-  - component: {fileID: 114046463909813458}
   m_Layer: 5
   m_Name: CriarPersonagem
   m_TagString: Untagged
@@ -228,29 +227,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &114046463909813458
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1201136944143558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ec50de897c57a4d9b4bf269486555e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  confirmarEscolha: {fileID: 114559770429818832}
-  nomeDigitado: {fileID: 114601137172958626}
-  panelCriacao: {fileID: 1201136944143558}
-  sobrenomes:
-  - Souza
-  - Paiva
-  - Machado
-  phrasesText: {fileID: 114374733642906722}
-  cursorLoja: {fileID: 0}
-  cursorPosition: 0
-  isShopping: 1
-  indexItem: 0
 --- !u!114 &114374733642906722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -422,7 +398,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114046463909813458}
+      - m_Target: {fileID: 0}
         m_MethodName: MENU_ACTION_GotoPage
         m_Mode: 5
         m_Arguments:

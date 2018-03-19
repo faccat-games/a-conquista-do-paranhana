@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour {
 
 	public bool isNoite;
 
+	public GameObject yearEventPanel;
 
 
 	//	public GameObject _fundo; 
@@ -24,6 +25,8 @@ public class Timer : MonoBehaviour {
 		isNoite = false;
 		_noitePanel = GameObject.Find ("Noite");
 		_noiteColor = _noitePanel.GetComponent<Image> ();
+		//GameObject YearEventPanel = GameObject.Find("YearEventPanel");
+		yearEventPanel.SetActive (true);
 	}
 
 	// Update is called once per frame

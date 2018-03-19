@@ -159,6 +159,60 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e420c8e5cf9f3f24ab4fbaff41b19cbc, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &151565580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 151565582}
+  - component: {fileID: 151565581}
+  - component: {fileID: 151565583}
+  m_Layer: 0
+  m_Name: EventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &151565581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 151565580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5ea34dd9a6e4d04a1f3d91a667033c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &151565582
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 151565580}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.203211, y: 5.784026, z: -0.09542209}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &151565583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 151565580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af79c187dc51841fc97520efd61b7b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateInterval: 5
+  initialYear: 1800
 --- !u!1 &229634908
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,8 +286,9 @@ GameObject:
   - component: {fileID: 337186701}
   - component: {fileID: 337186700}
   - component: {fileID: 337186699}
+  - component: {fileID: 337186703}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HelpCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,17 +359,23 @@ RectTransform:
   m_GameObject: {fileID: 337186698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1251719551}
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!222 &337186703
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 337186698}
 --- !u!1 &430348972
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +415,7 @@ GameObject:
   - component: {fileID: 439580522}
   - component: {fileID: 439580521}
   m_Layer: 5
-  m_Name: HelpText
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -428,7 +489,7 @@ GameObject:
   - component: {fileID: 473168508}
   - component: {fileID: 473168507}
   m_Layer: 0
-  m_Name: tronco (2)
+  m_Name: Tronco07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -710,7 +771,7 @@ GameObject:
   - component: {fileID: 860043649}
   - component: {fileID: 860043648}
   m_Layer: 0
-  m_Name: tronco (4)
+  m_Name: Tronco09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -771,7 +832,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &885755497
 GameObject:
@@ -788,7 +849,7 @@ GameObject:
   - component: {fileID: 885755504}
   - component: {fileID: 885755503}
   m_Layer: 5
-  m_Name: HelpBtn
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -958,7 +1019,7 @@ GameObject:
   - component: {fileID: 1120528713}
   - component: {fileID: 1120528712}
   m_Layer: 0
-  m_Name: Tronco-alt (2)
+  m_Name: Tronco05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1048,7 +1109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28c1d78fce73c04bad85e5f2fb18aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 1897844621169208, guid: 1e2749747fd1036429f71f5581efb6a6, type: 2}
+  _player: {fileID: 1709167953619850, guid: 13cac5e83ed4e48eeb37544d2f74bf25, type: 2}
   _helpPanel: {fileID: 337186698}
 --- !u!4 &1212080290
 Transform:
@@ -1074,7 +1135,7 @@ GameObject:
   - component: {fileID: 1251719553}
   - component: {fileID: 1251719552}
   m_Layer: 5
-  m_Name: PanelHelp
+  m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1263,7 +1324,7 @@ GameObject:
   - component: {fileID: 1390845935}
   - component: {fileID: 1390845934}
   m_Layer: 0
-  m_Name: Arbusto_02 (2)
+  m_Name: Arbusto02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1324,7 +1385,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1539125590
 Prefab:
@@ -1516,7 +1577,7 @@ GameObject:
   - component: {fileID: 1624418630}
   - component: {fileID: 1624418629}
   m_Layer: 0
-  m_Name: Tronco-alt
+  m_Name: Tronco01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1635,7 +1696,7 @@ GameObject:
   - component: {fileID: 1834808955}
   - component: {fileID: 1834808954}
   m_Layer: 0
-  m_Name: tronco
+  m_Name: Tronco02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1708,7 +1769,7 @@ GameObject:
   - component: {fileID: 1849631216}
   - component: {fileID: 1849631215}
   m_Layer: 0
-  m_Name: Tronco-alt (1)
+  m_Name: Tronco03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1781,7 +1842,7 @@ GameObject:
   - component: {fileID: 1949333908}
   - component: {fileID: 1949333907}
   m_Layer: 0
-  m_Name: tronco (1)
+  m_Name: Tronco04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1900,7 +1961,7 @@ GameObject:
   - component: {fileID: 2026163217}
   - component: {fileID: 2026163216}
   m_Layer: 0
-  m_Name: Arbusto_02
+  m_Name: Arbusto01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1961,7 +2022,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2060192569
 GameObject:
@@ -1973,7 +2034,7 @@ GameObject:
   - component: {fileID: 2060192571}
   - component: {fileID: 2060192570}
   m_Layer: 0
-  m_Name: tronco (3)
+  m_Name: Tronco08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

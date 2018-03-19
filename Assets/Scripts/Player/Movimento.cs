@@ -11,7 +11,7 @@ public class Movimento : MonoBehaviour {
 	public GameObject shopPanel;
 	public GameObject painelFade;
 
-	public bool isMove;
+	public bool isMove = true;
 
 	public Animator myAnimator;
 	public SpriteRenderer mySprite;
@@ -23,6 +23,7 @@ public class Movimento : MonoBehaviour {
 	public PlayerData _data;
 
 	public bool overPlow;
+	public float playerSpeed = 1.0f;
 
 	void Start(){
 		DontDestroyOnLoad (this);
@@ -40,11 +41,12 @@ public class Movimento : MonoBehaviour {
 		//Debug.Log (shopPanel.GetComponent<Image>().enabled);
 		//Debug.Log (painelFade.GetComponent<Image>().enabled);
 
-		if (talkBalloon.GetComponent<Image> ().enabled == false && shopPanel.GetComponent<Image> ().enabled == false && painelFade.GetComponent<Image> ().enabled == false) {
+		/*if (talkBalloon.GetComponent<Image> ().enabled == false && shopPanel.GetComponent<Image> ().enabled == false 
+		 * && painelFade.GetComponent<Image> ().enabled == false) {
 			isMove = true;
 		} else {
 			isMove = false;
-		}
+		}*/
 	}
 
 	void FixedUpdate () {
@@ -76,12 +78,12 @@ public class Movimento : MonoBehaviour {
 
 	void Move(){
 		if (Input.GetKey (KeyCode.DownArrow)) {
-			transform.Translate (Vector3.down * Time.deltaTime);
+			transform.Translate (Vector3.down * playerSpeed * Time.deltaTime);
 			myAnimator.SetBool ("walkDown", true);
 		}
 
 		if (Input.GetKey (KeyCode.UpArrow)) {
-			transform.Translate (Vector3.up * Time.deltaTime);
+			transform.Translate (Vector3.up * playerSpeed * Time.deltaTime);
 			myAnimator.SetBool ("walkUp", true);
 		}
 
@@ -90,7 +92,7 @@ public class Movimento : MonoBehaviour {
 				mySprite.flipX = true;
 				isFlip = true;
 			}
-			transform.Translate (Vector3.left * Time.deltaTime);
+			transform.Translate (Vector3.left * playerSpeed * Time.deltaTime);
 			myAnimator.SetBool ("walkRight", true);
 		}
 
@@ -99,7 +101,7 @@ public class Movimento : MonoBehaviour {
 				mySprite.flipX = false;
 				isFlip = false;
 			}
-			transform.Translate (Vector3.right * Time.deltaTime);
+			transform.Translate (Vector3.right * playerSpeed * Time.deltaTime);
 			myAnimator.SetBool ("walkRight", true);
 		}
 
