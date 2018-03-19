@@ -11,7 +11,7 @@ public class Movimento : MonoBehaviour {
 	public GameObject shopPanel;
 	public GameObject painelFade;
 
-	public bool isMove = true;
+	public bool isMove;
 
 	public Animator myAnimator;
 	public SpriteRenderer mySprite;
@@ -23,7 +23,9 @@ public class Movimento : MonoBehaviour {
 	public PlayerData _data;
 
 	public bool overPlow;
-	public float playerSpeed = 1.0f;
+
+
+	public int walkSpeed;
 
 	void Start(){
 		DontDestroyOnLoad (this);
@@ -31,7 +33,7 @@ public class Movimento : MonoBehaviour {
 
 		myAnimator = GetComponent<Animator> ();
 		mySprite = GetComponent<SpriteRenderer> ();
-		_data = GameObject.Find("PlayerData").GetComponent<PlayerData> ();
+		_data = GameObject.Find("PlayerData").GetComponent<PlayerData> ();             
 
 //		Debug.Log (exit);
 		talkBalloon = GameObject.Find ("Balao");
@@ -41,12 +43,12 @@ public class Movimento : MonoBehaviour {
 		//Debug.Log (shopPanel.GetComponent<Image>().enabled);
 		//Debug.Log (painelFade.GetComponent<Image>().enabled);
 
-		/*if (talkBalloon.GetComponent<Image> ().enabled == false && shopPanel.GetComponent<Image> ().enabled == false 
-		 * && painelFade.GetComponent<Image> ().enabled == false) {
-			isMove = true;
-		} else {
-			isMove = false;
-		}*/
+		isMove = true;
+//		if (talkBalloon.GetComponent<Image> ().enabled == false && shopPanel.GetComponent<Image> ().enabled == false && painelFade.GetComponent<Image> ().enabled == false) {
+//			isMove = true;
+//		} else {
+//			isMove = false;
+//		}
 	}
 
 	void FixedUpdate () {
@@ -78,21 +80,21 @@ public class Movimento : MonoBehaviour {
 
 	void Move(){
 		if (Input.GetKey (KeyCode.DownArrow)) {
-			transform.Translate (Vector3.down * playerSpeed * Time.deltaTime);
+			transform.Translate (Vector3.down * Time.deltaTime * walkSpeed);
 			myAnimator.SetBool ("walkDown", true);
 		}
 
 		if (Input.GetKey (KeyCode.UpArrow)) {
-			transform.Translate (Vector3.up * playerSpeed * Time.deltaTime);
+			transform.Translate (Vector3.up * Time.deltaTime * walkSpeed);
 			myAnimator.SetBool ("walkUp", true);
 		}
 
-		if (Input.GetKey (KeyCode.LeftArrow)) {
+		if (Input.GetKey (KeyCode.LeftArrow )) {
 			if (!isFlip) {
 				mySprite.flipX = true;
 				isFlip = true;
 			}
-			transform.Translate (Vector3.left * playerSpeed * Time.deltaTime);
+			transform.Translate (Vector3.left * Time.deltaTime * walkSpeed);
 			myAnimator.SetBool ("walkRight", true);
 		}
 
@@ -101,7 +103,7 @@ public class Movimento : MonoBehaviour {
 				mySprite.flipX = false;
 				isFlip = false;
 			}
-			transform.Translate (Vector3.right * playerSpeed * Time.deltaTime);
+			transform.Translate (Vector3.right * Time.deltaTime * walkSpeed);
 			myAnimator.SetBool ("walkRight", true);
 		}
 

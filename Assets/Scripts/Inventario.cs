@@ -5,8 +5,10 @@ using UnityEngine;
 public class Inventario : MonoBehaviour {
 
 	public GameObject panelInventario;
+	public PlayerData _playerData;
 
 	public GameObject axeItem;
+	public GameObject hoeItem;
 
 
 	public bool isMenuOpen;
@@ -15,7 +17,7 @@ public class Inventario : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		_playerData = GameObject.FindGameObjectWithTag ("Data").GetComponent<PlayerData> ();        
 	}
 	
 	// Update is called once per frame
@@ -33,6 +35,20 @@ public class Inventario : MonoBehaviour {
 	void AbreInventario(){
 		if (isMenuOpen) {
 			panelInventario.SetActive (true);
+
+			if (_playerData.hasHoe == false) {
+				hoeItem.SetActive (false);
+			} else {
+				hoeItem.SetActive (true);
+			}
+
+
+			if (_playerData.hasAxe == false) {
+				axeItem.SetActive (false);
+			} else {
+				axeItem.SetActive (true);
+			}
+			
 		}else panelInventario.SetActive (false);			
 	}
 }
