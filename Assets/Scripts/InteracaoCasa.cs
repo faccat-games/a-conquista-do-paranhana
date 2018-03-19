@@ -27,13 +27,13 @@ public class InteracaoCasa : MonoBehaviour {
 			_home.sortingOrder = -1;
 			insideHome.sortingOrder = 1;
 			if (bed) {
-				bed.sortingOrder = 3;
+				bed.sortingOrder = 4;
 			}
 		} else {
 			if (bed) {
 				bed.sortingOrder = -1;
 			}
-			_home.sortingOrder = 2;
+			_home.sortingOrder = 3;
 			insideHome.sortingOrder = -1;
 		}
 	}
