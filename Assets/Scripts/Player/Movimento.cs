@@ -79,17 +79,17 @@ public class Movimento : MonoBehaviour {
 	}
 
 	void Move(){
-		if (Input.GetKey (KeyCode.DownArrow)) {
+		if (Input.GetKey (KeyCode.DownArrow) && walkSpeed != 0) {
 			transform.Translate (Vector3.down * Time.deltaTime * walkSpeed);
 			myAnimator.SetBool ("walkDown", true);
 		}
 
-		if (Input.GetKey (KeyCode.UpArrow)) {
+		if (Input.GetKey (KeyCode.UpArrow) && walkSpeed != 0) {
 			transform.Translate (Vector3.up * Time.deltaTime * walkSpeed);
 			myAnimator.SetBool ("walkUp", true);
 		}
 
-		if (Input.GetKey (KeyCode.LeftArrow )) {
+		if (Input.GetKey (KeyCode.LeftArrow ) && walkSpeed != 0) {
 			if (!isFlip) {
 				mySprite.flipX = true;
 				isFlip = true;
@@ -98,7 +98,7 @@ public class Movimento : MonoBehaviour {
 			myAnimator.SetBool ("walkRight", true);
 		}
 
-		if (Input.GetKey (KeyCode.RightArrow)) {
+		if (Input.GetKey (KeyCode.RightArrow) && walkSpeed != 0) {
 			if (isFlip) {
 				mySprite.flipX = false;
 				isFlip = false;

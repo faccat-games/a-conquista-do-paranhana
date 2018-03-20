@@ -9,6 +9,10 @@ public class Sleep : MonoBehaviour {
 	public bool toSleep;
 	public Timer _newDay;
 
+	//Impedir movimento
+	public bool podemover;
+	public Movimento _movimento;
+
 	//Heal
 	public Image CurrentHealth;
 	public Text RatioText;
@@ -34,6 +38,8 @@ public class Sleep : MonoBehaviour {
 
 		_newDay = GameObject.FindGameObjectWithTag ("Player").GetComponent<Timer> ();
 		_fade = GameObject.Find ("PanelSleep").GetComponent<Image> ();
+		_movimento = GameObject.FindGameObjectWithTag ("Player").GetComponent<Movimento> ();
+		podemover = true;
 
 		toSleep = false;
 		_fade.canvasRenderer.SetAlpha(0.0f);
@@ -51,8 +57,11 @@ public class Sleep : MonoBehaviour {
 
 			AbreMenuDormir ();
 
-
-
+		}
+		if (podemover == false) {
+			_movimento.walkSpeed = 0;
+		} else {
+			_movimento.walkSpeed = 5;
 		}
 
 	}
@@ -94,6 +103,7 @@ public class Sleep : MonoBehaviour {
 		{
 			fadeIn ();
 			yield return new WaitForSeconds(waitTime);
+
 			fadeOut ();
 			yield return new WaitForSeconds (waitTime);
 			_fade.GetComponent <Image> ().enabled = false;
@@ -102,12 +112,14 @@ public class Sleep : MonoBehaviour {
 	}
 	//fade 
 	void fadeIn(){
-		_fade.CrossFadeAlpha (3.0f, 2.5f, false);	
+		_fade.CrossFadeAlpha (4.0f, 2.5f, false);	
 		_fade.GetComponent <Image> ().enabled = true;
 		Debug.Log ("deu");
 	}
 	void fadeOut(){		
-		_fade.CrossFadeAlpha (0.0f, 2.5f, false);	
+		_fade.CrossFadeAlpha (0.0f, 2.5f, false);
+
+		podemover = true;
 
 		Debug.Log ("nao deu");
 		fadein = false;
@@ -117,6 +129,8 @@ public class Sleep : MonoBehaviour {
 
 	public void AbreMenuDormir(){
 		menuDormir.SetActive (true);
+
+		podemover = false;
 
 	}
 

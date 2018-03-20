@@ -9,19 +9,20 @@ public class InteracaoCasa : MonoBehaviour {
 	public SpriteRenderer _home;
 	public SpriteRenderer insideHome;
 	public SpriteRenderer bed;
+	public float incremento;
 
 	void OnTriggerExit2D (Collider2D other){
 		if (other.gameObject.tag == "Player" && isHome == false) {
-		
+
+			other.gameObject.transform.Translate(0, +0.7f, 0);
 			isHome = true;
-		
-		} else { 
+
+		} else {
+			other.gameObject.transform.Translate(0, -0.5f, 0);
 			isHome = false;
 		}
-	
+
 	}
-
-
 	void FixedUpdate (){
 		if (isHome) {
 			_home.sortingOrder = -1;
@@ -37,6 +38,7 @@ public class InteracaoCasa : MonoBehaviour {
 			insideHome.sortingOrder = -1;
 		}
 	}
+
 
 
 }
