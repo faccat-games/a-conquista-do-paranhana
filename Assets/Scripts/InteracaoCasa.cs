@@ -10,16 +10,23 @@ public class InteracaoCasa : MonoBehaviour {
 	public SpriteRenderer insideHome;
 	public SpriteRenderer bed;
 	public float incremento;
+	public AudioSource _audioporta;
+
+	void Start () {
+		_audioporta = GetComponent<AudioSource>();
+	}
 
 	void OnTriggerExit2D (Collider2D other){
 		if (other.gameObject.tag == "Player" && isHome == false) {
 
 			other.gameObject.transform.Translate(0, +0.7f, 0);
 			isHome = true;
+			_audioporta.Play ();
 
 		} else {
 			other.gameObject.transform.Translate(0, -0.5f, 0);
 			isHome = false;
+			_audioporta.Play ();
 		}
 
 	}
