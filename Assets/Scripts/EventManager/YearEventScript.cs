@@ -59,7 +59,7 @@ public class YearEventScript : MonoBehaviour {
 	}
 	void UpdateYear (string value)
 	{
-		Debug.Log ("Current year: "+value);
+//		Debug.Log ("Current year: "+value);
 		if (yearEventsList.ContainsKey (value)) {
 			YearEventText.text = yearEventsList [value];
 		} else {
