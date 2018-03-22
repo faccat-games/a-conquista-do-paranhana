@@ -22,6 +22,9 @@ public class Timer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		dia = 10;
+		meses = 3;
+		anos = 1846;
 		isNoite = false;
 		_noitePanel = GameObject.Find ("Noite");
 		_noiteColor = _noitePanel.GetComponent<Image> ();
