@@ -36,7 +36,7 @@ public class CriaPersonagem : MonoBehaviour
 			PlayerPrefs.SetString ("Nome", _data.playerName);
 			PlayerPrefs.SetString ("Sobrenome", _data.playerSurname);
 			PlayerPrefs.SetFloat ("Dinheiro", _data.playerMoney);
-
+			Destroy (GameObject.Find ("Musicas"));
 
 
 			SceneManager.LoadScene ("map_01");
