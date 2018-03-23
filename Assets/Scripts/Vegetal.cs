@@ -32,12 +32,12 @@ public class Vegetal : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (_sleep.fadein) {
-			if (tempoPlantio < planta) {
-				mySprite.sprite = brotoSprite;
-			}
-			// outras fases da planta
-		}
+//		if (_sleep.fadein) {
+//			if (tempoPlantio < planta) {
+//				mySprite.sprite = brotoSprite;
+//			}
+//			// outras fases da planta
+//		}
 		
 	}
 }

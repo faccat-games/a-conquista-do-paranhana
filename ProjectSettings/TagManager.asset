@@ -9,6 +9,9 @@ TagManager:
   - Gold
   - Terra
   - Data
+  - Loja
+  - menu
+  - PanelSleep
   layers:
   - Default
   - TransparentFX

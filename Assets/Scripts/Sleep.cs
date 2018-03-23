@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Sleep : MonoBehaviour {
 
@@ -10,68 +9,34 @@ public class Sleep : MonoBehaviour {
 	public Timer _newDay;
 
 	//Impedir movimento
-	public bool podemover;
 	public Movimento _movimento;
-
-	//Heal
-	public Image CurrentHealth;
-	public Text RatioText;
-
-	private float heatlh = 100;
-
-
-	//fade
-	public Image _fade;
-	public bool fadein;
-	private IEnumerator coroutine;
-
 
 	// menu dormir
 	public GameObject menuDormir;
 
+	//fade
+	public Image _fadeImage;
 
-
-
-
-	//starta setando o alpha em 0 
-	void Start (){
-
+	// Use this for initialization
+	void Start () {
 		_newDay = GameObject.FindGameObjectWithTag ("Player").GetComponent<Timer> ();
-		_fade = GameObject.Find ("PanelSleep").GetComponent<Image> ();
 		_movimento = GameObject.FindGameObjectWithTag ("Player").GetComponent<Movimento> ();
-		podemover = true;
-
-		toSleep = false;
-		_fade.canvasRenderer.SetAlpha(0.0f);
-		fadein = true;
-		_fade.GetComponent <Image> ().enabled = false;
-
-
+		_fadeImage = GameObject.FindGameObjectWithTag ("PanelSleep").GetComponent<Image> ();
 
 
 	}
-	//termina o turno e atualiza a barra de vida
-	void FixedUpdate(){
-
-		if (toSleep && Input.GetKeyDown (KeyCode.E)) {
-
-			AbreMenuDormir ();
-
-		}
-		if (podemover == false) {
-			_movimento.walkSpeed = 0;
-		} else {
-			_movimento.walkSpeed = 5;
-		}
+	
+	// Update is called once per frame
+	void Update () {
 
 	}
-
 
 	void OnTriggerEnter2D (Collider2D other) {
 
 		if (other.gameObject.tag == "Player") {
 			Debug.Log ("cama");
 			toSleep = true;
+			_fadeImage = GameObject.Find ("PanelSleep").GetComponent<Image> (); 
 		}
 
 	}
@@ -81,85 +46,59 @@ public class Sleep : MonoBehaviour {
 		}
 	}
 
-	public void EndTurn(){
-		_newDay.dia++;
-		_newDay.horas = 5.00f;
-		_newDay.minutos = 0f;
-		_newDay.segundos = 0f;
+	void FixedUpdate(){
+
+		if (toSleep && Input.GetKeyDown (KeyCode.E)) {
+			
+			AbreMenuDormir ();
+			}
 	}
-
-	//Heal
-	private void UpdateHealthbar(){
-		float ratio = heatlh; 
-		//CurrentHealth.rectTransform.localScale = new Vector3 (ratio, 1, 1);
-	
-//		RatioText.text = (  ratio ).ToString () + '%';
-		Debug.Log ("curou! " + ratio);
-	}
-	//enumerador
-	private IEnumerator waitForSeconds(float waitTime)
-	{
-		while (fadein == true)
-		{
-			fadeIn ();
-			yield return new WaitForSeconds(waitTime);
-
-			fadeOut ();
-			yield return new WaitForSeconds (waitTime);
-			_fade.GetComponent <Image> ().enabled = false;
-		}
-
-	}
-	//fade 
-	void fadeIn(){
-		_fade.CrossFadeAlpha (4.0f, 2.5f, false);	
-		_fade.GetComponent <Image> ().enabled = true;
-		Debug.Log ("deu");
-	}
-	void fadeOut(){		
-		_fade.CrossFadeAlpha (0.0f, 2.5f, false);
-
-		podemover = true;
-
-		Debug.Log ("nao deu");
-		fadein = false;
-	}
-
 
 
 	public void AbreMenuDormir(){
 		menuDormir.SetActive (true);
 
-		podemover = false;
+		_movimento.isMove = false;
 
 	}
 
 
 	public void ConfirmaDormir(){
 
+		StartCoroutine(Fade());
 
-		EndTurn ();
-		coroutine = waitForSeconds(1.5f);
-		StartCoroutine(coroutine);
-		UpdateHealthbar ();
-		fadein = true;
 		menuDormir.SetActive (false);
 
 	}
 
 	public void CancelaDormir(){
 		menuDormir.SetActive (false);
+		_movimento.isMove = true;
+
+	}
+
+
+	void fadeIn(){
+		_fadeImage.CrossFadeAlpha (4.0f, 2.5f, false);	
+
+	}
+	void fadeOut(){		
+		
+		_fadeImage.CrossFadeAlpha (0.0f, 2.5f, false);	
+
+	}
+
+	IEnumerator Fade()
+	{
+		
+		yield return new WaitForSeconds(2);
+		fadeOut();
+		yield return new WaitForSeconds(2);
+		fadeIn();
+		_movimento.isMove = true;
 	}
 
 
 
+
 }
-
-
-
-
-
-
-
-
-
