@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Plantio : MonoBehaviour {
 
@@ -9,13 +11,24 @@ public class Plantio : MonoBehaviour {
 
 	public Movimento _mov;
 
+	public string thisScene;
+	public GameObject _gameobject;
+
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (this);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		thisScene= SceneManager.GetActiveScene().name;
+		if (thisScene != "map_06") {
+			_gameobject.SetActive (false);
+		} else
+			_gameobject.SetActive (true);
+
 		
 	}
 

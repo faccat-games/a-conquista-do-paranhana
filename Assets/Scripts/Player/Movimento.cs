@@ -31,6 +31,7 @@ public class Movimento : MonoBehaviour {
 		DontDestroyOnLoad (this);
 
 
+
 		myAnimator = GetComponent<Animator> ();
 		mySprite = GetComponent<SpriteRenderer> ();
 		_data = GameObject.Find("PlayerData").GetComponent<PlayerData> ();             

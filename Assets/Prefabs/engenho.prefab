@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4373299017097900}
   - component: {fileID: 212054596516473874}
+  - component: {fileID: 68974451010244136}
   m_Layer: 0
   m_Name: engenho
   m_TagString: Untagged
@@ -53,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4861889078025800}
   - component: {fileID: 212169730339093776}
+  - component: {fileID: 68439699374060260}
   m_Layer: 0
   m_Name: engenhoInterno
   m_TagString: Untagged
@@ -67,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1314294019888032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.95405424, y: -8.139552, z: 0}
+  m_LocalPosition: {x: -1.0333829, y: 4.8450317, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children:
   - {fileID: 4861889078025800}
@@ -113,7 +115,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.8352319, y: 0}
+  m_Offset: {x: 0.77, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -124,8 +126,52 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6704638, y: 0.1}
+  m_Size: {x: 3, y: 0.1}
   m_EdgeRadius: 0
+--- !u!68 &68439699374060260
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1418679920563238}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.6, y: -1.15}
+  - {x: -2.2, y: -1.15}
+  - {x: -2.2, y: 0.95}
+  - {x: 2.2, y: 0.95}
+  - {x: 2.2, y: -1.15}
+  - {x: -0.04, y: -1.15}
+--- !u!68 &68974451010244136
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1314294019888032}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.6, y: -1.15}
+  - {x: -0.6, y: -1.6}
+  - {x: -2.5, y: -1.6}
+  - {x: -2.5, y: 1.2}
+  - {x: 2.48, y: 1.2}
+  - {x: 2.48, y: -1.6}
+  - {x: -0.04, y: -1.6}
+  - {x: -0.04, y: -1.15}
 --- !u!114 &114860099244254998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,7 +265,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 83bc7e82a2003e14586e1967e153f49a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
