@@ -811,7 +811,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1833811052743050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6613679, y: -0.17248797, z: 0}
+  m_LocalPosition: {x: -4.16443, y: -6.7140813, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 4574309621455704}
@@ -2172,7 +2172,7 @@ MonoBehaviour:
   myAnimator: {fileID: 0}
   mySprite: {fileID: 0}
   thisScene: 
-  terraArada: {fileID: 1320871452282896, guid: b4946706652b79e4f9b6259ff7621b8f, type: 2}
+  terraArada: {fileID: 1762146274782148, guid: 641b40ccfe1bc9a41906c41a51ccb659, type: 2}
   _data: {fileID: 0}
   overPlow: 0
   walkSpeed: 5
