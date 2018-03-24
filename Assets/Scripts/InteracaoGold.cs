@@ -37,7 +37,7 @@ public class InteracaoGold : MonoBehaviour {
 		}
 	}
 
-	void FixedUpdate(){
+	void Update(){ //https://forum.unity.com/threads/fixedupdate-and-input-getkeydown.56862/
 		if (isTake && Input.GetKeyDown (KeyCode.E)&& vAction) {
 			sr2.sprite = sTronco;
 			_playerData.woodLog += 10;

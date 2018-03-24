@@ -21,11 +21,11 @@ public class Sleep : MonoBehaviour {
 	void Start () {
 		_newDay = GameObject.FindGameObjectWithTag ("Player").GetComponent<Timer> ();
 		_movimento = GameObject.FindGameObjectWithTag ("Player").GetComponent<Movimento> ();
-		_fadeImage = GameObject.FindGameObjectWithTag ("PanelSleep").GetComponent<Image> ();
+		_fadeImage = GameObject.FindGameObjectWithTag ("SleepPanel").GetComponent<Image> ();
 
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -36,7 +36,7 @@ public class Sleep : MonoBehaviour {
 		if (other.gameObject.tag == "Player") {
 			Debug.Log ("cama");
 			toSleep = true;
-			_fadeImage = GameObject.Find ("PanelSleep").GetComponent<Image> (); 
+			_fadeImage = GameObject.Find ("SleepPanel").GetComponent<Image> ();
 		}
 
 	}
@@ -49,7 +49,7 @@ public class Sleep : MonoBehaviour {
 	void FixedUpdate(){
 
 		if (toSleep && Input.GetKeyDown (KeyCode.E)) {
-			
+
 			AbreMenuDormir ();
 			}
 	}
@@ -79,18 +79,18 @@ public class Sleep : MonoBehaviour {
 
 
 	void fadeIn(){
-		_fadeImage.CrossFadeAlpha (4.0f, 2.5f, false);	
+		_fadeImage.CrossFadeAlpha (4.0f, 2.5f, false);
 
 	}
-	void fadeOut(){		
-		
-		_fadeImage.CrossFadeAlpha (0.0f, 2.5f, false);	
+	void fadeOut(){
+
+		_fadeImage.CrossFadeAlpha (0.0f, 2.5f, false);
 
 	}
 
 	IEnumerator Fade()
 	{
-		
+
 		yield return new WaitForSeconds(2);
 		fadeOut();
 		yield return new WaitForSeconds(2);

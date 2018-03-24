@@ -36,8 +36,8 @@ public class Movimento : MonoBehaviour {
 		_data = GameObject.Find("PlayerData").GetComponent<PlayerData> ();             
 
 //		Debug.Log (exit);
-		talkBalloon = GameObject.Find ("Balao");
-		shopPanel = GameObject.Find ("Panel");
+		//talkBalloon = GameObject.Find ("Balao");
+		//shopPanel = GameObject.Find ("Panel");
 
 		//Debug.Log (talkBalloon.GetComponent<Image>().enabled);
 		//Debug.Log (shopPanel.GetComponent<Image>().enabled);

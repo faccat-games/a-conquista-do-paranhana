@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class YearEventScript : MonoBehaviour {
+public class YearEvent : MonoBehaviour {
 	public Text YearText;
 	public Text YearEventText;
 	// Use this for initialization
 	Dictionary<string,string> yearEventsList = new Dictionary<string, string> ();
 
 	void Start () {
+		gameObject.transform.GetChild (0).gameObject.SetActive (true);
+
 		//gameObject.SetActive(true);
 		yearEventsList.Add("1846","A sociedade Eggers & Monteiro comprou a fazenda do Mundo Novo, e no mesmo ano criaram o loteamento da Santa Maria do Mundo Novo.");
 		//yearEventsList.Add("1846","1847 - construção da Casa de Pedra");
@@ -59,12 +61,16 @@ public class YearEventScript : MonoBehaviour {
 	}
 	void UpdateYear (string value)
 	{
+		//yearEventPanel.SetActive (true);
+
 //		Debug.Log ("Current year: "+value);
 		if (yearEventsList.ContainsKey (value)) {
 			YearEventText.text = yearEventsList [value];
+			EventManager.TriggerEvent ("NewDiaryEntry", "<b>"+value+"</b> - " + yearEventsList [value]);
 		} else {
 			YearEventText.text = "";
 		}
 		YearText.text = value;
+
 	}
 }

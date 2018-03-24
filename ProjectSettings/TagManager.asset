@@ -11,7 +11,7 @@ TagManager:
   - Data
   - Loja
   - menu
-  - PanelSleep
+  - SleepPanel
   layers:
   - Default
   - TransparentFX

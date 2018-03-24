@@ -34,7 +34,7 @@ public class Planta : MonoBehaviour {
 		lifeTime = diaPlantacao;
 
 		diaAtual = _thisTimer.dia;
-		mesAtual = _thisTimer.meses;
+		mesAtual = _thisTimer.mes;
 			
 	}
 	
@@ -43,10 +43,10 @@ public class Planta : MonoBehaviour {
 		// meses - 1
 		// mesplantacao -1
 
-		if (_thisTimer.meses != mesAtual) {
+		if (_thisTimer.mes != mesAtual) {
 			novaData = true;
 			lifeTime++;
-			mesAtual = _thisTimer.meses;
+			mesAtual = _thisTimer.mes;
 		} else if (diaAtual != _thisTimer.dia) {
 
 			lifeTime++;

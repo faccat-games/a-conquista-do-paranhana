@@ -9,7 +9,7 @@ public class EventTriggerNewYear : MonoBehaviour {
 //	public int initialYear = 1800;
 //	private int currentYear;
 
-	public Timer _timer;
+	/*public Timer _timer;
 	// Use this for initialization
 	void Start () {
 
@@ -20,5 +20,5 @@ public class EventTriggerNewYear : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 			EventManager.TriggerEvent ("newYear",_timer.anos.ToString());
-	}
+	}*/
 }

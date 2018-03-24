@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Sleep_OLD : MonoBehaviour {
 
-	public bool toSleep;
+	/*public bool toSleep;
 	public Timer _newDay;
 
 	//Impedir movimento
@@ -150,7 +150,7 @@ public class Sleep_OLD : MonoBehaviour {
 	public void CancelaDormir(){
 		menuDormir.SetActive (false);
 	}
-
+*/
 
 
 }

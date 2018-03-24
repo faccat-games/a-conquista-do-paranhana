@@ -356,8 +356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 127963408}
-  vel: 1.5
-  limit: -382
+  vel: 0.8
+  limit: -384
 --- !u!1 &463693485
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 977189896}
   - component: {fileID: 977189900}
   m_Layer: 5
-  m_Name: MenuCanvas
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,7 +6,7 @@ public class EventListener : MonoBehaviour {
 
 	//private UnityAction someListener;
 
-	void Awake ()
+	/*void Awake ()
 	{
 		//someListener = new UnityAction (SomeFunction);
 	}
@@ -27,6 +27,6 @@ public class EventListener : MonoBehaviour {
 	{
 		Debug.Log ("Current year: "+value);
 	}
-
+*/
 
 }

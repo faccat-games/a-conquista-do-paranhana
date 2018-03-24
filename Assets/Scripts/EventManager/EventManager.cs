@@ -13,7 +13,7 @@ public class EventManager : MonoBehaviour {
 	private static EventManager eventManager;
 
 	void Awake() {
-		DontDestroyOnLoad(transform.gameObject);
+		DontDestroyOnLoad(this.gameObject);
 	}
 			
 	public static EventManager instance
@@ -80,6 +80,8 @@ public class EventManager : MonoBehaviour {
 			thisEvent.Invoke (value);
 		}
 	}
+
+
 		
 }
 
