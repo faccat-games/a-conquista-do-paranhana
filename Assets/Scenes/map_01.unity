@@ -1684,7 +1684,7 @@ GameObject:
   - component: {fileID: 1738295687}
   - component: {fileID: 1738295686}
   m_Layer: 0
-  m_Name: trapiche
+  m_Name: Trapiche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

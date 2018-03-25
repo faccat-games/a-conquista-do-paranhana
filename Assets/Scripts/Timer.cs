@@ -9,14 +9,15 @@ public class Timer : MonoBehaviour {
 	//public float segundos, minutos, horas;
 	//public Text Data;
 	public int ano = 1846, mes = 3, dia = 10, hora = 6;
-	private int _ano;
+
+	private int _hora;
 
 	private DateTime dateTime;
 
 	//public GameObject _noitePanel;
 	//public Image _noiteColor;
 	public float Velocidade = 50.0f;
-	public bool isNoite = false;
+
 	private string _timestamp;
 
 
@@ -33,32 +34,23 @@ public class Timer : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		dateTime = dateTime.AddMinutes(Time.deltaTime * Velocidade * 1000);
-		dia = dateTime.Day;
-		mes = dateTime.Month;
-		ano = dateTime.Year;
-		// noite
-		int hora = Int32.Parse(dateTime.ToString("HH"));
-		if (hora < 6 && hora >= 19 && !isNoite) {
-			//_noiteColor.color = new Color (0f, 0f, 0f, .5f);
-			isNoite = true;
-			EventManager.TriggerEvent ("newDay", isNoite.ToString());
-		}
-		// dia
-		if (hora >= 6 && hora < 19 && isNoite) {
-			//_noiteColor.color = new Color (0f, 0f, 0f, 0f);
-			isNoite = false;
-			EventManager.TriggerEvent ("newDay", isNoite.ToString());
-		}
+		dateTime = dateTime.AddMinutes(Time.deltaTime * Velocidade);
+
 		//Tempo.text = dateTime.ToString ("HH:mm:ss");
 		//Data.text = dateTime.ToString ("F", new System.Globalization.CultureInfo ("pt-BR"));
 
-		_timestamp = dateTime.ToString ("F", new System.Globalization.CultureInfo ("pt-BR"));
-		Debug.Log (_timestamp);
-		EventManager.TriggerEvent ("timeUpdate", _timestamp);
-		if (ano != _ano) {
+		//_timestamp = dateTime.ToString ("F", new System.Globalization.CultureInfo ("pt-BR"));
+		_timestamp = dateTime.ToString();
+
+		Debug.Log (dateTime.ToString ("F", new System.Globalization.CultureInfo ("pt-BR")));
+
+		if (_hora != dateTime.Hour) {
+			EventManager.TriggerEvent ("timeUpdate", _timestamp);
+			_hora = dateTime.Hour;
+		}
+		/*if (ano != _ano) {
 			_ano = ano;
 			EventManager.TriggerEvent ("newYear", _ano.ToString ());
-		}
+		}*/
 	}
 } 

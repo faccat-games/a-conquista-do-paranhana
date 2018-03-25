@@ -17,10 +17,13 @@ public class InteracaoAjuda : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		//Destroy(other.gameObject);
 		Debug.Log("enter" + other.name);
+		EventManager.TriggerEvent ("newPlayerDialog","Eu sou "+other.name);
 	}
 
 	void OnTriggerExit2D (Collider2D other) {
 		//Destroy(other.gameObject);
 		Debug.Log("exit" + other.name);
+		//EventManager.TriggerEvent ("newPlayerDialog","");
+		EventManager.TriggerEvent ("newPlayerDialog","");
 	}
 }
