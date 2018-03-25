@@ -195,6 +195,8 @@ MonoBehaviour:
   talkBalloon: {fileID: 1635947031565178}
   phrases:
   - "Ol\xE1, em breve abriremos o engenho"
+  - "Hallo! Aqui \xE9 o Engenho. \xC9 usado para moer sacas de trigo e descascar sacas
+    de arroz."
   phrasesText: {fileID: 114138256390791720}
   indexPhrase: 0
   talkText: {fileID: 0}
