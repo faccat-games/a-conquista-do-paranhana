@@ -17,13 +17,13 @@ public class InteracaoCasa : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D (Collider2D other){
-		if (other.gameObject.tag == "Player" && isHome == false) {
+		if (other.gameObject.tag == "Player" && isHome == false && other.gameObject.name != "InteracaoAjuda") {
 
 			other.gameObject.transform.Translate(0, +0.7f, 0);
 			isHome = true;
 			_audioporta.Play ();
 
-		} else {
+		} else if(other.gameObject.tag == "Player" && isHome != false && other.gameObject.name != "InteracaoAjuda" ) {
 			other.gameObject.transform.Translate(0, -0.5f, 0);
 			isHome = false;
 			_audioporta.Play ();
