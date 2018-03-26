@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4467215573490402}
   - component: {fileID: 212755408673091550}
   - component: {fileID: 114760526800318408}
+  - component: {fileID: 61101290651478630}
   m_Layer: 0
   m_Name: Milho
   m_TagString: Untagged
@@ -35,12 +36,37 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1431046442002590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7057351, y: -6.304521, z: 0}
+  m_LocalPosition: {x: -2.2372236, y: -5.8816524, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61101290651478630
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1431046442002590}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!114 &114760526800318408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -61,6 +87,10 @@ MonoBehaviour:
   diaPlantacao: 1
   mesPlantacao: 1
   novaData: 0
+  isMadura: 0
+  totalColheita: 5
+  _itemColetado: 0
+  isColher: 0
 --- !u!212 &212755408673091550
 SpriteRenderer:
   m_ObjectHideFlags: 1

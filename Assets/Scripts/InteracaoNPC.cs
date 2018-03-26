@@ -13,6 +13,7 @@ public class InteracaoNPC : MonoBehaviour {
 
 	public bool giveHoe;
 	public bool giveAxe;
+	public bool giveSeeds;
 
 
 	public bool isItemGiver;
@@ -59,6 +60,9 @@ public class InteracaoNPC : MonoBehaviour {
 					}
 					if (giveAxe) {
 						_playerData.hasAxe = true;
+					}
+					if (giveSeeds) {
+						_playerData.cornSeeds += 5;    /// ALTERAR
 					}
 
 				}

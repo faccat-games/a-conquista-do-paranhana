@@ -23,7 +23,11 @@ public class Planta : MonoBehaviour {
 	int mesAtual;
 	int diaAtual;
 
-	bool isMadura;
+	// colher planta
+	public bool isMadura;
+	public int totalColheita;     // total de itens coletados da planta
+	public int _itemColetado;     // alterar para outro tipo de objeto
+	public bool isColher;
 
 
 	// Use this for initialization
@@ -64,6 +68,13 @@ public class Planta : MonoBehaviour {
 
 
 
+		if(Input.GetKeyDown(KeyCode.E) && isColher){
+			GameObject.FindGameObjectWithTag ("Data").GetComponent<PlayerData> ().corn += totalColheita;    // alterear para outras plantas
+			Destroy (gameObject);
+		}
+
+
+
 
 	}
 
@@ -77,8 +88,9 @@ public class Planta : MonoBehaviour {
 
 
 	void OnTriggerEnter2D(Collider2D col){
-		if(col.tag == "Player"){
-			Debug.Log("PLAYER NA PLANTA");
+		Debug.Log (col.tag);
+		if(col.tag == "Player" && isMadura){
+			isColher = true;
 		}
 	}
 

@@ -183,7 +183,8 @@ MonoBehaviour:
   talkText: {fileID: 0}
   giveHoe: 1
   giveAxe: 0
-  isItemGiver: 0
+  giveSeeds: 1
+  isItemGiver: 1
   itemPhrases:
   - "Seja bem vindo primo. A partir de hoje voc\xEA mora nessa casa."
   - Pegue essa enchada e algumas sementes de milho
