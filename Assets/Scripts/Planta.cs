@@ -23,6 +23,8 @@ public class Planta : MonoBehaviour {
 	int mesAtual;
 	int diaAtual;
 
+	bool isMadura;
+
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +37,8 @@ public class Planta : MonoBehaviour {
 
 		diaAtual = _thisTimer.dia;
 		mesAtual = _thisTimer.mes;
+
+		isMadura = false;
 			
 	}
 	
@@ -67,6 +71,15 @@ public class Planta : MonoBehaviour {
 		lifeTime++;
 		if (lifeTime == daysToGrow) {
 			_mySprite.sprite = lastForm;
+			isMadura = true;
 		}
 	}
+
+
+	void OnTriggerEnter2D(Collider2D col){
+		if(col.tag == "Player"){
+			Debug.Log("PLAYER NA PLANTA");
+		}
+	}
+
 }

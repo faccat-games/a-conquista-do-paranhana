@@ -957,8 +957,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -287}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchoredPosition: {x: 0.000026703, y: -312}
+  m_SizeDelta: {x: 160, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &885755499
 MonoBehaviour:
@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1833811052743050, guid: 8151bec0ff8634acca694b5c87ddd25f, type: 2}
-  _helpPanel: {fileID: 337186698}
+  _helpPanel: {fileID: 1251719550}
 --- !u!4 &1212080290
 Transform:
   m_ObjectHideFlags: 0
@@ -1409,10 +1409,10 @@ RectTransform:
   m_Father: {fileID: 337186702}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 62.9, y: 116.4}
-  m_SizeDelta: {x: -251.8, y: 90.4}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 780, y: 860}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1251719552
 MonoBehaviour:

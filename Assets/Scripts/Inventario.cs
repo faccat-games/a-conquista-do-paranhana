@@ -49,6 +49,6 @@ public class Inventario : MonoBehaviour {
 				axeItem.SetActive (true);
 			}
 			
-		}else panelInventario.SetActive (false);			
+		} else panelInventario.SetActive (false);			
 	}
 }

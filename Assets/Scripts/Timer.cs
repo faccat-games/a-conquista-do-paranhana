@@ -42,7 +42,7 @@ public class Timer : MonoBehaviour {
 		//_timestamp = dateTime.ToString ("F", new System.Globalization.CultureInfo ("pt-BR"));
 		_timestamp = dateTime.ToString();
 
-		Debug.Log (dateTime.ToString ("F", new System.Globalization.CultureInfo ("pt-BR")));
+		//Debug.Log (dateTime.ToString ("F", new System.Globalization.CultureInfo ("pt-BR")));
 
 		if (_hora != dateTime.Hour) {
 			EventManager.TriggerEvent ("timeUpdate", _timestamp);

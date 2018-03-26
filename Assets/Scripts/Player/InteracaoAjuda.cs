@@ -23,7 +23,6 @@ public class InteracaoAjuda : MonoBehaviour {
 	void OnTriggerExit2D (Collider2D other) {
 		//Destroy(other.gameObject);
 		Debug.Log("exit" + other.name);
-		//EventManager.TriggerEvent ("newPlayerDialog","");
 		EventManager.TriggerEvent ("newPlayerDialog","");
 	}
 }

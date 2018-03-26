@@ -12,7 +12,7 @@ public class Noite : MonoBehaviour {
 	private bool _isNoite = false;
 
 	void Start () {
-		EventManager.StartListening ("timeUpdate", UpdateBackground);
+		//EventManager.StartListening ("timeUpdate", UpdateBackground);
 		imageBackground = gameObject.GetComponent<Image> ();
 	}
 
@@ -42,6 +42,6 @@ public class Noite : MonoBehaviour {
 	}
 
 	void OnDestroy () {
-		EventManager.StopListening ("timeUpdate", UpdateBackground);
+		//EventManager.StopListening ("timeUpdate", UpdateBackground);
 	}
 }

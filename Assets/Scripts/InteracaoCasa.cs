@@ -16,34 +16,35 @@ public class InteracaoCasa : MonoBehaviour {
 		_audioporta = GetComponent<AudioSource>();
 	}
 
-	void OnTriggerExit2D (Collider2D other){
-		if (other.gameObject.tag == "Player" && isHome == false) {
-
-			other.gameObject.transform.Translate(0, +0.7f, 0);
-			isHome = true;
-			_audioporta.Play ();
-
-		} else {
-			other.gameObject.transform.Translate(0, -0.5f, 0);
-			isHome = false;
-			_audioporta.Play ();
-		}
-
+	void OnTriggerEnter2D (Collider2D other){
+		//Debug.Log ("enter" + other.name + ' ' + isHome.ToString() + ' ' +timer);
+		if (other.gameObject.tag == "Player" && !isHome) {
+				other.gameObject.transform.Translate(0, +1.0f, 0);
+				isHome = true;
+				_home.sortingOrder = -1;
+				insideHome.sortingOrder = 1;
+				if (bed) {
+					bed.sortingOrder = 4;
+				}
+				_audioporta.Play ();
+			} 
 	}
-	void FixedUpdate (){
-		if (isHome) {
-			_home.sortingOrder = -1;
-			insideHome.sortingOrder = 1;
-			if (bed) {
-				bed.sortingOrder = 4;
-			}
-		} else {
+
+	void OnTriggerExit2D (Collider2D other){
+		//Debug.Log ("exit ---- " + other.name + ' ' + isHome.ToString());
+		if (other.gameObject.tag == "Player" && isHome) {
+			other.gameObject.transform.Translate(0, -1.2f, 0);
+			isHome = false;
 			if (bed) {
 				bed.sortingOrder = -1;
 			}
 			_home.sortingOrder = 3;
 			insideHome.sortingOrder = -1;
+			_audioporta.Play ();
 		}
+	}
+
+	void Update (){
 	}
 
 
