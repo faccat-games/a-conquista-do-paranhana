@@ -12,11 +12,7 @@ public class InteracaoGold : MonoBehaviour {
 
 	void Awake(){
 
-		_playerData = GameObject.Find ("PlayerData").GetComponent<PlayerData> ();
-		if (_playerData.hasAxe == true) {
-			Debug.Log ("TEM MACHADO");
-			vAction = true;
-		}
+
 	}
 
 	void Start () {
@@ -26,6 +22,10 @@ public class InteracaoGold : MonoBehaviour {
 	
 	}
 	void OnTriggerEnter2D (Collider2D other) {
+		_playerData = GameObject.Find ("PlayerData").GetComponent<PlayerData> ();
+		if (_playerData.hasAxe == true) {
+			vAction = true;
+		}
 		if (other.gameObject.tag == "Player") {
 			isTake = true;
 
@@ -37,7 +37,7 @@ public class InteracaoGold : MonoBehaviour {
 		}
 	}
 
-	void Update(){ //https://forum.unity.com/threads/fixedupdate-and-input-getkeydown.56862/
+	void Update(){
 		if (isTake && Input.GetKeyDown (KeyCode.E)&& vAction) {
 			sr2.sprite = sTronco;
 			_playerData.woodLog += 10;

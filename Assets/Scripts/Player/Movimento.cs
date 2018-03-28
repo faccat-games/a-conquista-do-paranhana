@@ -125,8 +125,9 @@ public class Movimento : MonoBehaviour {
 
 			if (thisScene == "map_06" && _data.hasHoe == true) {	
 				Arar ();
-			} else
-				Debug.Log ("sem arado");
+			} 
+			//else
+			//	Debug.Log ("sem arado");
 		}
 
 		if (Input.GetKeyDown (KeyCode.Q)) {
