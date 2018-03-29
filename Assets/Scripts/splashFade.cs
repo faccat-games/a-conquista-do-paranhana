@@ -9,6 +9,7 @@ public class splashFade : MonoBehaviour {
 
 	public Image splashImage;
 	public Image splashImage2;
+	public Image splashImage3;
 	public Canvas canvas;
 	public string loadScene;
 
@@ -16,6 +17,7 @@ public class splashFade : MonoBehaviour {
 
 		splashImage.canvasRenderer.SetAlpha(0.0f);
 		splashImage2.canvasRenderer.SetAlpha(0.0f);
+		splashImage3.canvasRenderer.SetAlpha(0.0f);
 
 
 		FadeInFirst();
@@ -28,6 +30,11 @@ public class splashFade : MonoBehaviour {
 		FadeInSecond();
 		yield return new WaitForSeconds(2.5f);
 		FadeOutSecond();
+		yield return new WaitForSeconds(2.5f);
+
+		FadeInThird();
+		yield return new WaitForSeconds(2.5f);
+		FadeOutThird();
 		yield return new WaitForSeconds(2.5f);
 
 		SceneManager.LoadScene(loadScene);
@@ -50,7 +57,7 @@ public class splashFade : MonoBehaviour {
 	void FadeInSecond(){
 	
 		splashImage2.CrossFadeAlpha (1.0f, 1.5f, false);
-		canvas.GetComponent<Image>().color = new Color32(14,9,69,100);
+		//canvas.GetComponent<Image>().color = new Color32(14,9,69,100);
 
 	}
 
@@ -58,4 +65,17 @@ public class splashFade : MonoBehaviour {
 		
 		splashImage2.CrossFadeAlpha (0.0f, 2.5f, false);
 	}
+
+	void FadeInThird(){
+
+		splashImage3.CrossFadeAlpha (1.0f, 1.5f, false);
+		canvas.GetComponent<Image>().color = new Color32(14,9,69,100);
+
+	}
+
+	void FadeOutThird(){
+
+		splashImage3.CrossFadeAlpha (0.0f, 2.5f, false);
+	}
+
 }
