@@ -6,7 +6,7 @@ public class InteracaoAjuda : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log (gameObject.name);
+		//Debug.Log (gameObject.name);
 	}
 	
 	// Update is called once per frame
@@ -16,13 +16,17 @@ public class InteracaoAjuda : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 		//Destroy(other.gameObject);
-		Debug.Log("enter" + other.name);
-		EventManager.TriggerEvent ("newPlayerDialog","Eu sou "+other.name);
+		//Debug.Log("enter" + other.name);
+
+		Ajuda info = other.GetComponent<Ajuda> ();
+		if (info && info.Interagir) {
+			EventManager.TriggerEvent ("newPlayerDialog",info.Descricao + "\n" + info.Texto);
+		}
 	}
 
 	void OnTriggerExit2D (Collider2D other) {
 		//Destroy(other.gameObject);
-		Debug.Log("exit" + other.name);
+		//Debug.Log("exit" + other.name);
 		EventManager.TriggerEvent ("newPlayerDialog","");
 	}
 }

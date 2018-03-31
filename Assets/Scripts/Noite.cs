@@ -12,7 +12,7 @@ public class Noite : MonoBehaviour {
 	private bool _isNoite = false;
 
 	void Start () {
-		//EventManager.StartListening ("timeUpdate", UpdateBackground);
+		EventManager.StartListening ("newDayCicle", UpdateBackground);
 		imageBackground = gameObject.GetComponent<Image> ();
 	}
 
@@ -21,7 +21,7 @@ public class Noite : MonoBehaviour {
 
 	void UpdateBackground(string value) {
 	
-		currentDateTime = DateTime.Parse(value);
+		/*currentDateTime = DateTime.Parse(value);
 		// noite
 		int hora = Int32.Parse(currentDateTime.ToString("HH"));
 
@@ -38,10 +38,15 @@ public class Noite : MonoBehaviour {
 			imageBackground.color = new Color (0.0f, 0.0f, 0.0f, (isNoite) ? 0.10f : 0.0f);
 			_isNoite = isNoite;
 		}
-			
+			*/
+		isNoite = (Boolean.Parse (value)) ? false : true;
+		if (isNoite != _isNoite) {
+			imageBackground.color = new Color (0.0f, 0.0f, 0.0f, (isNoite) ? 0.20f : 0.0f);
+			_isNoite = isNoite;
+		}
 	}
 
 	void OnDestroy () {
-		//EventManager.StopListening ("timeUpdate", UpdateBackground);
+		EventManager.StopListening ("newDayCicle", UpdateBackground);
 	}
 }

@@ -38,7 +38,7 @@ public class InteracaoCasa : MonoBehaviour {
 			if (bed) {
 				bed.sortingOrder = -1;
 			}
-			_home.sortingOrder = 3;
+			_home.sortingOrder = 1;
 			insideHome.sortingOrder = -1;
 			_audioporta.Play ();
 		}

@@ -5,8 +5,8 @@ using UnityEngine;
 public class InteracaoGold : MonoBehaviour {
 	public bool isTake;
 	public bool vAction;
-	public SpriteRenderer sr2;
-	public Sprite sTronco;
+	//public SpriteRenderer sr2;
+	//public Sprite sTronco;
 	public AudioSource _audio;
 	public PlayerData _playerData;
 
@@ -16,7 +16,7 @@ public class InteracaoGold : MonoBehaviour {
 	}
 
 	void Start () {
-		sr2 = GetComponent<SpriteRenderer> ();
+		//sr2 = GetComponent<SpriteRenderer> ();
 		_audio = GetComponent<AudioSource>();
 
 	
@@ -39,9 +39,11 @@ public class InteracaoGold : MonoBehaviour {
 
 	void Update(){
 		if (isTake && Input.GetKeyDown (KeyCode.E)&& vAction) {
-			sr2.sprite = sTronco;
+			//sr2.sprite = sTronco;
+		
 			_playerData.woodLog += 10;
-
+			GetComponent<Arvore>().isCortada = true;
+			GetComponent<Ajuda> ().Interagir = false;
 			vAction = false;
 			_audio.Play();
 		}

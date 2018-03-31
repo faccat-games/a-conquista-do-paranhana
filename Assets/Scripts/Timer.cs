@@ -18,11 +18,13 @@ public class Timer : MonoBehaviour {
 	//public Image _noiteColor;
 	public float Velocidade = 50.0f;
 
-	private string _timestamp;
+	public string _currentTime;
 
 
-	//	public GameObject _fundo; 
-	//	public GameObject _cor;
+	public bool newDay = true;
+	private bool _newDay = false;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +34,14 @@ public class Timer : MonoBehaviour {
 		dateTime = new DateTime(ano, mes, dia, hora, 0, 0);
 	}
 
+	public DateTime currentDateTime
+	{
+		get
+		{
+			//Some other code
+			return dateTime;
+		}
+	}
 	// Update is called once per frame
 	void Update () {
 		dateTime = dateTime.AddMinutes(Time.deltaTime * Velocidade);
@@ -40,13 +50,26 @@ public class Timer : MonoBehaviour {
 		//Data.text = dateTime.ToString ("F", new System.Globalization.CultureInfo ("pt-BR"));
 
 		//_timestamp = dateTime.ToString ("F", new System.Globalization.CultureInfo ("pt-BR"));
-		_timestamp = dateTime.ToString();
+		_currentTime = dateTime.ToString();
 
 		//Debug.Log (dateTime.ToString ("F", new System.Globalization.CultureInfo ("pt-BR")));
 
 		if (_hora != dateTime.Hour) {
-			EventManager.TriggerEvent ("timeUpdate", _timestamp);
+			EventManager.TriggerEvent ("timeUpdate", _currentTime);
 			_hora = dateTime.Hour;
+
+			if (_hora < 6 || _hora >= 19) {
+				newDay = false;
+			}
+			// dia
+			if (_hora >= 6 && _hora < 19) {			
+				newDay = true;
+			}
+
+			if (newDay != _newDay) {
+				EventManager.TriggerEvent ("newDayCicle", newDay.ToString());
+				_newDay = newDay;
+			}
 		}
 		/*if (ano != _ano) {
 			_ano = ano;

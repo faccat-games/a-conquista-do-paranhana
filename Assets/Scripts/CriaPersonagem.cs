@@ -10,6 +10,7 @@ public class CriaPersonagem : MonoBehaviour
     public InputField nomeDigitado; 
 	public  Text sobrenomeDigitado;
     public GameObject panelCriacao;
+	public string NomeCena;
 
 
 	public PlayerData _data; 
@@ -39,7 +40,7 @@ public class CriaPersonagem : MonoBehaviour
 			Destroy (GameObject.Find ("Musicas"));
 
 
-			SceneManager.LoadScene ("map_01");
+			SceneManager.LoadScene (NomeCena);
 		} else {
 			Debug.Log ("entre com um nome e sobrenome");
 		}

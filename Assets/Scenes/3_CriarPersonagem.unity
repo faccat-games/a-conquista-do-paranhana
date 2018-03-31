@@ -123,7 +123,6 @@ GameObject:
   m_Component:
   - component: {fileID: 27821970}
   - component: {fileID: 27821973}
-  - component: {fileID: 27821972}
   - component: {fileID: 27821971}
   m_Layer: 5
   m_Name: CriarPersonagem
@@ -168,35 +167,8 @@ MonoBehaviour:
   nomeDigitado: {fileID: 411239293}
   sobrenomeDigitado: {fileID: 1517899516}
   panelCriacao: {fileID: 1854182407}
+  NomeCena: 4_Evento01
   _data: {fileID: 65204283}
---- !u!114 &27821972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000983050898350, guid: e457278e72f04204ea659db2afe3bfbe,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 27821969}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.2509804, g: 0.12941177, b: 0.08235294, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
 --- !u!222 &27821973
 CanvasRenderer:
   m_ObjectHideFlags: 0

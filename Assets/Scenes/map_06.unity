@@ -964,6 +964,11 @@ Prefab:
       propertyPath: menuDormir
       value: 
       objectReference: {fileID: 130267297}
+    - target: {fileID: 212351106650984048, guid: cbff0e3671198814fa395d821bae58ed,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbff0e3671198814fa395d821bae58ed, type: 2}
   m_IsPrefabParent: 0

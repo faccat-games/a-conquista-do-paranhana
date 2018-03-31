@@ -22,9 +22,6 @@ public class PlayerData : MonoBehaviour {
 	public int itemHand;   // item em uso pelo jogador   seleção por id   // 0 nenhum, 1 cornseeds;
 
 
-
-
-
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (this);

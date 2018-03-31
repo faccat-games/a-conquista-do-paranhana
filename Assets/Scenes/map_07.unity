@@ -603,6 +603,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 212054596516473874, guid: f70282f44f6f6ad42a0c8463abe37e2a,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212169730339093776, guid: f70282f44f6f6ad42a0c8463abe37e2a,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f70282f44f6f6ad42a0c8463abe37e2a, type: 2}
   m_IsPrefabParent: 0

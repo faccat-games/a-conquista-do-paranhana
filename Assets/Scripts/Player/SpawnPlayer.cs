@@ -19,7 +19,7 @@ public class SpawnPlayer : MonoBehaviour {
 	void Awake(){
 		if (!GameObject.FindWithTag ("Player")) {
 			GameObject clone;
-			clone = Instantiate(_player, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+			clone = Instantiate(_player, transform.position, Quaternion.identity) as GameObject;
 			clone.GetComponent<Movimento> ().exit = -1;
 
 			_helpPanel.SetActive (true);

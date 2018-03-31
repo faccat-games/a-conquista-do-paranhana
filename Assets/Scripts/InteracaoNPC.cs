@@ -7,13 +7,17 @@ public class InteracaoNPC : MonoBehaviour {
 	private bool isTalk;
 	public GameObject talkBalloon;
 	public string[] phrases;
-	public Text phrasesText;
+	//public Text phrasesText;
 	public int indexPhrase;
 	public Text talkText;
 
 	public bool giveHoe;
 	public bool giveAxe;
 	public bool giveSeeds;
+
+	public string TextoHoe;
+	public string TextoAxe;
+	public string TextoSeeds;
 
 
 	public bool isItemGiver;
@@ -26,6 +30,7 @@ public class InteracaoNPC : MonoBehaviour {
 	void Start(){
 		_playerMov = GameObject.FindGameObjectWithTag ("Player").GetComponent<Movimento> ();
 		_playerData = GameObject.FindGameObjectWithTag ("Data").GetComponent<PlayerData> ();
+		//talkText = GetComponentInChildren<Text> ();
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
@@ -46,10 +51,11 @@ public class InteracaoNPC : MonoBehaviour {
 		if (isItemGiver) {
 			if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase <= itemPhrases.Length - 1) {
 				_playerMov.isMove = false;
-				phrasesText.text = itemPhrases [indexPhrase];
+				talkText.text = itemPhrases [indexPhrase];
 				talkBalloon.SetActive (true);
 				indexPhrase++;
-				}else if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase >= itemPhrases.Length - 1) {
+				EventManager.TriggerEvent ("newPlayerDialog","");
+				} else if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase >= itemPhrases.Length - 1) {
 				    _playerMov.isMove = true;
 					talkBalloon.SetActive (false);
 					talkText = talkBalloon.GetComponentInChildren<Text> ();
@@ -57,12 +63,18 @@ public class InteracaoNPC : MonoBehaviour {
 					isItemGiver = false;
 					if (giveHoe) {
 						_playerData.hasHoe = true;
+						GetComponent<Ajuda> ().Interagir = false;
+						EventManager.TriggerEvent ("newPlayerDialog",TextoHoe);
 					}
 					if (giveAxe) {
 						_playerData.hasAxe = true;
+						GetComponent<Ajuda> ().Interagir = false;
+						EventManager.TriggerEvent ("newPlayerDialog",TextoAxe);
 					}
 					if (giveSeeds) {
 						_playerData.cornSeeds += 5;    /// ALTERAR
+						GetComponent<Ajuda> ().Interagir = false;
+						EventManager.TriggerEvent ("newPlayerDialog",TextoSeeds);
 					}
 
 				}
@@ -72,9 +84,10 @@ public class InteracaoNPC : MonoBehaviour {
 
 			if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase <= phrases.Length - 1) {
 				_playerMov.isMove = false;
-				phrasesText.text = phrases [indexPhrase];
+				talkText.text = phrases [indexPhrase];
 				talkBalloon.SetActive (true);
 				indexPhrase++;
+				EventManager.TriggerEvent ("newPlayerDialog","");
 			} else if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase >= phrases.Length - 1) {
 				_playerMov.isMove = true;
 				talkBalloon.SetActive (false);
