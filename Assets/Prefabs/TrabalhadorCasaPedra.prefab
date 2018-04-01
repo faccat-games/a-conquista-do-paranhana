@@ -11,51 +11,16 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1976037540825296}
   m_IsPrefabParent: 1
---- !u!1 &1313016850330506
+--- !u!1 &1196815391330058
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 224301416768274550}
-  - component: {fileID: 222968756874937682}
-  - component: {fileID: 114433705044512108}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!1 &1594753900425536
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 224752946926852532}
-  - component: {fileID: 223125067881549766}
-  - component: {fileID: 114877194242230114}
-  - component: {fileID: 114670582061981694}
-  m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1704312483653260
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 224846753151442740}
-  - component: {fileID: 222935538239692848}
-  - component: {fileID: 114926199635471146}
+  - component: {fileID: 224397717319166938}
+  - component: {fileID: 222602841795453278}
+  - component: {fileID: 114013389788529764}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -63,6 +28,42 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1696439113077700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224555724633181810}
+  - component: {fileID: 223439580489845122}
+  - component: {fileID: 114811932734481490}
+  - component: {fileID: 114870244802911876}
+  m_Layer: 5
+  m_Name: CanvasNpcDialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1851652435867028
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224071889074813562}
+  - component: {fileID: 222712304870771500}
+  - component: {fileID: 114131161097547296}
+  - component: {fileID: 114496341022023666}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1976037540825296
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,6 +76,7 @@ GameObject:
   - component: {fileID: 61993218892539672}
   - component: {fileID: 61655376508778088}
   - component: {fileID: 114413803964383278}
+  - component: {fileID: 114927908566743856}
   m_Layer: 0
   m_Name: TrabalhadorCasaPedra
   m_TagString: Untagged
@@ -88,11 +90,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1976037540825296}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19, y: -7.37, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 54.37, y: 19.62, z: 1.1121535}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
-  - {fileID: 224752946926852532}
+  - {fileID: 224555724633181810}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,42 +148,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.44424915, y: 0.7531731}
   m_EdgeRadius: 0
---- !u!114 &114413803964383278
+--- !u!114 &114013389788529764
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1976037540825296}
+  m_GameObject: {fileID: 1196815391330058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9fed5bddc1f9e642805613e253ae47d, type: 3}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  talkBalloon: {fileID: 1313016850330506}
-  phrases:
-  - "Hallo! Aqui \xE9 a Casa de Pedra! Ela foi constru\xEDda em 1847. Voc\xEA pode
-    comprar ferramentas e utens\xEDlios, trocar a sua produ\xE7\xE3o por mantimentos
-    ou fazer uma visita!"
-  - Abriremos em breve, aguarde alguns dias.
-  phrasesText: {fileID: 114926199635471146}
-  indexPhrase: 0
-  talkText: {fileID: 0}
-  giveHoe: 0
-  giveAxe: 0
-  isItemGiver: 0
-  itemPhrases:
-  - "Seja bem vindo primo. A partir de hoje voc\xEA mora nessa casa."
-  - Pegue essa enchada e algumas sementes de milho
-  - Aperte a tecla W para arar e depois use E para plantar a semente escolhida
-  - "Lembre-se, voc\xEA s\xF3 tem permiss\xE3o de plantar nesse terreno."
-  _playerMov: {fileID: 0}
-  _playerData: {fileID: 0}
---- !u!114 &114433705044512108
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 16
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 16
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!114 &114131161097547296
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1313016850330506}
+  m_GameObject: {fileID: 1851652435867028}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -195,36 +200,66 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0e566f68bbc868249b30ea60af846f0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dec97fb354a1d9f41a6c6fb6b638de15, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114670582061981694
+--- !u!114 &114413803964383278
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1594753900425536}
+  m_GameObject: {fileID: 1976037540825296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: b9fed5bddc1f9e642805613e253ae47d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &114877194242230114
+  talkBalloon: {fileID: 1851652435867028}
+  phrases:
+  - "Hallo! Aqui \xE9 a Casa de Pedra! Ela foi constru\xEDda em 1847. Voc\xEA pode
+    comprar ferramentas e utens\xEDlios, trocar a sua produ\xE7\xE3o por mantimentos
+    ou fazer uma visita!"
+  - Abriremos em breve, aguarde alguns dias.
+  indexPhrase: 0
+  giveHoe: 0
+  giveAxe: 0
+  giveSeeds: 0
+  TextoHoe: 
+  TextoAxe: 
+  TextoSeeds: 
+  isItemGiver: 0
+  itemPhrases:
+  - "Seja bem vindo primo. A partir de hoje voc\xEA mora nessa casa."
+  - Pegue essa enchada e algumas sementes de milho
+  - Aperte a tecla W para arar e depois use E para plantar a semente escolhida
+  - "Lembre-se, voc\xEA s\xF3 tem permiss\xE3o de plantar nesse terreno."
+  _playerMov: {fileID: 0}
+  _playerData: {fileID: 0}
+--- !u!114 &114496341022023666
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1594753900425536}
+  m_GameObject: {fileID: 1851652435867028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1224c0707a0e34eeaa185a9d378e3b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: {x: 0, y: 0, z: 0}
+  obj: {fileID: 1976037540825296}
+  camera: {fileID: 0}
+--- !u!114 &114811932734481490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1696439113077700}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -240,41 +275,36 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114926199635471146
+--- !u!114 &114870244802911876
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1704312483653260}
+  m_GameObject: {fileID: 1696439113077700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: a6262d1fd9b73aa40939fd913dbe0a64, type: 3}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: '
-
-'
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &114927908566743856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1976037540825296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bcc3f529f3b84a89a74e826f0e1832a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Descricao: Este senhor parece bem atarefado.
+  Texto: 
+  Interagir: 1
 --- !u!212 &212435876466764746
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -319,24 +349,24 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!222 &222935538239692848
+--- !u!222 &222602841795453278
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1704312483653260}
---- !u!222 &222968756874937682
+  m_GameObject: {fileID: 1196815391330058}
+--- !u!222 &222712304870771500
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1313016850330506}
---- !u!223 &223125067881549766
+  m_GameObject: {fileID: 1851652435867028}
+--- !u!223 &223439580489845122
 Canvas:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1594753900425536}
+  m_GameObject: {fileID: 1696439113077700}
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
@@ -351,36 +381,54 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!224 &224301416768274550
+--- !u!224 &224071889074813562
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1313016850330506}
+  m_GameObject: {fileID: 1851652435867028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 224846753151442740}
-  m_Father: {fileID: 224752946926852532}
+  - {fileID: 224397717319166938}
+  m_Father: {fileID: 224555724633181810}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 800, y: 200}
+  m_AnchorMin: {x: 5.888122, y: 3.1976612}
+  m_AnchorMax: {x: 5.888122, y: 3.1976612}
+  m_AnchoredPosition: {x: -5642, y: -1868}
+  m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &224752946926852532
+--- !u!224 &224397717319166938
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1594753900425536}
+  m_GameObject: {fileID: 1196815391330058}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224071889074813562}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -7.2083435, y: 14}
+  m_SizeDelta: {x: 211, y: 56}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224555724633181810
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1696439113077700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 224301416768274550}
+  - {fileID: 224071889074813562}
   m_Father: {fileID: 4190854552135330}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -389,21 +437,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!224 &224846753151442740
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1704312483653260}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 224301416768274550}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.1, y: 10.3}
-  m_SizeDelta: {x: 560, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}

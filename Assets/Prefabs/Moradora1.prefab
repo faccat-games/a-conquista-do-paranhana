@@ -166,8 +166,7 @@ MonoBehaviour:
   - "N\xE3o esque\xE7a de falar com os moradores"
   - "Entre, vamos preparar um p\xE3o com K\xE4sschmier e tomar um caf\xE9. Sua visita
     \xE9 sempre bem-vinda!"
-  indexPhrase: 1
-  talkText: {fileID: 114271721479529528}
+  indexPhrase: 0
   giveHoe: 0
   giveAxe: 0
   giveSeeds: 0
@@ -231,7 +230,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Seja bem vindo ! Sua fam\xEDlia ?"
+  m_Text: 
 --- !u!114 &114343002788166960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -393,8 +392,8 @@ RectTransform:
   m_Father: {fileID: 224947892762126428}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 2.94604, y: 2.3104496}
-  m_AnchorMax: {x: 2.94604, y: 2.3104496}
+  m_AnchorMin: {x: 0.79456186, y: -6.701262}
+  m_AnchorMax: {x: 0.79456186, y: -6.701262}
   m_AnchoredPosition: {x: -2642.4358, y: -1253}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}

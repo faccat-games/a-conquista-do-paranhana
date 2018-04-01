@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+using System;
 
 public class InteracaoNPC : MonoBehaviour {
 	private bool isTalk;
@@ -9,7 +11,7 @@ public class InteracaoNPC : MonoBehaviour {
 	public string[] phrases;
 	//public Text phrasesText;
 	public int indexPhrase;
-	public Text talkText;
+	private Text talkText;
 
 	public bool giveHoe;
 	public bool giveAxe;
@@ -27,9 +29,15 @@ public class InteracaoNPC : MonoBehaviour {
 	public Movimento _playerMov;
 	public PlayerData _playerData;
 
+	private string[] talkPlayer = new string[3];
+
+	private Ajuda _ajuda;
+
+
 	void Start(){
 		_playerMov = GameObject.FindGameObjectWithTag ("Player").GetComponent<Movimento> ();
 		_playerData = GameObject.FindGameObjectWithTag ("Data").GetComponent<PlayerData> ();
+		_ajuda = GetComponent<Ajuda> ();
 		//talkText = GetComponentInChildren<Text> ();
 	}
 
@@ -50,51 +58,56 @@ public class InteracaoNPC : MonoBehaviour {
 
 		if (isItemGiver) {
 			if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase <= itemPhrases.Length - 1) {
+				talkBalloon.SetActive (true);
+				talkText = talkBalloon.GetComponentInChildren<Text> ();
 				_playerMov.isMove = false;
 				talkText.text = itemPhrases [indexPhrase];
-				talkBalloon.SetActive (true);
 				indexPhrase++;
 				EventManager.TriggerEvent ("newPlayerDialog","");
 				} else if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase >= itemPhrases.Length - 1) {
 				    _playerMov.isMove = true;
-					talkBalloon.SetActive (false);
-					talkText = talkBalloon.GetComponentInChildren<Text> ();
+					
 					talkText.text = "";
-					isItemGiver = false;
+					talkBalloon.SetActive (false);
+					
+					isItemGiver = false;					
+
 					if (giveHoe) {
 						_playerData.hasHoe = true;
-						GetComponent<Ajuda> ().Interagir = false;
-						EventManager.TriggerEvent ("newPlayerDialog",TextoHoe);
+						talkPlayer [0] = TextoHoe;
 					}
 					if (giveAxe) {
 						_playerData.hasAxe = true;
-						GetComponent<Ajuda> ().Interagir = false;
-						EventManager.TriggerEvent ("newPlayerDialog",TextoAxe);
+						talkPlayer [1] = TextoAxe;
 					}
 					if (giveSeeds) {
 						_playerData.cornSeeds += 5;    /// ALTERAR
-						GetComponent<Ajuda> ().Interagir = false;
-						EventManager.TriggerEvent ("newPlayerDialog",TextoSeeds);
+						talkPlayer [2] = TextoSeeds;
 					}
 
+					talkPlayer = talkPlayer.Where(val => !String.IsNullOrEmpty(val)).ToArray();	
+					if (talkPlayer.Length > 0) {
+						if (_ajuda) {
+							_ajuda.Interagir = false;
+						}
+						EventManager.TriggerEvent ("newPlayerDialog",String.Join("\n", talkPlayer));
+					}
 				}
 			
 		} else {
-
-
+			
 			if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase <= phrases.Length - 1) {
 				_playerMov.isMove = false;
-				talkText.text = phrases [indexPhrase];
 				talkBalloon.SetActive (true);
+				talkText = talkBalloon.GetComponentInChildren<Text> ();
+				talkText.text = phrases [indexPhrase];
 				indexPhrase++;
 				EventManager.TriggerEvent ("newPlayerDialog","");
 			} else if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase >= phrases.Length - 1) {
 				_playerMov.isMove = true;
-				talkBalloon.SetActive (false);
 				talkText = talkBalloon.GetComponentInChildren<Text> ();
 				talkText.text = "";
-
-
+				talkBalloon.SetActive (false);
 			}
 
 		}

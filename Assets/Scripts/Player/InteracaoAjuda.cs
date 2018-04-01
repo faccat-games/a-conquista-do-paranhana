@@ -20,7 +20,10 @@ public class InteracaoAjuda : MonoBehaviour {
 
 		Ajuda info = other.GetComponent<Ajuda> ();
 		if (info && info.Interagir) {
-			EventManager.TriggerEvent ("newPlayerDialog",info.Descricao + "\n" + info.Texto);
+			string t = (info.Descricao.Length != 0) ? info.Descricao + "\n" + info.Texto : info.Texto;
+			EventManager.TriggerEvent ("newPlayerDialog",t);
+		} else if (info) {
+			EventManager.TriggerEvent ("newPlayerDialog",info.Descricao);
 		}
 	}
 

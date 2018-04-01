@@ -29,7 +29,7 @@ public class Balao : MonoBehaviour {
 	}
 
 	void UpdateBalao (string value) {
-		Debug.Log ("Dialog:" + value);
+		//Debug.Log ("Dialog:" + value);
 		MostrarBalao = (value == "") ? false : true;
 		if (MostrarBalao) {
 			timer = BalaoTempo;
