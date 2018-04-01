@@ -36,12 +36,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4655768098810826}
   - component: {fileID: 212900810958053816}
-  - component: {fileID: 114171816296518322}
   - component: {fileID: 61294523232937128}
   - component: {fileID: 82345781437572562}
   - component: {fileID: 70132126847082018}
   - component: {fileID: 114667274718011800}
   - component: {fileID: 114166252524076142}
+  - component: {fileID: 114896312681745186}
   m_Layer: 0
   m_Name: Arvore
   m_TagString: Gold
@@ -207,10 +207,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcc3f529f3b84a89a74e826f0e1832a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Descricao: "Uma \xE1rvore."
-  Texto: Posso usar o machado.
+  Descricao: 
+  Texto: "Uma \xE1rvore. Posso usar o machado."
   Interagir: 1
---- !u!114 &114171816296518322
+--- !u!114 &114667274718011800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1673395237544636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6356b9238d94c5d9aadddc3c86d53a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tronco: {fileID: 0}
+  isCortada: 0
+--- !u!114 &114896312681745186
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -225,19 +238,6 @@ MonoBehaviour:
   vAction: 0
   _audio: {fileID: 0}
   _playerData: {fileID: 0}
---- !u!114 &114667274718011800
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1673395237544636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df6356b9238d94c5d9aadddc3c86d53a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tronco: {fileID: 0}
-  isCortada: 0
 --- !u!212 &212769928086079690
 SpriteRenderer:
   m_ObjectHideFlags: 1

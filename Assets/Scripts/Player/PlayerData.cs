@@ -13,10 +13,10 @@ public class PlayerData : MonoBehaviour {
 	public bool hasAxe;          // tem machado?
 	public bool hasHoe;          // tem arado ?
 
-	public int woodLog;
+	public int _woodLog;
 
-	public int corn;
-	public int cornSeeds;    //item 0
+	public int _corn;
+	public int _cornSeeds;    //item 0
 
 
 	public int itemHand;   // item em uso pelo jogador   seleção por id   // 0 nenhum, 1 cornseeds;
@@ -32,5 +32,23 @@ public class PlayerData : MonoBehaviour {
 		
 	}
 
+
+	public int cornSeeds
+	{
+		get {return _cornSeeds;}
+		set {_cornSeeds = value;}
+	}
+
+	public int corn
+	{
+		get {return _corn;}
+		set {_corn = value;}
+	}
+
+	public int woodLog
+	{
+		get {return _woodLog;}
+		set {_woodLog = value;}
+	}
 
 }

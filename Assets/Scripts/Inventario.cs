@@ -26,7 +26,7 @@ public class Inventario : MonoBehaviour {
 		_playerData = GameObject.FindGameObjectWithTag ("Data").GetComponent<PlayerData> ();   
 		_timer = gameObject.GetComponentInParent<Timer> ();
 		//EventManager.StartListening ("timeUpdate", UpdateTimer);
-
+		PlayerNome.text = _playerData.playerName + " " + _playerData.playerSurname;
 	}
 
 	void UpdateTimer(string value) {
@@ -71,4 +71,15 @@ public class Inventario : MonoBehaviour {
 			
 		} else panelInventario.SetActive (false);			
 	}
+
+
+	/*public void AddItem( GameObject item )
+	{
+		if ( item == null || item.GetComponent<TeamSelectItem>() == null )
+			return;
+
+		item.transform.SetParent( Grid.transform );
+		item.transform.localScale = autoLocalScale;
+		item.transform.localPosition = Vector3.zero;
+	}*/
 }
