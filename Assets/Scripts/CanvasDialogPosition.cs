@@ -6,7 +6,7 @@ public class CanvasDialogPosition : MonoBehaviour {
 	public Vector3 pos;
 
 	public GameObject obj;
-	public Camera camera;
+	//private Camera camera;
 	private Vector3 dialogPos;
 	private RectTransform rt;
 	//private RectTransform canvasRT;
