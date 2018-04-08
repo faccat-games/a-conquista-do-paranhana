@@ -20,17 +20,17 @@ public class Movimento : MonoBehaviour {
 	public string thisScene;
 
 	public GameObject terraArada;
-	public PlayerData _data;
+	private PlayerData _data;
 
-	public bool overPlow;
-
+	private GameObject overPlow;
+	private GameObject overFarm;
 
 	public int walkSpeed;
 
 	void Start(){
-		DontDestroyOnLoad (this);
+		//DontDestroyOnLoad (this);
 
-
+		//overFarm = null;
 
 		myAnimator = GetComponent<Animator> ();
 		mySprite = GetComponent<SpriteRenderer> ();
@@ -52,16 +52,16 @@ public class Movimento : MonoBehaviour {
 //		}
 	}
 
-	void FixedUpdate () {
+	void Update () {
 
 		//////
 
-		if (!Input.anyKey) {                                        // <--- Resolve animação presa na transição de telas
+		/*if (!Input.anyKey) {                                        // <--- Resolve animação presa na transição de telas
 			myAnimator.SetBool ("walkUp", false);
 			myAnimator.SetBool ("walkDown", false);
 			myAnimator.SetBool ("walkRight", false);
-		}
-		if (Input.GetKeyUp (KeyCode.UpArrow)) { 
+		}*/
+		/*if (Input.GetKeyUp (KeyCode.UpArrow)) { 
 			myAnimator.SetBool ("walkUp", false);
 
 		}
@@ -71,7 +71,7 @@ public class Movimento : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.RightArrow) || Input.GetKeyUp (KeyCode.LeftArrow)) { 
 			myAnimator.SetBool ("walkRight", false);
 		}
-
+*/
 
 
 		if (isMove) {
@@ -121,40 +121,57 @@ public class Movimento : MonoBehaviour {
 		}
 
 		if(Input.GetKeyDown(KeyCode.W)){
-			thisScene= SceneManager.GetActiveScene().name;
+			Arar ();
 
-			if (thisScene == "map_06" && _data.hasHoe == true) {	
-				Arar ();
-			} 
-			//else
-			//	Debug.Log ("sem arado");
 		}
 
-		if (Input.GetKeyDown (KeyCode.Q)) {
+		if (Input.GetKeyDown (KeyCode.E)) {
 			PlantarSemente ();
 		}
-
 			
 	}
 
 	void Arar(){
-		
-		if(thisScene == "map_06" && _data.hasHoe==true && overPlow==false  ){	 //map_06
-		
-			Instantiate(terraArada, new Vector3(this.transform.position.x,this.transform.position.y,this.transform.position.z), Quaternion.identity);
-
-
+		if (overFarm != null && _data.IsItem("Enxada")){	
+			//Debug.Log ("PLANTOU");
+			var _terraArada = Instantiate(terraArada, new Vector3(this.transform.position.x,this.transform.position.y,this.transform.position.z), Quaternion.identity);
+			_terraArada.transform.SetParent (overFarm.transform);
+			overFarm.GetComponent<Ajuda> ().Interagir = false;
 		}
 	}
 
 	void PlantarSemente(){
-		
-		Debug.Log (_data.itemHand);
-		if (overPlow == true  && _data.itemHand>0 && _data.cornSeeds>0) {
-				_data.cornSeeds -= 1;
+		//Debug.Log ("PlantarSemente" + _data.GetResource("cornSeeds"));
+		if (overPlow != null  && _data.GetResource("cornSeeds")>0) {
+			var _overPlow = overPlow.GetComponent<Plantio> ();
+			if (!_overPlow.isUsed) {
+				_data.SetResource("cornSeeds",_data.GetResource("cornSeeds") - 1);
+				_overPlow.PlantarMilho ();
+			}
 		}
 	}
 
+
+	void OnTriggerEnter2D(Collider2D col){
+		if (col.name == "AreaPlantio") {
+			overFarm = col.gameObject;
+		}
+	}
+	void OnTriggerExit2D(Collider2D col){
+		if (col.name == "AreaPlantio") {
+			overFarm = null;
+		}
+		if (col.name == "Plantio") {
+			overPlow = null;
+		}
+	}
+	void OnTriggerStay2D(Collider2D col){
+
+		if (col.name=="Plantio") {
+			//_mov = col.GetComponent<Movimento> ();
+			overPlow = col.gameObject;
+		}
+	}
 
 }
 		

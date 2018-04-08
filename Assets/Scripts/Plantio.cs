@@ -7,32 +7,37 @@ using UnityEngine.SceneManagement;
 public class Plantio : MonoBehaviour {
 
 	public bool isUsed;
+	public GameObject Milho;
 
+	//private Movimento _mov;
 
-	public Movimento _mov;
-
-	public string thisScene;
-	public GameObject _gameobject;
+	//public string thisScene;
+	//private GameObject _gameobject;
 
 	// Use this for initialization
 	void Start () {
-		DontDestroyOnLoad (this);
+		//DontDestroyOnLoad (this);
+
+		//if(_gameobject.GetComponent<SpriteRenderer>().sortingOrder<2){
+	//		_gameobject.GetComponent<SpriteRenderer> ().sortingOrder = 2;	
+	//	}
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
-		thisScene= SceneManager.GetActiveScene().name;
-		if (thisScene != "map_06") {
-			_gameobject.SetActive (false);
-		} else
-			_gameobject.SetActive (true);
-
-		
 	}
 
-	void OnTriggerStay2D(Collider2D col){
+	public void PlantarMilho() {
+		if (!isUsed) {
+			var _milho = Instantiate (Milho, new Vector3 (transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+			_milho.transform.SetParent (transform);
+			isUsed = true;
+		}
+	}
+
+	/*void OnTriggerStay2D(Collider2D col){
 
 		if (col.tag=="Player") {
 			_mov = col.GetComponent<Movimento> ();
@@ -45,5 +50,5 @@ public class Plantio : MonoBehaviour {
 		if (col.tag=="Player") {
 			_mov.overPlow = false;
 		}
-	}
+	}*/
 }

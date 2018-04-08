@@ -159,20 +159,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fed5bddc1f9e642805613e253ae47d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTalk: 0
   talkBalloon: {fileID: 1640041866596850}
   phrases:
-  - "Seja bem vindo ! Sua fam\xEDlia ?"
+  - 'Seja bem vindo ! '
   - Siga pelo caminho ao norte.
   - "N\xE3o esque\xE7a de falar com os moradores"
-  - "Entre, vamos preparar um p\xE3o com K\xE4sschmier e tomar um caf\xE9. Sua visita
-    \xE9 sempre bem-vinda!"
+  - "Na pr\xF3xima vez, vamos preparar um p\xE3o com K\xE4sschmier e tomar um caf\xE9.
+    Sua visita \xE9 sempre bem-vinda!"
   indexPhrase: 0
-  giveHoe: 0
-  giveAxe: 0
-  giveSeeds: 0
-  TextoHoe: 
-  TextoAxe: 
-  TextoSeeds: 
+  giveRecurso: 0
+  giveItem: 0
+  TextoPlayer: 
+  NomeRecurso: 
+  NomeItem: 
+  QtdRecurso: 0
+  QtdItem: 1
   isItemGiver: 0
   itemPhrases: []
   _playerMov: {fileID: 0}
@@ -260,7 +262,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {x: 0, y: 0, z: 0}
   obj: {fileID: 1645651572893856}
-  camera: {fileID: 0}
 --- !u!114 &114709749990334768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -392,8 +393,8 @@ RectTransform:
   m_Father: {fileID: 224947892762126428}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.79456186, y: -6.701262}
-  m_AnchorMax: {x: 0.79456186, y: -6.701262}
+  m_AnchorMin: {x: 2.985649, y: 2.2953033}
+  m_AnchorMax: {x: 2.985649, y: 2.2953033}
   m_AnchoredPosition: {x: -2642.4358, y: -1253}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}

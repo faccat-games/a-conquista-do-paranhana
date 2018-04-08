@@ -16,7 +16,8 @@ public class Balao : MonoBehaviour {
 		BalaoText = BalaoPanel.transform.GetChild (0).gameObject.GetComponent<Text> ();
 	}
 		
-	void Update () {		
+	void Update () {	
+			
 		if (MostrarBalao) {
 			timer -= Time.deltaTime;
 			if (timer <= 0.0f) {

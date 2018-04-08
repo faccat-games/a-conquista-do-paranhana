@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 61655376508778088}
   - component: {fileID: 114413803964383278}
   - component: {fileID: 114927908566743856}
+  - component: {fileID: 114161267627775780}
   m_Layer: 0
   m_Name: TrabalhadorCasaPedra
   m_TagString: Untagged
@@ -91,8 +92,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1976037540825296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.37, y: 19.62, z: 1.1121535}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalPosition: {x: 54.37, y: 18.55, z: 1.1121535}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 224555724633181810}
   m_Father: {fileID: 0}
@@ -208,6 +209,22 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114161267627775780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1976037540825296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc2ca407ed034387bbe1d9a91c60ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RecursoRequerido: 
+  ItemRequerido: Farinha
+  InsuficienteTexto: 
+  MinQtd: 5
+  RemoveItem: 1
 --- !u!114 &114413803964383278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,25 +236,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fed5bddc1f9e642805613e253ae47d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTalk: 0
   talkBalloon: {fileID: 1851652435867028}
   phrases:
-  - "Hallo! Aqui \xE9 a Casa de Pedra! Ela foi constru\xEDda em 1847. Voc\xEA pode
-    comprar ferramentas e utens\xEDlios, trocar a sua produ\xE7\xE3o por mantimentos
-    ou fazer uma visita!"
+  - "Hallo! Aqui \xE9 a Casa de Pedra! Ela foi constru\xEDda em 1847. "
+  - "Aqui voc\xEA pode comprar ferramentas e utens\xEDlios,"
+  - "ou negociar a sua produ\xE7\xE3o por mantimentos!"
   - Abriremos em breve, aguarde alguns dias.
   indexPhrase: 0
-  giveHoe: 0
-  giveAxe: 0
-  giveSeeds: 0
-  TextoHoe: 
-  TextoAxe: 
-  TextoSeeds: 
+  giveRecurso: 1
+  giveItem: 0
+  TextoPlayer: "Eu agrade\xE7o."
+  NomeRecurso: money
+  NomeItem: 
+  QtdRecurso: 50
+  QtdItem: 5
   isItemGiver: 0
   itemPhrases:
-  - "Seja bem vindo primo. A partir de hoje voc\xEA mora nessa casa."
-  - Pegue essa enchada e algumas sementes de milho
-  - Aperte a tecla W para arar e depois use E para plantar a semente escolhida
-  - "Lembre-se, voc\xEA s\xF3 tem permiss\xE3o de plantar nesse terreno."
+  - No momento estamos comprando Farinha.
+  - "Vejo que voc\xEA tem alguma. "
+  - Aqui esta seu pagamento. Obrigado e volte sempre.
   _playerMov: {fileID: 0}
   _playerData: {fileID: 0}
 --- !u!114 &114496341022023666
@@ -253,7 +271,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {x: 0, y: 0, z: 0}
   obj: {fileID: 1976037540825296}
-  camera: {fileID: 0}
 --- !u!114 &114811932734481490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -303,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Descricao: Este senhor parece bem atarefado.
-  Texto: 
+  Texto: "Talvez eles paguem um bom pre\xE7o pelas minhas mercadorias."
   Interagir: 1
 --- !u!212 &212435876466764746
 SpriteRenderer:
@@ -395,9 +412,9 @@ RectTransform:
   m_Father: {fileID: 224555724633181810}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 5.888122, y: 3.1976612}
-  m_AnchorMax: {x: 5.888122, y: 3.1976612}
-  m_AnchoredPosition: {x: -5642, y: -1868}
+  m_AnchorMin: {x: 5.21103, y: 2.7762444}
+  m_AnchorMax: {x: 5.21103, y: 2.7762444}
+  m_AnchoredPosition: {x: -4930.4414, y: -1611.2983}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224397717319166938

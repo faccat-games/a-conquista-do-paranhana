@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 61073699424971184}
   - component: {fileID: 114159074892520956}
   - component: {fileID: 114724876158620966}
+  - component: {fileID: 114857666522917294}
   m_Layer: 0
   m_Name: TrabalhadorEngenho
   m_TagString: Untagged
@@ -92,7 +93,7 @@ Transform:
   m_GameObject: {fileID: 1396589256697524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 56.728428, y: -7.5725327, z: 1.0743781}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 224398691988925892}
   m_Father: {fileID: 0}
@@ -161,7 +162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {x: 0, y: 0, z: 0}
   obj: {fileID: 1396589256697524}
-  camera: {fileID: 0}
 --- !u!114 &114159074892520956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,24 +173,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fed5bddc1f9e642805613e253ae47d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTalk: 0
   talkBalloon: {fileID: 1784680940273174}
   phrases:
-  - "Ol\xE1, em breve abriremos o engenho"
   - "Hallo! Aqui \xE9 o Engenho. \xC9 usado para moer sacas de trigo e descascar sacas
     de arroz."
-  indexPhrase: 1
-  giveHoe: 0
-  giveAxe: 0
-  giveSeeds: 0
-  TextoHoe: 
-  TextoAxe: 
-  TextoSeeds: 
+  - Em breve abriremos.
+  indexPhrase: 0
+  giveRecurso: 0
+  giveItem: 1
+  TextoPlayer: Obrigado pela Farinha.
+  NomeRecurso: 
+  NomeItem: Farinha
+  QtdRecurso: 0
+  QtdItem: 5
   isItemGiver: 0
   itemPhrases:
-  - "Seja bem vindo primo. A partir de hoje voc\xEA mora nessa casa."
-  - Pegue essa enchada e algumas sementes de milho
-  - Aperte a tecla W para arar e depois use E para plantar a semente escolhida
-  - "Lembre-se, voc\xEA s\xF3 tem permiss\xE3o de plantar nesse terreno."
+  - "Vejo que voc\xEA trouxe Milho."
+  - Fique com estes Sacos de Farinha em troca.
   _playerMov: {fileID: 0}
   _playerData: {fileID: 0}
 --- !u!114 &114187184532297450
@@ -264,9 +264,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcc3f529f3b84a89a74e826f0e1832a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Descricao: 
-  Texto: 
+  Descricao: "Este \xE9 o Trabalhador do Engenho."
+  Texto: Ele deve estar esperando algo.
   Interagir: 1
+--- !u!114 &114857666522917294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1396589256697524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc2ca407ed034387bbe1d9a91c60ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RecursoRequerido: corn
+  ItemRequerido: 
+  InsuficienteTexto: 
+  MinQtd: 5
+  RemoveItem: 1
 --- !u!114 &114969877925260134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -431,8 +447,8 @@ RectTransform:
   m_Father: {fileID: 224398691988925892}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 8.285977, y: 10.730643}
-  m_AnchorMax: {x: 8.285977, y: 10.730643}
-  m_AnchoredPosition: {x: -8113, y: -7735}
+  m_AnchorMin: {x: 7.3043814, y: 9.469407}
+  m_AnchorMax: {x: 7.3043814, y: 9.469407}
+  m_AnchoredPosition: {x: -7094, y: -6759}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}

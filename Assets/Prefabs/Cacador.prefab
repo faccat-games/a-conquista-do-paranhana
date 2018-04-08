@@ -221,18 +221,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fed5bddc1f9e642805613e253ae47d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTalk: 0
   talkBalloon: {fileID: 1440880117951748}
   phrases:
   - "Ol\xE1. Sou o ca\xE7ador, respons\xE1vel por capturar animais para alimenta\xE7\xE3o. "
   - Tenha cuidado e boa viagem!
   indexPhrase: 0
-  talkText: {fileID: 114906003750607560}
-  giveHoe: 0
-  giveAxe: 1
-  giveSeeds: 0
-  TextoHoe: Ganhei uma Enxada.
-  TextoAxe: Ganhei um Machado.
-  TextoSeeds: Ganhei algumas Sementes.
+  giveRecurso: 0
+  giveItem: 1
+  TextoHoe: 
+  TextoAxe: 
+  TextoSeeds: 
+  TextoItem: 
+  TextoPlayer: Obrigado pelo Machado.
+  NomeRecurso: 
+  NomeItem: Machado
+  QtdRecurso: 0
+  QtdItem: 1
   isItemGiver: 1
   itemPhrases:
   - "Ol\xE1 ! Voc\xEA deve ser o novo colono."
@@ -254,7 +259,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {x: 0, y: 0, z: 0}
   obj: {fileID: 1828710406974552}
-  camera: {fileID: 0}
 --- !u!114 &114906003750607560
 MonoBehaviour:
   m_ObjectHideFlags: 1

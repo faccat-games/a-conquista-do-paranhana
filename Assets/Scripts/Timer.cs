@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour {
 	//public float segundos, minutos, horas;
 	//public Text Data;
 	public int ano = 1846, mes = 3, dia = 10, hora = 6;
-
+	public string CurrentAno;
 	private int _hora;
 
 	private DateTime dateTime;
@@ -23,6 +23,8 @@ public class Timer : MonoBehaviour {
 
 	public bool newDay = true;
 	private bool _newDay = false;
+
+	public bool isPaused = true;
 
 
 
@@ -44,15 +46,18 @@ public class Timer : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		dateTime = dateTime.AddMinutes(Time.deltaTime * Velocidade);
 
-		//Tempo.text = dateTime.ToString ("HH:mm:ss");
-		//Data.text = dateTime.ToString ("F", new System.Globalization.CultureInfo ("pt-BR"));
+		if (isPaused) {
+			return;
+		}
+
+		dateTime = dateTime.AddMinutes(Time.deltaTime * Velocidade);
 
 		//_timestamp = dateTime.ToString ("F", new System.Globalization.CultureInfo ("pt-BR"));
 		_currentTime = dateTime.ToString();
 
 		//Debug.Log (dateTime.ToString ("F", new System.Globalization.CultureInfo ("pt-BR")));
+		CurrentAno = dateTime.ToString ("yyyy");
 
 		if (_hora != dateTime.Hour) {
 			EventManager.TriggerEvent ("timeUpdate", _currentTime);
@@ -67,6 +72,9 @@ public class Timer : MonoBehaviour {
 			}
 
 			if (newDay != _newDay) {
+				//if (!newDay) {
+					//EventManager.TriggerEvent ("newPlayerDialog","Esta ficando escuro!!!");
+				//}
 				EventManager.TriggerEvent ("newDayCicle", newDay.ToString());
 				_newDay = newDay;
 			}

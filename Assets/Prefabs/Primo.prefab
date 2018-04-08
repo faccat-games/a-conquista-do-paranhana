@@ -206,22 +206,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fed5bddc1f9e642805613e253ae47d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTalk: 0
   talkBalloon: {fileID: 1289531662656530}
   phrases:
   - Como vai o trabalho ?
   - Use Tab para abrir o menu do personagem e selecionar outras sementes
   - "Assim que a Casa de Pedra abrir, voc\xEA poder\xE1 comprar e vender itens."
   indexPhrase: 0
-  giveHoe: 1
-  giveAxe: 0
-  giveSeeds: 1
-  TextoHoe: "Esta Enxada vai ser \xFAtil."
+  giveRecurso: 1
+  giveItem: 1
+  TextoHoe: 
   TextoAxe: 
-  TextoSeeds: Obrigado pelas Sementes.
+  TextoSeeds: 
+  TextoItem: 
+  TextoPlayer: "Esta Enxada vai ser \xFAtil e obrigado pelas Sementes."
+  NomeRecurso: cornSeeds
+  NomeItem: Enxada
+  QtdRecurso: 5
+  QtdItem: 1
   isItemGiver: 1
   itemPhrases:
   - "Seja bem vindo primo. A partir de hoje voc\xEA mora nessa casa."
-  - Pegue essa enchada e algumas sementes de milho
+  - Pegue essa enxada e algumas sementes de milho
   - Aperte a tecla W para arar e depois use E para plantar a semente escolhida
   - "Lembre-se, voc\xEA s\xF3 tem permiss\xE3o de plantar nesse terreno."
   _playerMov: {fileID: 0}
@@ -303,7 +309,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {x: 0, y: 0, z: 0}
   obj: {fileID: 1705341805521316}
-  camera: {fileID: 0}
 --- !u!212 &212539332897068256
 SpriteRenderer:
   m_ObjectHideFlags: 1

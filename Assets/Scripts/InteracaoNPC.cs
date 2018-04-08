@@ -6,30 +6,44 @@ using System.Linq;
 using System;
 
 public class InteracaoNPC : MonoBehaviour {
-	private bool isTalk;
+	public bool isTalk;
 	public GameObject talkBalloon;
 	public string[] phrases;
 	//public Text phrasesText;
 	public int indexPhrase;
 	private Text talkText;
 
-	public bool giveHoe;
-	public bool giveAxe;
-	public bool giveSeeds;
+	//public bool giveHoe;
+	//public bool giveAxe;
+	//public bool giveSeeds;
+	public bool giveRecurso;
+	public bool giveItem;
 
-	public string TextoHoe;
-	public string TextoAxe;
-	public string TextoSeeds;
+	//public string TextoHoe;
+	//public string TextoAxe;
+	//public string TextoSeeds;
+	//public string TextoItem;
 
+	public string TextoPlayer;
+
+	public string NomeRecurso;
+
+	public string NomeItem;
+
+
+	public int QtdRecurso = 0;
+
+	public int QtdItem = 1;
 
 	public bool isItemGiver;
+	//public bool itemGived = false;
 	public string[] itemPhrases;
 
 
 	public Movimento _playerMov;
 	public PlayerData _playerData;
 
-	private string[] talkPlayer = new string[3];
+	//private string[] talkPlayer = new string[4];
 
 	private Ajuda _ajuda;
 
@@ -44,16 +58,18 @@ public class InteracaoNPC : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.tag == "Player") {
 			isTalk = true;
+			//itemGived = false;
 			indexPhrase = 0;
 		}
 	}
 	void OnTriggerExit2D (Collider2D other) {
 		if (other.gameObject.tag == "Player") {
 			isTalk = false;
+			//itemGived = false;
 			indexPhrase = 0;
 		}
 	}
-
+		
 	void Update(){ 
 
 		if (isItemGiver) {
@@ -71,27 +87,23 @@ public class InteracaoNPC : MonoBehaviour {
 					talkBalloon.SetActive (false);
 					
 					isItemGiver = false;					
-
-					if (giveHoe) {
-						_playerData.hasHoe = true;
-						talkPlayer [0] = TextoHoe;
-					}
-					if (giveAxe) {
-						_playerData.hasAxe = true;
-						talkPlayer [1] = TextoAxe;
-					}
-					if (giveSeeds) {
-						_playerData.cornSeeds += 5;    /// ALTERAR
-						talkPlayer [2] = TextoSeeds;
+									
+					if (giveItem) {
+						_playerData.SetItem (NomeItem, _playerData.GetItem (NomeItem) + QtdItem);													
 					}
 
-					talkPlayer = talkPlayer.Where(val => !String.IsNullOrEmpty(val)).ToArray();	
-					if (talkPlayer.Length > 0) {
+					if (giveRecurso) {						
+						_playerData.SetResource (NomeRecurso, _playerData.GetResource (NomeRecurso) + QtdRecurso);
+					}
+
+					//talkPlayer = talkPlayer.Where(val => !String.IsNullOrEmpty(val)).ToArray();	
+					if (TextoPlayer != null) {
 						if (_ajuda) {
 							_ajuda.Interagir = false;
 						}
-						EventManager.TriggerEvent ("newPlayerDialog",String.Join("\n", talkPlayer));
+						EventManager.TriggerEvent ("newPlayerDialog",TextoPlayer);
 					}
+					//itemGived = true;
 				}
 			
 		} else {

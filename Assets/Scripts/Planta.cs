@@ -1,96 +1,87 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Planta : MonoBehaviour {
 
 	public GameObject _player;
-	public Timer _thisTimer;
+	public PlayerData _playerData;
+	//public Timer _thisTimer;
 
 	public int lifeTime;    
 
 	public int daysToGrow;
 
+	public Sprite midForm;
 	public Sprite lastForm;
 
-	public SpriteRenderer _mySprite;
+	public SpriteRenderer _spritePlanta;
 
 	public int diaPlantacao;
-	public int mesPlantacao;
 
-	public bool novaData;
-
-	int mesAtual;
-	int diaAtual;
 
 	// colher planta
-	public bool isMadura;
+	public bool isMadura = false;
 	public int totalColheita;     // total de itens coletados da planta
 	public int _itemColetado;     // alterar para outro tipo de objeto
-	public bool isColher;
+	public bool isColher = false;
 
 
-	// Use this for initialization
 	void Start () {
-		DontDestroyOnLoad (this);
-		_mySprite = gameObject.GetComponent<SpriteRenderer> ();
+
+		_spritePlanta = gameObject.GetComponent<SpriteRenderer> ();
 		_player = GameObject.FindGameObjectWithTag ("Player");
-		_thisTimer= _player.GetComponent<Timer> ();
-
-		lifeTime = diaPlantacao;
-
-		diaAtual = _thisTimer.dia;
-		mesAtual = _thisTimer.mes;
-
-		isMadura = false;
-			
+		_playerData = GameObject.Find("PlayerData").GetComponent<PlayerData> ();   
+		EventManager.StartListening ("newDayCicle", UpdateLifeTime);
+		//lifeTime = diaPlantacao;
 	}
-	
-	// Update is called once per frame
+
+	void UpdateLifeTime(string value) {
+		//bool newDay = value == "true";
+		if (Convert.ToBoolean(value)) {
+			lifeTime++;
+		}
+	}
+
 	void Update () {
-		// meses - 1
-		// mesplantacao -1
 
-		if (_thisTimer.mes != mesAtual) {
-			novaData = true;
-			lifeTime++;
-			mesAtual = _thisTimer.mes;
-		} else if (diaAtual != _thisTimer.dia) {
-
-			lifeTime++;
-			diaAtual = _thisTimer.dia;
+		if (!isMadura) {
+			switch (Convert.ToInt32(Math.Floor (((double) 2 / (double)daysToGrow) * (double)lifeTime))) {
+			case 1:
+				_spritePlanta.sprite = midForm;
+				transform.localPosition = new Vector3(0, 0.2f, 0);
+				break;
+			case 2:
+				_spritePlanta.sprite = lastForm;
+				transform.localPosition = new Vector3(0, 0.6f, 0);
+				isMadura = true;
+				break;			
+			}
 		}
 
-
-		if (lifeTime == daysToGrow) {
-			_mySprite.sprite = lastForm;
-		}
-
-
-
-		if(Input.GetKeyDown(KeyCode.E) && isColher){
-			GameObject.FindGameObjectWithTag ("Data").GetComponent<PlayerData> ().corn += totalColheita;    // alterear para outras plantas
+		/*if (lifeTime == daysToGrow) {
+			_spritePlanta.sprite = lastForm;
+			isMadura = true;
+		}*/
+			
+		if (Input.GetKeyDown(KeyCode.E) && isColher){
+			_playerData.SetResource("corn",_playerData.GetResource("corn") + totalColheita);    // alterear para outras plantas
 			Destroy (gameObject);
 		}
-
-
-
-
 	}
 
-	public void updatePlanta(){
-		lifeTime++;
-		if (lifeTime == daysToGrow) {
-			_mySprite.sprite = lastForm;
-			isMadura = true;
+	void OnTriggerEnter2D(Collider2D col){
+		//Debug.Log (col.tag);
+		if(col.tag == "Player" && isMadura){
+			isColher = true;
 		}
 	}
 
-
-	void OnTriggerEnter2D(Collider2D col){
-		Debug.Log (col.tag);
+	void OnTriggerExit2D(Collider2D col){
+		//Debug.Log (col.tag);
 		if(col.tag == "Player" && isMadura){
-			isColher = true;
+			isColher = false;
 		}
 	}
 

@@ -6,14 +6,15 @@ public class HelpButton : MonoBehaviour {
 
 	public GameObject helpPanel;
 
-	public Movimento _mov;
-
-	public GameObject _player;
+	private Movimento _mov;
+	private Timer _timer;
+	private GameObject _player;
 
 	// Use this for initialization
 	void Start () {
 		_player = GameObject.FindWithTag ("Player");
-		_mov= _player.GetComponent<Movimento> ();
+		_mov = _player.GetComponent<Movimento> ();
+		_timer = _player.GetComponent<Timer> ();
 	}
 	
 	// Update is called once per frame
@@ -21,11 +22,13 @@ public class HelpButton : MonoBehaviour {
 
 		if (helpPanel.activeSelf == true) {
 			_mov.isMove = false;
+			_timer.isPaused = true;
 		}
 	}
 
 	public void FecharPanel(){
 		_mov.isMove = true;
+		_timer.isPaused = false;
 		helpPanel.SetActive(false);
 	}
 }

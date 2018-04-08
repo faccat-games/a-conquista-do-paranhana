@@ -23,7 +23,7 @@ public class InteracaoArvore : MonoBehaviour {
 	}
 	void OnTriggerEnter2D (Collider2D other) {
 		_playerData = GameObject.Find ("PlayerData").GetComponent<PlayerData> ();
-		if (_playerData.hasAxe == true) {
+		if (_playerData.IsItem("Machado")) {
 			vAction = true;
 		}
 		if (other.gameObject.tag == "Player") {
@@ -39,9 +39,8 @@ public class InteracaoArvore : MonoBehaviour {
 
 	void Update(){
 		if (isTake && Input.GetKeyDown (KeyCode.E)&& vAction) {
-			//sr2.sprite = sTronco;
-		
-			_playerData.woodLog += 10;
+			//sr2.sprite = sTronco;		
+			_playerData.SetResource("woodLog",_playerData.GetResource("woodLog") + 10);
 			GetComponent<Arvore>().isCortada = true;
 			GetComponent<Ajuda> ().Interagir = false;
 			vAction = false;

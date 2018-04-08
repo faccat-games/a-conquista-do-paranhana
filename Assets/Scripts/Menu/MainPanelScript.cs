@@ -6,7 +6,7 @@ public class MainPanelScript : MonoBehaviour {
 	public GameObject background;
 	private RectTransform backgroundRectTransform;
 	public float vel = 1.00f;
-	public float limit = -379.46f; //-388.5
+	public float limit = -300f; //-388.5
 	// Use this for initialization
 	void Start () {
 		backgroundRectTransform = background.GetComponent<RectTransform>();

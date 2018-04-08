@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InteracaoAjuda : MonoBehaviour {
-	//private float timer;
-	//private bool MostrarBalao = false;
+	private float timer;
+	private bool showDialog = false;
+	private Collider2D _other;
+	public float TempoDialogo = 1.2f;
 	// Use this for initialization
 	void Start () {
 		//Debug.Log (gameObject.name);
@@ -12,36 +14,47 @@ public class InteracaoAjuda : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		/*if (MostrarBalao) {
-			timer -= Time.deltaTime;
-			if (timer <= 0.0f) {
-				MostrarBalao = false;
+		if (Input.GetKeyDown (KeyCode.E)) {
+			showDialog = false;
+		}
+		if (timer <= 0.0f) {			
+			if (showDialog) {
+				showDialog = false;
+				OpenDialog (_other);
 			}
-		} else {
-			timer = BalaoTempo;
-		}*/
+		} else if (showDialog) {
+			timer -= Time.deltaTime;
+			//showDialog = false;
+		}
 	}
 
-	void OnTriggerStay2D (Collider2D other) { 
+	void OnTriggerStay2D (Collider2D other) { 	
 		
 	}
 	void OnTriggerEnter2D (Collider2D other) {
 		//Destroy(other.gameObject);
 		//Debug.Log("enter" + other.name);
+		timer = TempoDialogo;
+		showDialog = true;
+		_other = other;
+	}
 
+	void OpenDialog(Collider2D other) {
 		Ajuda info = other.GetComponent<Ajuda> ();
-		if (info && info.Interagir) {
-			string t = "";
-			if (info.Descricao.Length != 0 && info.Texto.Length != 0) {
-				t = info.Descricao + "\n" + info.Texto;
-			} else if (info.Descricao.Length != 0) {
-				t = info.Descricao;
-			} else if (info.Texto.Length != 0) {
-				t = info.Texto;
+		if (info) {			
+			if (info.Interagir) {
+				string t = "";
+				if (info.Descricao.Length != 0 && info.Texto.Length != 0) {
+					t = info.Descricao + "\n" + info.Texto;
+				} else if (info.Descricao.Length != 0) {
+					t = info.Descricao;
+				} else if (info.Texto.Length != 0) {
+					t = info.Texto;
+				}
+				EventManager.TriggerEvent ("newPlayerDialog",t);
+			} else {
+				EventManager.TriggerEvent ("newPlayerDialog",info.Descricao);
 			}
-			EventManager.TriggerEvent ("newPlayerDialog",t);
-		} else if (info) {
-			EventManager.TriggerEvent ("newPlayerDialog",info.Descricao);
 		}
 	}
 
@@ -49,5 +62,6 @@ public class InteracaoAjuda : MonoBehaviour {
 		//Destroy(other.gameObject);
 		//Debug.Log("exit" + other.name);
 		EventManager.TriggerEvent ("newPlayerDialog","");
+		showDialog = false;
 	}
 }

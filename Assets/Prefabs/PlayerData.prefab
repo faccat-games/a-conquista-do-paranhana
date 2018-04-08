@@ -87,9 +87,9 @@ MonoBehaviour:
   playerMoney: 0
   hasAxe: 0
   hasHoe: 0
-  woodLog: 0
-  corn: 0
-  cornSeeds: 0
+  _woodLog: 0
+  _corn: 6
+  _cornSeeds: 0
   itemHand: 0
 --- !u!114 &114375374739575188
 MonoBehaviour:
@@ -102,7 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af79c187dc51841fc97520efd61b7b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timer: {fileID: 0}
 --- !u!114 &114779558481822056
 MonoBehaviour:
   m_ObjectHideFlags: 1

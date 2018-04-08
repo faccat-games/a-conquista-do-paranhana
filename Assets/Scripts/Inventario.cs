@@ -12,6 +12,7 @@ public class Inventario : MonoBehaviour {
 	//private DateTime currentDateTime;
 	public GameObject axeItem;
 	public GameObject hoeItem;
+	public GameObject farinhaItem;
 	public Text DataTexto;
 	public Text HoraTexto;
 	public Text PlayerNome;
@@ -26,7 +27,9 @@ public class Inventario : MonoBehaviour {
 		_playerData = GameObject.FindGameObjectWithTag ("Data").GetComponent<PlayerData> ();   
 		_timer = gameObject.GetComponentInParent<Timer> ();
 		//EventManager.StartListening ("timeUpdate", UpdateTimer);
-		PlayerNome.text = _playerData.playerName + " " + _playerData.playerSurname;
+		if (PlayerNome != null) {			
+			PlayerNome.text = _playerData.playerName + " " + _playerData.playerSurname;
+		}
 	}
 
 	void UpdateTimer(string value) {
@@ -36,9 +39,12 @@ public class Inventario : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		DataTexto.text = _timer.currentDateTime.ToString ("D", new System.Globalization.CultureInfo ("pt-BR"));
-		HoraTexto.text = _timer.currentDateTime.ToString ("HH:mm");
+		if (DataTexto != null) {
+			DataTexto.text = _timer.currentDateTime.ToString ("D", new System.Globalization.CultureInfo ("pt-BR"));
+		}
+		if (HoraTexto != null) {
+			HoraTexto.text = _timer.currentDateTime.ToString ("HH:mm");
+		}
 
 		if(Input.GetKeyDown(KeyCode.Tab ) && isMenuOpen ==false){
 			Time.timeScale = 0;
@@ -56,17 +62,19 @@ public class Inventario : MonoBehaviour {
 		if (isMenuOpen) {
 			panelInventario.SetActive (true);
 
-			if (_playerData.hasHoe == false) {
-				hoeItem.SetActive (false);
-			} else {
-				hoeItem.SetActive (true);
+			if (farinhaItem != null) {
+				if (_playerData.GetItem("Farinha") > 0) {
+					farinhaItem.SetActive (true);
+					farinhaItem.GetComponent<Text>().text = _playerData.GetItem("Farinha") +" x " + "Farinha";
+				} else {
+					farinhaItem.SetActive (false);
+				}
 			}
-
-
-			if (_playerData.hasAxe == false) {
-				axeItem.SetActive (false);
-			} else {
-				axeItem.SetActive (true);
+			if (axeItem != null) {				
+				axeItem.SetActive (_playerData.IsItem("Machado"));				
+			}
+			if (hoeItem != null) {				
+				hoeItem.SetActive (_playerData.IsItem("Enxada"));
 			}
 			
 		} else panelInventario.SetActive (false);			
