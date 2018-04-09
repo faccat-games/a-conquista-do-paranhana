@@ -7,13 +7,15 @@ using UnityEngine.UI;
 public class Noite : MonoBehaviour {
 
 	private DateTime currentDateTime;
-	private Image imageBackground;
+	public GameObject background;
 	public bool isNoite = false;
 	private bool _isNoite = false;
+	public GameObject iconeLua;
 
 	void Start () {
 		EventManager.StartListening ("newDayCicle", UpdateBackground);
-		imageBackground = gameObject.GetComponent<Image> ();
+		//imageBackground = GetComponent<Image> ();
+		//iconeLua = GetComponentInChildren<Image> ();
 	}
 
 	void Update () {
@@ -41,7 +43,8 @@ public class Noite : MonoBehaviour {
 			*/
 		isNoite = (Boolean.Parse (value)) ? false : true;
 		if (isNoite != _isNoite) {
-			imageBackground.color = new Color (0.0f, 0.0f, 0.0f, (isNoite) ? 0.20f : 0.0f);
+			background.GetComponent<Image> ().color = new Color (0.0f, 0.0f, 0.0f, (isNoite) ? 0.50f : 0.0f);
+			iconeLua.SetActive (isNoite);
 			_isNoite = isNoite;
 		}
 	}

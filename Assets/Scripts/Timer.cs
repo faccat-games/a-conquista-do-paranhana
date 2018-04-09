@@ -36,6 +36,17 @@ public class Timer : MonoBehaviour {
 		dateTime = new DateTime(ano, mes, dia, hora, 0, 0);
 	}
 
+	public void SetNewYear(int _ano) {
+		dateTime = new DateTime(_ano, mes, dia, hora+1, 0, 0);
+	}
+
+	public void SetNextDay() {
+		dateTime = dateTime.AddDays(1);
+		dateTime = new DateTime (dateTime.Year, dateTime.Month, dateTime.Day, hora, 0, 0);
+		newDay = true;
+		_newDay = false;
+	}
+
 	public DateTime currentDateTime
 	{
 		get

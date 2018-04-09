@@ -6,37 +6,38 @@ using UnityEngine.UI;
 public class Sleep : MonoBehaviour {
 
 	public bool toSleep;
-	public Timer _newDay;
+	private Timer _timer;
+	public string mensagemAcordar = "";
 
 	//Impedir movimento
-	public Movimento _movimento;
+	private Movimento _mov;
 
 	// menu dormir
 	public GameObject menuDormir;
 
 	//fade
-	public Image _fadeImage;
+	//private Image _fadeImage;
+	private SleepPanel _sleepPanel;
 
 	// Use this for initialization
 	void Start () {
-		_newDay = GameObject.FindGameObjectWithTag ("Player").GetComponent<Timer> ();
-		_movimento = GameObject.FindGameObjectWithTag ("Player").GetComponent<Movimento> ();
-		_fadeImage = GameObject.FindGameObjectWithTag ("SleepPanel").GetComponent<Image> ();
-
-
+		_timer = GameObject.FindGameObjectWithTag ("Player").GetComponent<Timer> ();
+		_mov = GameObject.FindGameObjectWithTag ("Player").GetComponent<Movimento> ();
+		_sleepPanel = GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<SleepPanel> ();
+		//_fadeImage = _sleepPanel.GetComponentInChildren<Image> ();
 	}
 
 	// Update is called once per frame
-	void Update () {
-
+	void Update () {				
+		
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
 
 		if (other.gameObject.tag == "Player") {
-			Debug.Log ("cama");
+			//Debug.Log ("cama");
 			toSleep = true;
-			_fadeImage = GameObject.Find ("SleepPanel").GetComponent<Image> ();
+			//_fadeImage = GameObject.Find ("SleepPanel").GetComponent<Image> ();
 		}
 
 	}
@@ -47,55 +48,51 @@ public class Sleep : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-
-		if (toSleep && Input.GetKeyDown (KeyCode.E)) {
-
+		if (toSleep && _mov.isMove && Input.GetKeyDown (KeyCode.E)) {
 			AbreMenuDormir ();
-			}
+		}
 	}
 
-
 	public void AbreMenuDormir(){
+		EventManager.TriggerEvent ("newPlayerDialog","");
 		menuDormir.SetActive (true);
-
-		_movimento.isMove = false;
-
+		_mov.isMove = false;
+		_timer.isPaused = true;
 	}
 
 
 	public void ConfirmaDormir(){
-
 		StartCoroutine(Fade());
-
 		menuDormir.SetActive (false);
-
 	}
 
 	public void CancelaDormir(){
 		menuDormir.SetActive (false);
-		_movimento.isMove = true;
-
+		_mov.isMove = true;
+		_timer.isPaused = false;
 	}
 
 
 	void fadeIn(){
-		_fadeImage.CrossFadeAlpha (4.0f, 2.5f, false);
+		_sleepPanel.SetFadeIn (2.5f);
+		//_fadeImage.CrossFadeAlpha (4.0f, 2.5f, false);
 
 	}
 	void fadeOut(){
-
-		_fadeImage.CrossFadeAlpha (0.0f, 2.5f, false);
-
+		_sleepPanel.SetFadeOut (2.5f);
+		//_fadeImage.CrossFadeAlpha (0.0f, 2.5f, false);
 	}
 
 	IEnumerator Fade()
 	{
-
-		yield return new WaitForSeconds(2);
 		fadeOut();
 		yield return new WaitForSeconds(2);
 		fadeIn();
-		_movimento.isMove = true;
+		//yield return new WaitForSeconds(2);
+		_mov.isMove = true;
+		_timer.isPaused = false;
+		_timer.SetNextDay ();
+		EventManager.TriggerEvent ("newPlayerDialog",mensagemAcordar);
 	}
 
 

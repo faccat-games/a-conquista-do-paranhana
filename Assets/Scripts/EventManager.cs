@@ -13,7 +13,7 @@ public class EventManager : MonoBehaviour {
 	private static EventManager eventManager;
 
 	void Awake() {
-		DontDestroyOnLoad(this.gameObject);
+		//DontDestroyOnLoad(this.gameObject);
 	}
 			
 	public static EventManager instance

@@ -6,7 +6,7 @@ public class SpawnPlayer : MonoBehaviour {
 
 	public GameObject _player;
 
-	public GameObject _helpPanel;
+	//public GameObject _helpPanel;
 
 
 	// Use this for initialization
@@ -22,8 +22,7 @@ public class SpawnPlayer : MonoBehaviour {
 			clone = Instantiate(_player, transform.position, Quaternion.identity) as GameObject;
 			clone.GetComponent<Movimento> ().exit = -1;
 
-			_helpPanel.SetActive (true);
-			//Debug.Log ("Não achou");
+
 		}
 	}
 	

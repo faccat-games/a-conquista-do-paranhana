@@ -6,29 +6,31 @@ using System;
 
 public class PassaDeFase : MonoBehaviour {
 
-	private Movimento _mov;
+	//private Movimento _mov;
 	private GameObject _player;
-	public GameObject playerStart;   // posicao de saida
+	//public GameObject playerStart;   // posicao de saida
 	private PlayerData _data;
-	private Timer _timer; 
+	//private Timer _timer; 
 
 	//public int scenarioExit;    // qual entrada do cenario
 
 	public string CondicaoNome;
 	public int CondicaoValor;
-	private bool next = false;
-	public bool nextEvent = true;
-	private int nextAno;
-	public string playerMessage = "O tempo parece passar tão rápido.";
-	public int tempoPadrao = 30;
-	public int tempoAvancado = 30000;
+	public bool proximaFase = false;
+	public bool checkCondition = true;
+	private Balao _balao; 
+	//private int nextAno;
+	//public string playerMessage = "O tempo parece passar tão rápido.";
+	//public int tempoPadrao = 30;
+	//public int tempoAvancado = 30000;
 
 	// Use this for initialization
 	void Start () {
 		_player = GameObject.FindWithTag ("Player");
-		_timer = _player.GetComponent<Timer> ();
+		_balao = _player.GetComponentInChildren<Balao> ();
+		//_timer = _player.GetComponent<Timer> ();
 		_data = GameObject.Find("PlayerData").GetComponent<PlayerData> (); 
-		_mov= _player.GetComponent<Movimento> ();
+		//_mov= _player.GetComponent<Movimento> ();
 
 		//if (_mov.exit==scenarioExit){
 		//	_player.transform.position = playerStart.transform.position;
@@ -37,35 +39,37 @@ public class PassaDeFase : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (nextEvent) {
-			if (!next && _data.IsResource (CondicaoNome)) {
+		if (checkCondition && _balao != null && !_balao.MostrarBalao) {
+			if (!proximaFase && _data.IsResource (CondicaoNome)) {
 				if (_data.GetResource (CondicaoNome) >= CondicaoValor) {
-					next = true;
-					EventManager.TriggerEvent ("newPlayerDialog",playerMessage);
-					_mov.isMove = false;
-					_timer.Velocidade = tempoAvancado;
-					nextAno = Convert.ToInt32(_timer.CurrentAno) + 1;
+					proximaFase = true;
+					//EventManager.TriggerEvent ("newPlayerDialog",playerMessage);
+					//_mov.isMove = false;
+					//_timer.Velocidade = tempoAvancado;
+					//nextAno = Convert.ToInt32(_timer.CurrentAno) + 1;
+					//EventManager.TriggerEvent ("finalFase","Recurso - "+CondicaoNome+" é maior ou igual a "+CondicaoValor);
 				}
-			} else if (!next && _data.IsItem (CondicaoNome)) {
+			} else if (!proximaFase && _data.IsItem (CondicaoNome)) {
 				if (_data.GetItem (CondicaoNome) >= CondicaoValor) {
-					next = true;
-					EventManager.TriggerEvent ("newPlayerDialog",playerMessage);
-					_mov.isMove = false;
-					_timer.Velocidade = tempoAvancado;
-					nextAno = Convert.ToInt32(_timer.CurrentAno) + 1;
+					proximaFase = true;
+					//EventManager.TriggerEvent ("newPlayerDialog",playerMessage);
+					//_mov.isMove = false;
+					//_timer.Velocidade = tempoAvancado;
+					//nextAno = Convert.ToInt32(_timer.CurrentAno) + 1;
+					//EventManager.TriggerEvent ("finalFase","Item - "+CondicaoNome+" é maior ou igual a "+CondicaoValor);
 				}
 			}
-			if (next) {				
-				if (nextAno == Convert.ToInt32 (_timer.CurrentAno)) {
+			/*if (proximaFase) {				
+				//if (nextAno == Convert.ToInt32 (_timer.CurrentAno)) {
 					nextEvent = false;		
-					next = false;
+					proximaFase = false;
 					_mov.isMove = true;
-					_timer.Velocidade = tempoPadrao;
+					//_timer.Velocidade = tempoPadrao;
 					if (playerStart) {
 						_player.transform.position = playerStart.transform.position;
 					}
-				} 
-			}
+				//} 
+			}*/
 		}
 	}
 }

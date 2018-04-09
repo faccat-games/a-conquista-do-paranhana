@@ -9,7 +9,7 @@ public class Movimento : MonoBehaviour {
 	public int exit;
 	public GameObject talkBalloon;
 	public GameObject shopPanel;
-	public GameObject painelFade;
+	//public GameObject painelFade;
 
 	public bool isMove;
 
@@ -17,7 +17,7 @@ public class Movimento : MonoBehaviour {
 	public SpriteRenderer mySprite;
 	bool isFlip;
 
-	public string thisScene;
+	//public string thisScene;
 
 	public GameObject terraArada;
 	private PlayerData _data;

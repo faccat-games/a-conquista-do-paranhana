@@ -11,7 +11,8 @@ public class InteracaoCasa : MonoBehaviour {
 	public SpriteRenderer bed;
 	public float incremento;
 	public AudioSource _audioporta;
-	private int originalOrder = 2;
+	private int _homeOriginalOrder = 2;
+	private int _insideHomeOriginalOrder = 1;
 
 	void Start () {
 		_audioporta = GetComponent<AudioSource>();
@@ -20,15 +21,16 @@ public class InteracaoCasa : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other){
 		//Debug.Log ("enter" + other.name + ' ' + isHome.ToString() + ' ' +timer);
 		if (other.gameObject.tag == "Player" && !isHome) {
-				originalOrder = _home.sortingOrder;
+				_homeOriginalOrder = _home.sortingOrder;
+				_insideHomeOriginalOrder = insideHome.sortingOrder;
 				other.gameObject.transform.Translate(0, +1.0f, 0);
 				isHome = true;
 				_home.sortingOrder = -1;
 				insideHome.sortingOrder = 1;
 				if (bed) {
 					bed.sortingOrder = 4;
-				}
-				_audioporta.Play ();
+				}				
+				playAudio ();
 			} 
 	}
 
@@ -40,8 +42,14 @@ public class InteracaoCasa : MonoBehaviour {
 			if (bed) {
 				bed.sortingOrder = -1;
 			}
-			_home.sortingOrder = originalOrder;
-			insideHome.sortingOrder = -1;
+			_home.sortingOrder = _homeOriginalOrder;
+			insideHome.sortingOrder = _insideHomeOriginalOrder;
+			playAudio ();
+		}
+	}
+
+	void playAudio() {
+		if (_audioporta != null) {
 			_audioporta.Play ();
 		}
 	}

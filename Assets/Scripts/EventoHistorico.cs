@@ -60,11 +60,11 @@ public class EventoHistorico : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		EventoHistoricoPanel.SetActive (MostraPainel);
-		if (MostraPainel) {
-			_mov.isMove = false;
-			_timer.isPaused = true;
-		}
+		//EventoHistoricoPanel.SetActive (MostraPainel);
+		//if (MostraPainel && _player.GetComponent<Movimento>().isMove) {
+		//	_mov.isMove = false;
+		//	_timer.isPaused = true;
+		//}
 	}
 
 	void OnEnable ()
@@ -81,6 +81,7 @@ public class EventoHistorico : MonoBehaviour {
 		_mov.isMove = true;
 		_timer.isPaused = false;
 		MostraPainel = false;
+		EventoHistoricoPanel.SetActive (MostraPainel);
 	}
 
 	void UpdateYear (string value)
@@ -100,6 +101,9 @@ public class EventoHistorico : MonoBehaviour {
 				Texto.text = "Ano Novo";
 			}		
 			MostraPainel = true;
+			EventoHistoricoPanel.SetActive (MostraPainel);
+			_mov.isMove = false;
+			_timer.isPaused = true;
 		}
 
 		AnoTexto.text = currentYear = year;
