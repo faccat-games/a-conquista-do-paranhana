@@ -413,6 +413,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1227551700347506
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224875097983013124}
+  - component: {fileID: 222073416490305952}
+  - component: {fileID: 114146651026861554}
+  m_Layer: 5
+  m_Name: TextWithImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1248807248844514
 GameObject:
   m_ObjectHideFlags: 1
@@ -1304,6 +1321,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1896021222973054
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224835750912941152}
+  - component: {fileID: 222323011566766146}
+  - component: {fileID: 114190117354257142}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1897696853145406
 GameObject:
   m_ObjectHideFlags: 1
@@ -1760,6 +1794,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnoTexto: {fileID: 114733996754701504}
   Texto: {fileID: 114045816384472190}
+  TextoWithImage: {fileID: 114146651026861554}
+  EventImage: {fileID: 114190117354257142}
   MostraPainel: 0
 --- !u!114 &114013707575265584
 MonoBehaviour:
@@ -1883,14 +1919,15 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 42
+    m_MaxSize: 34
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: A sociedade Eggers & Monteiro comprou a fazenda do Mundo Novo, e no mesmo
+    ano criaram o loteamento da Santa Maria do Mundo Novo.
 --- !u!114 &114047243050994732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2169,7 +2206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.2509804, g: 0.12941177, b: 0.08235294, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2409,6 +2446,40 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &114146651026861554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1227551700347506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.2509804, g: 0.12941177, b: 0.08235294, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 24
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 34
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: A sociedade Eggers & Monteiro comprou a fazenda do Mundo Novo, e no mesmo
+    ano criaram o loteamento da Santa Maria do Mundo Novo.
 --- !u!114 &114149652444366100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2556,6 +2627,33 @@ MonoBehaviour:
   m_Sprite: {fileID: 21300000, guid: 13a072acbad1ec846a473d4589921027, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &114190117354257142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896021222973054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7607844, g: 0.6627451, b: 0.44705886, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4072,7 +4170,6 @@ MonoBehaviour:
   Velocidade: 30
   _currentTime: 
   newDay: 1
-  isPaused: 1
 --- !u!114 &114729027170642228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4124,7 +4221,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 1886
 --- !u!114 &114736220874979708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4803,6 +4900,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1394542384774334}
+--- !u!222 &222073416490305952
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1227551700347506}
 --- !u!222 &222102782716617634
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -4917,6 +5020,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280769034865642}
+--- !u!222 &222323011566766146
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896021222973054}
 --- !u!222 &222340875085674308
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -5677,7 +5786,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1731032608332758}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5686,7 +5795,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.2000449, y: 133.20204}
+  m_AnchoredPosition: {x: -24.700068, y: 144.07498}
   m_SizeDelta: {x: 257.9, y: 63.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224245104734828316
@@ -5997,14 +6106,16 @@ RectTransform:
   - {fileID: 224599857604030142}
   - {fileID: 224211743070736190}
   - {fileID: 224803922048161818}
+  - {fileID: 224875097983013124}
+  - {fileID: 224835750912941152}
   - {fileID: 224700653929129012}
   m_Father: {fileID: 224694801537565950}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.3, y: 5.9}
-  m_SizeDelta: {x: 800, y: 883.6}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1128.6, y: 1052.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224486310514251516
 RectTransform:
@@ -6410,11 +6521,11 @@ RectTransform:
   m_Children:
   - {fileID: 224336440612987402}
   m_Father: {fileID: 224479354821689748}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -326}
+  m_AnchoredPosition: {x: 0.75, y: -399}
   m_SizeDelta: {x: 160, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224725877267763470
@@ -6499,7 +6610,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1157182099128594}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6508,8 +6619,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.2, y: -30.723}
-  m_SizeDelta: {x: 574.4, y: 264.25}
+  m_AnchoredPosition: {x: -32.80005, y: -44.99994}
+  m_SizeDelta: {x: 749.6, y: 293.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224823503426210922
 RectTransform:
@@ -6548,6 +6659,24 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 50, y: -187.5}
   m_SizeDelta: {x: 100, y: 125}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224835750912941152
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896021222973054}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224479354821689748}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 166.5, y: -46.638}
+  m_SizeDelta: {x: 382.5, y: 290.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224853809140002538
 RectTransform:
@@ -6609,6 +6738,24 @@ RectTransform:
   m_AnchoredPosition: {x: 20.000027, y: 0.2000122}
   m_SizeDelta: {x: 50.9, y: 49.5}
   m_Pivot: {x: 0, y: 0.5}
+--- !u!224 &224875097983013124
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1227551700347506}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224479354821689748}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -230.05005, y: -55.013}
+  m_SizeDelta: {x: 382.7, y: 273.6}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224879373499445314
 RectTransform:
   m_ObjectHideFlags: 1

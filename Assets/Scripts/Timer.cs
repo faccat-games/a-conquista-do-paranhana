@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour {
 	public bool newDay = true;
 	private bool _newDay = false;
 
-	public bool isPaused = true;
+	private bool _isPaused = true;
 
 
 
@@ -55,10 +55,18 @@ public class Timer : MonoBehaviour {
 			return dateTime;
 		}
 	}
+
+
+	public bool isPaused
+	{
+		get {return _isPaused;}
+		set {_isPaused = value;}
+	}
+
 	// Update is called once per frame
 	void Update () {
 
-		if (isPaused) {
+		if (_isPaused) {
 			return;
 		}
 
