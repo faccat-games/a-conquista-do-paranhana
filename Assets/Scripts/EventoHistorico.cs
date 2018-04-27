@@ -7,6 +7,8 @@ using System;
 public class EventoHistorico : MonoBehaviour {
 	public Text AnoTexto;
 	public Text Texto;
+	public Text TextoWithImage;
+	public Image EventImage;
 	//public float YearEventDisplayTime = 5.0f;
 	public bool MostraPainel = false;
 	private float timer;
@@ -93,11 +95,28 @@ public class EventoHistorico : MonoBehaviour {
 		//yearEventPanel.SetActive (true);
 		//Debug.Log ("Current year: "+year);
 
+
 		if (currentYear != year) {
+
+			Texture2D texture = Resources.Load("Events/event-"+year) as Texture2D;
+
 			if (yearEventsList.ContainsKey (year)) {
-				Texto.text = yearEventsList [year];
+				if (texture) {
+					Texto.gameObject.SetActive (false);
+					TextoWithImage.gameObject.SetActive (true);
+					EventImage.gameObject.SetActive (true);
+					EventImage.sprite = Sprite.Create (texture, new Rect (0, 0, texture.width, texture.height), new Vector2 (0.5f, 0.5f));
+				} else {
+					Texto.gameObject.SetActive (true);
+					TextoWithImage.gameObject.SetActive (false);
+					EventImage.gameObject.SetActive (false);
+				}
+				TextoWithImage.text = Texto.text = yearEventsList [year];
 				EventManager.TriggerEvent ("newDiaryEntry", "<b>"+year+"</b> - " + yearEventsList [year]);
 			} else {
+				Texto.gameObject.SetActive (true);
+				TextoWithImage.gameObject.SetActive (false);
+				EventImage.gameObject.SetActive (false);
 				Texto.text = "Ano Novo";
 			}		
 			MostraPainel = true;
