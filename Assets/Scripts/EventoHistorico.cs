@@ -80,7 +80,9 @@ public class EventoHistorico : MonoBehaviour {
 	}
 
 	public void FecharPanel(){
-		_mov.isMove = true;
+        if (_mov != null) {
+            _mov.isMove = true;
+        }
 		_timer.isPaused = false;
 		MostraPainel = false;
 		EventoHistoricoPanel.SetActive (MostraPainel);

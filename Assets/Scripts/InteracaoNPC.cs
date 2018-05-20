@@ -40,9 +40,9 @@ public class InteracaoNPC : MonoBehaviour {
 	public string[] itemPhrases;
 
 
-	public Movimento _playerMov;
+	//public Movimento _playerMov;
 	public PlayerData _playerData;
-	private Timer _timer;
+	private Player _player;
 
 	//private string[] talkPlayer = new string[4];
 
@@ -52,9 +52,10 @@ public class InteracaoNPC : MonoBehaviour {
 
 
 	void Start(){
-		_playerMov = GameObject.FindGameObjectWithTag ("Player").GetComponent<Movimento> ();
+        _player = GameObject.FindWithTag("Player").GetComponent<Player>();
+		//_playerMov = GameObject.FindGameObjectWithTag ("Player").GetComponent<Movimento> ();
 		_playerData = GameObject.FindGameObjectWithTag ("Data").GetComponent<PlayerData> ();
-		_timer = GameObject.FindGameObjectWithTag ("Player").GetComponent<Timer> ();
+		//_timer = GameObject.FindGameObjectWithTag ("Player").GetComponent<Timer> ();
 		_ajuda = GetComponent<Ajuda> ();
 		//talkText = GetComponentInChildren<Text> ();
 	}
@@ -75,11 +76,10 @@ public class InteracaoNPC : MonoBehaviour {
 	}
 		
 	void Update(){ 
-		isVisible = GetComponent<SpriteRenderer> ().color.a == 0.0f ? false : true; 
+        isVisible = GetComponent<SpriteRenderer> ().color.a.Equals(0.0f) ? false : true; 
 
 		if (!isVisible) {
-			_playerMov.isMove = true;
-			_timer.isPaused = false;
+            _player.Paused = false;
 			talkText = talkBalloon.GetComponentInChildren<Text> ();
 			talkText.text = "";
 			talkBalloon.SetActive (false);
@@ -91,15 +91,12 @@ public class InteracaoNPC : MonoBehaviour {
 			if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase <= itemPhrases.Length - 1) {
 				talkBalloon.SetActive (true);
 				talkText = talkBalloon.GetComponentInChildren<Text> ();
-				_playerMov.isMove = false;
-				_timer.isPaused = true;
+                _player.Paused = true;
 				talkText.text = itemPhrases [indexPhrase];
 				indexPhrase++;
 				EventManager.TriggerEvent ("newPlayerDialog","");
 				} else if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase >= itemPhrases.Length - 1) {
-				    _playerMov.isMove = true;
-					_timer.isPaused = false;
-					
+                    _player.Paused = false;					
 					talkText.text = "";
 					talkBalloon.SetActive (false);
 					
@@ -126,16 +123,14 @@ public class InteracaoNPC : MonoBehaviour {
 		} else {
 			
 			if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase <= phrases.Length - 1) {
-				_playerMov.isMove = false;
-				_timer.isPaused = true;
+                _player.Paused = true;
 				talkBalloon.SetActive (true);
 				talkText = talkBalloon.GetComponentInChildren<Text> ();
 				talkText.text = phrases [indexPhrase];
 				indexPhrase++;
 				EventManager.TriggerEvent ("newPlayerDialog","");
 			} else if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase >= phrases.Length - 1) {
-				_playerMov.isMove = true;
-				_timer.isPaused = false;
+                _player.Paused = false;
 				talkText = talkBalloon.GetComponentInChildren<Text> ();
 				talkText.text = "";
 				talkBalloon.SetActive (false);

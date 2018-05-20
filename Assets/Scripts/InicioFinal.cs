@@ -13,8 +13,9 @@ public class InicioFinal : MonoBehaviour {
 	[TextArea(3,10)]
 	public string TextoFinal = "";
 	public int ProximoAno = 0;
-	public GameObject HelpPanel; 
-	public Text texto;
+	//public GameObject HelpPanel; 
+    //public GameObject EventoPanel; 
+	//public Text texto;
 	//private string _texto; 
 
 	// Use this for initialization
@@ -29,9 +30,9 @@ public class InicioFinal : MonoBehaviour {
 		//HelpPanel.SetActive (true);
 		//HelpPanel.GetComponent<Text> ().text = TextoInicio;
 		//isInicio = false;
-		_player = GameObject.FindWithTag ("Player");
-		_mov = _player.GetComponent<Movimento> ();
-		_timer = _player.GetComponent<Timer> ();
+		//_player = GameObject.FindWithTag ("Player");
+		//_mov = _player.GetComponent<Movimento> ();
+		//_timer = _player.GetComponent<Timer> ();
 		_passdefase = GetComponent<PassaDeFase> ();
 		//Debug.Log ("Não achou");			
 		//EventManager.StartListening ("passaFase", FinalFase);
@@ -43,12 +44,12 @@ public class InicioFinal : MonoBehaviour {
 		if (_isInicio != isInicio) {
 			if (isInicio) {
 				_isInicio = isInicio;			
-				CreatePanel (TextoInicio);			
-				posicaoInicial = _player.transform.position;
+				//CreatePanel (TextoInicio);			
+				//posicaoInicial = _player.transform.position;
 			} else {
 				_isInicio = isInicio;
-				CreatePanel (TextoFinal);
-				_player.transform.position = posicaoInicial;
+				//CreatePanel (TextoFinal);
+				//_player.transform.position = posicaoInicial;
 			}
 		}
 			
@@ -58,27 +59,36 @@ public class InicioFinal : MonoBehaviour {
 			isInicio = false;
 		}
 
-
 		//if (HelpPanel.activeSelf == true) {
 		//	PauseGame (true);
 		//}
 	}
 
-	public void PauseGame(bool paused = true) {
+
+
+    public void Iniciar() {
+        EventManager.TriggerEvent("mostrarAjudaTela", TextoInicio);
+    }
+    //public void StartLevel() {
+    //    SpawnPlayer spawnPlayer = GetComponent<SpawnPlayer>();
+    //    spawnPlayer.CreatePlayer();
+    //}
+
+	/*public void PauseGame(bool paused = true) {
 		_mov.isMove = !paused;
 		_timer.isPaused = paused;
-	}
+	}*/
 
-	public void CreatePanel (string value) {
+	/*public void CreatePanel (string value) {
 		PauseGame (true);
-		HelpPanel.SetActive (true);
+		//HelpPanel.SetActive (true);
 		texto.text = value;
 		//HelpPanel.GetComponent<Text> ().text = value;	
-	}
+	}*/
 
-	public void FecharPanel(){		
+	/*public void FecharPanel(){		
 		PauseGame (false);
-		HelpPanel.SetActive(false);
+		//HelpPanel.SetActive(false);
 		if (!isInicio) {
 			if (ProximoAno != 0) {
 				_timer.SetNewYear (ProximoAno);
@@ -87,6 +97,6 @@ public class InicioFinal : MonoBehaviour {
 			_isInicio = false;
 			//isInicio = true;
 		}
-	}
+	}*/
 		
 }

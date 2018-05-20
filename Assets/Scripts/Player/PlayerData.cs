@@ -7,7 +7,8 @@ public class PlayerData : MonoBehaviour {
 
 	public string playerName;
 	public string playerSurname;    // esse campo deve ser modificado caso o sobrenome indique uma habilidade do personagem
-	private int _money;
+    public int initialMoney = 20;
+    private int _money;
 
 	public Dictionary<string, int> items = new Dictionary<string, int> ();
 
@@ -20,6 +21,11 @@ public class PlayerData : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (this);
+        _money = initialMoney;
+
+        //PlayerPrefs.SetString("Nome", playerName);
+        //PlayerPrefs.SetString("Sobrenome", playerSurname);
+        //PlayerPrefs.SetFloat("Dinheiro", money);
 	}
 	
 	// Update is called once per frame

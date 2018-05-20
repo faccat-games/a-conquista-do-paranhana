@@ -13,6 +13,7 @@ public class splashFade : MonoBehaviour {
 	public Canvas canvas;
 	public string loadScene;
 
+	public float delay = 2.5f;
 	IEnumerator Start () {
 
 		splashImage.canvasRenderer.SetAlpha(0.0f);
@@ -21,49 +22,49 @@ public class splashFade : MonoBehaviour {
 
 
 		FadeInFirst();
-		yield return new WaitForSeconds(2.5f);
+		yield return new WaitForSeconds(delay);
 		FadeOutFirst();
-		yield return new WaitForSeconds(2.5f);
+		yield return new WaitForSeconds(delay);
 
 
 
 		FadeInSecond();
-		yield return new WaitForSeconds(2.5f);
+		yield return new WaitForSeconds(delay);
 		FadeOutSecond();
-		yield return new WaitForSeconds(2.5f);
+		yield return new WaitForSeconds(delay);
 
 		FadeInThird();
-		yield return new WaitForSeconds(2.5f);
+		yield return new WaitForSeconds(delay);
 		FadeOutThird();
-		yield return new WaitForSeconds(2.5f);
+		yield return new WaitForSeconds(delay);
 
 		SceneManager.LoadScene(loadScene);
 
 	}
 
 	void FadeInFirst(){
-	
+
 		splashImage.CrossFadeAlpha (1.0f, 1.5f, false);
 
 	}
 
 	void FadeOutFirst(){
 
-		splashImage.CrossFadeAlpha (0.0f, 2.5f, false);
+		splashImage.CrossFadeAlpha (0.0f, delay, false);
 		//CrossFadeColor\
 
 	}
 
 	void FadeInSecond(){
-	
+
 		splashImage2.CrossFadeAlpha (1.0f, 1.5f, false);
 		//canvas.GetComponent<Image>().color = new Color32(14,9,69,100);
 
 	}
 
 	void FadeOutSecond(){
-		
-		splashImage2.CrossFadeAlpha (0.0f, 2.5f, false);
+
+		splashImage2.CrossFadeAlpha (0.0f, delay, false);
 	}
 
 	void FadeInThird(){
@@ -75,7 +76,7 @@ public class splashFade : MonoBehaviour {
 
 	void FadeOutThird(){
 
-		splashImage3.CrossFadeAlpha (0.0f, 2.5f, false);
+		splashImage3.CrossFadeAlpha (0.0f, delay, false);
 	}
 
 }

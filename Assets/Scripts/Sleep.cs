@@ -10,7 +10,7 @@ public class Sleep : MonoBehaviour {
 	public string mensagemAcordar = "";
 
 	//Impedir movimento
-	private Movimento _mov;
+	private Player _player;
 
 	// menu dormir
 	public GameObject menuDormir;
@@ -21,8 +21,9 @@ public class Sleep : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_timer = GameObject.FindGameObjectWithTag ("Player").GetComponent<Timer> ();
-		_mov = GameObject.FindGameObjectWithTag ("Player").GetComponent<Movimento> ();
+		//_timer = GameObject.FindGameObjectWithTag ("Player").GetComponent<Timer> ();
+		//_mov = GameObject.FindGameObjectWithTag ("Player").GetComponent<Movimento> ();
+        _player = GameObject.FindWithTag("Player").GetComponent<Player>();
 		_sleepPanel = GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<SleepPanel> ();
 		//_fadeImage = _sleepPanel.GetComponentInChildren<Image> ();
 	}
@@ -48,7 +49,7 @@ public class Sleep : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		if (toSleep && _mov.isMove && Input.GetKeyDown (KeyCode.E)) {
+        if (toSleep && _player.Paused && Input.GetKeyDown (KeyCode.E)) {
 			AbreMenuDormir ();
 		}
 	}
@@ -56,8 +57,7 @@ public class Sleep : MonoBehaviour {
 	public void AbreMenuDormir(){
 		EventManager.TriggerEvent ("newPlayerDialog","");
 		menuDormir.SetActive (true);
-		_mov.isMove = false;
-		_timer.isPaused = true;
+        _player.Paused = true;
 	}
 
 
@@ -68,8 +68,7 @@ public class Sleep : MonoBehaviour {
 
 	public void CancelaDormir(){
 		menuDormir.SetActive (false);
-		_mov.isMove = true;
-		_timer.isPaused = false;
+        _player.Paused = false;
 	}
 
 
@@ -88,9 +87,8 @@ public class Sleep : MonoBehaviour {
 		fadeOut();
 		yield return new WaitForSeconds(2);
 		fadeIn();
-		//yield return new WaitForSeconds(2);
-		_mov.isMove = true;
-		_timer.isPaused = false;
+        //yield return new WaitForSeconds(2);
+        _player.Paused = false;
 		_timer.SetNextDay ();
 		EventManager.TriggerEvent ("newPlayerDialog",mensagemAcordar);
 	}
