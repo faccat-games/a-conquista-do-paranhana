@@ -50,6 +50,7 @@ public class InteracaoNPC : MonoBehaviour {
 
 	private bool isVisible;
 
+    private string _dialog;
 
 	void Start(){
         _player = GameObject.FindWithTag("Player").GetComponent<Player>();
@@ -74,6 +75,15 @@ public class InteracaoNPC : MonoBehaviour {
 			indexPhrase = 0;
 		}
 	}
+
+    string RemChar(string val) {
+        if (val.Length > 0 && val[0].ToString() == "=")
+        {
+            val = val.Remove(0, 1);
+            EventManager.TriggerEvent("newDiaryEntry", "- " + val);
+        }
+        return val;
+    }
 		
 	void Update(){ 
         isVisible = GetComponent<SpriteRenderer> ().color.a.Equals(0.0f) ? false : true; 
@@ -88,14 +98,15 @@ public class InteracaoNPC : MonoBehaviour {
 		}
 
 		if (isItemGiver) {
-			if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase <= itemPhrases.Length - 1) {
+            if (isTalk && Input.GetKeyDown (KeyCode.Space) && indexPhrase <= itemPhrases.Length - 1) {
 				talkBalloon.SetActive (true);
 				talkText = talkBalloon.GetComponentInChildren<Text> ();
                 _player.Paused = true;
-				talkText.text = itemPhrases [indexPhrase];
+                _dialog = itemPhrases [indexPhrase];
+                talkText.text = RemChar(_dialog);
 				indexPhrase++;
 				EventManager.TriggerEvent ("newPlayerDialog","");
-				} else if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase >= itemPhrases.Length - 1) {
+            } else if (isTalk && Input.GetKeyDown (KeyCode.Space) && indexPhrase >= itemPhrases.Length - 1) {
                     _player.Paused = false;					
 					talkText.text = "";
 					talkBalloon.SetActive (false);
@@ -122,14 +133,15 @@ public class InteracaoNPC : MonoBehaviour {
 			
 		} else {
 			
-			if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase <= phrases.Length - 1) {
+            if (isTalk && Input.GetKeyDown (KeyCode.Space) && indexPhrase <= phrases.Length - 1) {
                 _player.Paused = true;
 				talkBalloon.SetActive (true);
 				talkText = talkBalloon.GetComponentInChildren<Text> ();
-				talkText.text = phrases [indexPhrase];
+                _dialog = phrases [indexPhrase];
+                talkText.text = RemChar(_dialog);
 				indexPhrase++;
 				EventManager.TriggerEvent ("newPlayerDialog","");
-			} else if (isTalk && Input.GetKeyDown (KeyCode.E) && indexPhrase >= phrases.Length - 1) {
+            } else if (isTalk && Input.GetKeyDown (KeyCode.Space) && indexPhrase >= phrases.Length - 1) {
                 _player.Paused = false;
 				talkText = talkBalloon.GetComponentInChildren<Text> ();
 				talkText.text = "";

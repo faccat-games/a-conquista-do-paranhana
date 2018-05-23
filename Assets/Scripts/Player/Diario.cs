@@ -38,6 +38,7 @@ public class Diario : MonoBehaviour {
 		//}
 		//YearText.text = value;
 		//content.Enqueue(value);
+
 		if (!DiarioContent.Contains (value)) {
 			DiarioContent.Add (value);
 			DiarioText.text = "";

@@ -26,7 +26,7 @@ public class Planta : MonoBehaviour {
 	public int totalColheita;     // total de itens coletados da planta
 	public int _itemColetado;     // alterar para outro tipo de objeto
 	public bool isColher = false;
-
+    public string colherMsg;
 
 	void Start () {
 
@@ -65,9 +65,10 @@ public class Planta : MonoBehaviour {
 			isMadura = true;
 		}*/
 			
-		if (Input.GetKeyDown(KeyCode.E) && isColher){
+        if (Input.GetKeyDown(KeyCode.Space) && isColher){
 			_playerData.SetResource("corn",_playerData.GetResource("corn") + totalColheita);    // alterear para outras plantas
-			Destroy (gameObject);
+			//Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
 		}
 	}
 
@@ -75,6 +76,7 @@ public class Planta : MonoBehaviour {
 		//Debug.Log (col.tag);
 		if(col.tag == "Player" && isMadura){
 			isColher = true;
+            EventManager.TriggerEvent("newPlayerDialog", colherMsg);
 		}
 	}
 

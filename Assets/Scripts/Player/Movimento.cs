@@ -125,7 +125,7 @@ public class Movimento : MonoBehaviour {
 
 		}
 
-		if (Input.GetKeyDown (KeyCode.E)) {
+    if (Input.GetKeyDown (KeyCode.Space)) {
 			PlantarSemente ();
 		}
 			

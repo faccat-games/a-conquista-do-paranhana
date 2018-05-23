@@ -38,7 +38,7 @@ public class InteracaoArvore : MonoBehaviour {
 	}
 
 	void Update(){
-		if (isTake && Input.GetKeyDown (KeyCode.E)&& vAction) {
+        if (isTake && Input.GetKeyDown (KeyCode.Space)&& vAction) {
 			//sr2.sprite = sTronco;		
 			_playerData.SetResource("woodLog",_playerData.GetResource("woodLog") + 10);
 			GetComponent<Arvore>().isCortada = true;

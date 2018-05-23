@@ -14,7 +14,7 @@ public class InteracaoAjuda : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.E)) {
+        if (Input.GetKeyDown (KeyCode.Space)) {
 			showDialog = false;
 		}
 		if (timer <= 0.0f) {			

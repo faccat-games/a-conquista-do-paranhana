@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour {
 
 	private bool _isPaused = true;
 
-
+    public string mensagemNoite;
 
 	// Use this for initialization
 	void Start () {
@@ -91,9 +91,9 @@ public class Timer : MonoBehaviour {
 			}
 
 			if (newDay != _newDay) {
-				//if (!newDay) {
-					//EventManager.TriggerEvent ("newPlayerDialog","Esta ficando escuro!!!");
-				//}
+				if (!newDay) {
+                    EventManager.TriggerEvent ("newPlayerDialog",mensagemNoite);
+				}
 				EventManager.TriggerEvent ("newDayCicle", newDay.ToString());
 				_newDay = newDay;
 			}

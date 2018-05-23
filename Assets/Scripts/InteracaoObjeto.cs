@@ -23,7 +23,7 @@ public class InteracaoObjeto : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		if (isTake && Input.GetKeyDown (KeyCode.E)) {
+        if (isTake && Input.GetKeyDown (KeyCode.Space)) {
 			sr.color = new Color (1, 0, 0, 1);
 			Debug.Log ("Item pego");
 		}

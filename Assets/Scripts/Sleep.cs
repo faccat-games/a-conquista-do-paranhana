@@ -21,7 +21,7 @@ public class Sleep : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//_timer = GameObject.FindGameObjectWithTag ("Player").GetComponent<Timer> ();
+		_timer = GameObject.FindGameObjectWithTag ("Player").GetComponent<Timer> ();
 		//_mov = GameObject.FindGameObjectWithTag ("Player").GetComponent<Movimento> ();
         _player = GameObject.FindWithTag("Player").GetComponent<Player>();
 		_sleepPanel = GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<SleepPanel> ();
@@ -49,7 +49,7 @@ public class Sleep : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-        if (toSleep && _player.Paused && Input.GetKeyDown (KeyCode.E)) {
+        if (toSleep && !_player.Paused && Input.GetKeyDown (KeyCode.Space)) {
 			AbreMenuDormir ();
 		}
 	}

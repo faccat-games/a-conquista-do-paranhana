@@ -41,7 +41,7 @@ public class InteracaoLoja : MonoBehaviour {
 
 	void FixedUpdate (){
 
-		if (isShop && Input.GetKeyDown (KeyCode.E) && isShopping==false  ) {		// && indexItem <= itens.Length - 1
+        if (isShop && Input.GetKeyDown (KeyCode.Space) && isShopping==false  ) {		// && indexItem <= itens.Length - 1
 
 			foreach (string index in itens) {
 				phrasesText.text += index + "\n";
@@ -93,7 +93,7 @@ public class InteracaoLoja : MonoBehaviour {
 
 		}
 
-		if (  Input.GetKeyDown (KeyCode.E) && indexItem >= itens.Length - 1) {
+        if (  Input.GetKeyDown (KeyCode.Space) && indexItem >= itens.Length - 1) {
 			shopPanel.GetComponent<Image> ().enabled = false;
 			isShopping = false;
 			cursorLoja.SetActive (false);
