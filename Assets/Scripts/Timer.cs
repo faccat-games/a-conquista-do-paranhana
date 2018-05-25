@@ -59,8 +59,13 @@ public class Timer : MonoBehaviour {
 
 	public bool isPaused
 	{
-		get {return _isPaused;}
-		set {_isPaused = value;}
+		get {            
+            return _isPaused;
+        }
+		set {
+            Time.timeScale = (value) ? 0 : 1;
+            _isPaused = value;
+        }
 	}
 
 	// Update is called once per frame

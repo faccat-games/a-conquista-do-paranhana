@@ -10,9 +10,7 @@ public class Inventario : MonoBehaviour {
 	public PlayerData _playerData;
 	//private Timer _timer;
 	//private DateTime currentDateTime;
-	public GameObject axeItem;
-	public GameObject hoeItem;
-	public GameObject farinhaItem;
+
 	public Text DataTexto;
 	public Text HoraTexto;
 	public Text PlayerNome;
@@ -30,6 +28,7 @@ public class Inventario : MonoBehaviour {
 		if (PlayerNome != null) {			
 			PlayerNome.text = _playerData.playerName + " " + _playerData.playerSurname;
 		}
+
 	}
 
 	void UpdateTimer(string value) {
@@ -46,48 +45,23 @@ public class Inventario : MonoBehaviour {
 			HoraTexto.text = _timer.currentDateTime.ToString ("HH:mm");
 		}
 
-		if(Input.GetKeyDown(KeyCode.Tab ) && isMenuOpen ==false){
-			Time.timeScale = 0;
+		if (Input.GetKeyDown(KeyCode.Tab ) && isMenuOpen ==false){
+            _timer.isPaused = true;
 			isMenuOpen = true;
-
-
-		} else 	if(Input.GetKeyDown(KeyCode.Tab ) && isMenuOpen ==true){
-					Time.timeScale = 1;
-					isMenuOpen = false;
-				}
+		} else if(Input.GetKeyDown(KeyCode.Tab ) && isMenuOpen ==true){
+            _timer.isPaused = false;
+			isMenuOpen = false;
+		}
 		AbreInventario ();		
 	}
 
 	void AbreInventario(){
+        
 		if (isMenuOpen) {
-			panelInventario.SetActive (true);
-
-			if (farinhaItem != null) {
-				if (_playerData.GetItem("Farinha") > 0) {
-					farinhaItem.SetActive (true);
-					farinhaItem.GetComponent<Text>().text = _playerData.GetItem("Farinha") +" x " + "Farinha";
-				} else {
-					farinhaItem.SetActive (false);
-				}
-			}
-			if (axeItem != null) {				
-				axeItem.SetActive (_playerData.IsItem("Machado"));				
-			}
-			if (hoeItem != null) {				
-				hoeItem.SetActive (_playerData.IsItem("Enxada"));
-			}
-			
-		} else panelInventario.SetActive (false);			
+			panelInventario.SetActive (true);                 			
+        } else {
+            panelInventario.SetActive(false);
+        }			
 	}
 
-
-	/*public void AddItem( GameObject item )
-	{
-		if ( item == null || item.GetComponent<TeamSelectItem>() == null )
-			return;
-
-		item.transform.SetParent( Grid.transform );
-		item.transform.localScale = autoLocalScale;
-		item.transform.localPosition = Vector3.zero;
-	}*/
 }

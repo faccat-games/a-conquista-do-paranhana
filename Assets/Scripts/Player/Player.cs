@@ -23,7 +23,7 @@ public class Player : MonoBehaviour {
             Movimento _mov = GetComponent<Movimento>();
             Timer _timer = GetComponent<Timer>();
             _mov.isMove = !value;
-            _timer.isPaused = value; 
+            _timer.isPaused = value;
         }
     }
 

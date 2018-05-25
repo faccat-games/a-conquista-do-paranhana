@@ -51,6 +51,7 @@ public class InteracaoNPC : MonoBehaviour {
 	private bool isVisible;
 
     private string _dialog;
+    //private Inventario _inventario;
 
 	void Start(){
         _player = GameObject.FindWithTag("Player").GetComponent<Player>();
@@ -58,7 +59,8 @@ public class InteracaoNPC : MonoBehaviour {
 		_playerData = GameObject.FindGameObjectWithTag ("Data").GetComponent<PlayerData> ();
 		//_timer = GameObject.FindGameObjectWithTag ("Player").GetComponent<Timer> ();
 		_ajuda = GetComponent<Ajuda> ();
-		//talkText = GetComponentInChildren<Text> ();
+        //talkText = GetComponentInChildren<Text> ();
+        //_inventario = _player.GetComponent<Inventario>();
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
@@ -114,7 +116,9 @@ public class InteracaoNPC : MonoBehaviour {
 					isItemGiver = false;					
 									
 					if (giveItem) {
-						_playerData.SetItem (NomeItem, _playerData.GetItem (NomeItem) + QtdItem);													
+						_playerData.SetItem (NomeItem, _playerData.GetItem (NomeItem) + QtdItem);
+                        //_inventario.AddItem(NomeItem);
+                        //_inventario.SetValue(NomeItem, _playerData.GetItem(NomeItem));
 					}
 
 					if (giveRecurso) {						
