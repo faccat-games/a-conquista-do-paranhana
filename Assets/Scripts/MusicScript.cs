@@ -8,6 +8,11 @@ public class MusicScript : MonoBehaviour {
 	public Object[] myPlaylist;
 	public AudioSource _audio;
 	Scene  thisScene;
+    public Timer _timer;
+
+    public AudioSource nightSongs;
+
+    
 
 	//Play Global
 	private static MusicScript instance = null;
@@ -20,6 +25,8 @@ public class MusicScript : MonoBehaviour {
 	{
 		_audio = GetComponent<AudioSource> ();
 		myPlaylist = Resources.LoadAll ("Music", typeof(AudioClip));
+
+        _timer = GameObject.FindGameObjectWithTag("Player").GetComponent<Timer>();
 
 		if (instance != null && instance != this)
 		{
@@ -47,8 +54,32 @@ public class MusicScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (_audio.isPlaying == false && thisScene.name =="4_Evento01" ) {
-			RandomPLaylist ();
-		}
+
+        if (_timer.isNight == false)
+        {
+            if (_audio.isPlaying == false)
+            {
+                PlayDayMusic();
+            }
+           
+        }
+
+        else if(_timer.isNight) {
+            if (nightSongs.isPlaying == false)
+            {
+                // PlayDayMusic();
+                PlayNightMusic();
+            }
+        }
 	}
+
+    public void PlayDayMusic() {
+            nightSongs.Stop();
+            RandomPLaylist();
+    }
+
+    public void PlayNightMusic() {
+        _audio.Stop();
+        nightSongs.Play();
+    }
 }

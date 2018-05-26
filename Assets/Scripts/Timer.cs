@@ -12,6 +12,8 @@ public class Timer : MonoBehaviour {
 	public string CurrentAno;
 	private int _hora;
 
+    public bool isNight;
+
 	private DateTime dateTime;
 
 	//public GameObject _noitePanel;
@@ -89,11 +91,15 @@ public class Timer : MonoBehaviour {
 
 			if (_hora < 6 || _hora >= 19) {
 				newDay = false;
+                isNight = true;
+              
 			}
 			// dia
 			if (_hora >= 6 && _hora < 19) {			
 				newDay = true;
-			}
+                isNight = false;
+               
+            }
 
 			if (newDay != _newDay) {
 				if (!newDay) {
