@@ -66,7 +66,7 @@ public class Planta : MonoBehaviour {
 		}*/
 			
         if (Input.GetKeyDown(KeyCode.Space) && isColher){
-			_playerData.SetResource("corn",_playerData.GetResource("corn") + totalColheita);    // alterear para outras plantas
+			_playerData.SetResource("Milho",_playerData.GetResource("Milho") + totalColheita);    // alterear para outras plantas
 			//Destroy(gameObject);
             Destroy(transform.parent.gameObject);
 		}

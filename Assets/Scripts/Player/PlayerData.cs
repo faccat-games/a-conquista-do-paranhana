@@ -7,21 +7,21 @@ public class PlayerData : MonoBehaviour {
 
 	public string playerName;
 	public string playerSurname;    // esse campo deve ser modificado caso o sobrenome indique uma habilidade do personagem
-    public int initialMoney = 20;
-    private int _money;
+    public int dinheiroInicial = 20;
+    private int _dinheiro;
 
 	public Dictionary<string, int> items = new Dictionary<string, int> ();
 
-	private int _woodLog;
-	private int _corn;
-	private int _cornSeeds;    //item 0
+	private int _madeira;
+	private int _milho;
+	private int _sementesMilho;    //item 0
 
 	public int itemHand;   // item em uso pelo jogador   seleção por id   // 0 nenhum, 1 cornseeds;
 
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (this);
-        _money = initialMoney;
+        _dinheiro = dinheiroInicial;
 
         //PlayerPrefs.SetString("Nome", playerName);
         //PlayerPrefs.SetString("Sobrenome", playerSurname);
@@ -33,31 +33,31 @@ public class PlayerData : MonoBehaviour {
 		
 	}
 	public string moneyFormatted {
-		get { return "R" + _money.ToString() + "$000"; }
+		get { return "R" + _dinheiro.ToString() + "$000"; }
 	}
-	public int money
+	public int Dinheiro
 	{
-		get {return _money;}
-		set {_money = value;}
-	}
-
-
-	public int cornSeeds
-	{
-		get {return _cornSeeds;}
-		set {_cornSeeds = value;}
+		get {return _dinheiro;}
+		set {_dinheiro = value;}
 	}
 
-	public int corn
+
+	public int SementesMilho
 	{
-		get {return _corn;}
-		set {_corn = value;}
+		get {return _sementesMilho;}
+		set {_sementesMilho = value;}
 	}
 
-	public int woodLog
+	public int Milho
 	{
-		get {return _woodLog;}
-		set {_woodLog = value;}
+		get {return _milho;}
+		set {_milho = value;}
+	}
+
+	public int Madeira
+	{
+		get {return _madeira;}
+		set {_madeira = value;}
 	}
 		
 

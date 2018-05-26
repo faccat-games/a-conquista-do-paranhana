@@ -142,10 +142,10 @@ public class Movimento : MonoBehaviour {
 
 	void PlantarSemente(){
 		//Debug.Log ("PlantarSemente" + _data.GetResource("cornSeeds"));
-		if (overPlow != null  && _data.GetResource("cornSeeds")>0) {
+        if (overPlow != null  && _data.GetResource("SementesMilho")>0) {
 			var _overPlow = overPlow.GetComponent<Plantio> ();
 			if (!_overPlow.isUsed) {
-				_data.SetResource("cornSeeds",_data.GetResource("cornSeeds") - 1);
+                _data.SetResource("SementesMilho",_data.GetResource("SementesMilho") - 1);
 				_overPlow.PlantarMilho ();
 			}
 		}

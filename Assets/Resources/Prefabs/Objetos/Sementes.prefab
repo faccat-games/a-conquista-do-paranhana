@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1 x Farinha
+  m_Text: 1 x Sementes
 --- !u!114 &114862697443417150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,8 +117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0bdfdd3c290460985af88381552d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _valor: 0
+  _valor: 1
   id: Sementes
+  Descricao: Sementes
 --- !u!222 &222121016064404114
 CanvasRenderer:
   m_ObjectHideFlags: 1
