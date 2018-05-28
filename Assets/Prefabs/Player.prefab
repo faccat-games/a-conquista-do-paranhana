@@ -3273,7 +3273,8 @@ MonoBehaviour:
   dia: 10
   hora: 6
   CurrentAno: 
-  Velocidade: 30
+  isNight: 0
+  Velocidade: 25
   _currentTime: 
   newDay: 1
   mensagemNoite: Anoiteceu ...

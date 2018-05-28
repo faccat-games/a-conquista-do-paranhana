@@ -65,7 +65,7 @@ public class Timer : MonoBehaviour {
             return _isPaused;
         }
 		set {
-            Time.timeScale = (value) ? 0 : 1;
+            //Time.timeScale = (value) ? 0 : 1;
             _isPaused = value;
         }
 	}
@@ -91,14 +91,12 @@ public class Timer : MonoBehaviour {
 
 			if (_hora < 6 || _hora >= 19) {
 				newDay = false;
-                isNight = true;
-              
+                isNight = true;             
 			}
 			// dia
 			if (_hora >= 6 && _hora < 19) {			
 				newDay = true;
-                isNight = false;
-               
+                isNight = false;               
             }
 
 			if (newDay != _newDay) {
