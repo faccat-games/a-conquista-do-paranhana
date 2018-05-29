@@ -16,6 +16,7 @@ public class TrocaRequisito : MonoBehaviour {
     public int MinQtdRecurso = 0;
     public bool RemoveRecurso;
 
+    public GameObject ObjetoRequisito; 
 	
     public string InsuficienteTexto = "Você ainda não tem o suficiente.";
 
@@ -32,6 +33,11 @@ public class TrocaRequisito : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (_interacaoNPC != null && _interacaoNPC.InteractingWithPlayer) {
+
+            if (ObjetoRequisito != null && ObjetoRequisito.active) {
+                _interacaoNPC.Interagir = true;
+            }
+
             if (ItemRequerido != "" && RecursoRequerido != "") {
                 if (_playerData.IsItem(ItemRequerido) 
                     && _playerData.GetItem(ItemRequerido) >= MinQtdItem 
