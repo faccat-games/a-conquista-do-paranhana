@@ -16,7 +16,7 @@ public class TrocaRequisito : MonoBehaviour {
     public int MinQtdRecurso = 0;
     public bool RemoveRecurso;
 
-    public GameObject ObjetoRequisito; 
+    public GameObject ObjetoAtivoRequisito; 
 	
     public string InsuficienteTexto = "Você ainda não tem o suficiente.";
 
@@ -34,7 +34,7 @@ public class TrocaRequisito : MonoBehaviour {
 	void Update () {
         if (_interacaoNPC != null && _interacaoNPC.InteractingWithPlayer) {
 
-            if (ObjetoRequisito != null && ObjetoRequisito.active) {
+            if (ObjetoAtivoRequisito != null && ObjetoAtivoRequisito.activeSelf) {
                 _interacaoNPC.Interagir = true;
             }
 
