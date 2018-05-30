@@ -16,12 +16,14 @@ public class BasicAnimation : MonoBehaviour {
     private float _LoopInterval = 0;
     private string _currentDirection;
     public bool pause = false;
+    private Rigidbody2D rb;
 	// Use this for initialization
 	void Start () {
         _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         //InvokeRepeating ("ChangeSprite", 0, AnimationInterval);
         _idle = _spriteRenderer.sprite;
         _currentDirection = startPosition;
+        rb = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -49,11 +51,15 @@ public class BasicAnimation : MonoBehaviour {
                 t = -transform.up;
                 break;
         }
-        if (pause) {
-            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-        } else {
-            GetComponent<Rigidbody2D>().velocity = t * speed;
+
+        if (rb != null) {
+            if (pause) {
+                GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            } else {
+                GetComponent<Rigidbody2D>().velocity = t * speed;
+            }            
         }
+
         if (_InstantiationTimer <= 0)
         {
             //Instantiate(prefab, spawn.position, Quaternion.identity);
@@ -64,14 +70,14 @@ public class BasicAnimation : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        //if (coll.gameObject.tag == "Enemy")
+        if (coll.gameObject.tag == "Player") {
+            return;
+        }
         //    coll.gameObject.SendMessage("ApplyDamage", 10);
         _currentDirection = (_currentDirection == "right") ? "left" : "right";
     }
 
     void ChangeSprite() {
-
-
         if (_currentIndex == sprites.Length) {
             _currentIndex = 0;
         }

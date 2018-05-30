@@ -9,6 +9,7 @@ public class InteracaoArvore : MonoBehaviour {
 	//public Sprite sTronco;
 	public AudioSource _audio;
 	public PlayerData _playerData;
+    public int NumMadeira = 10;
 
 	void Awake(){
 
@@ -40,7 +41,7 @@ public class InteracaoArvore : MonoBehaviour {
 	void Update(){
         if (isTake && Input.GetKeyDown (KeyCode.Space)&& vAction) {
 			//sr2.sprite = sTronco;		
-			_playerData.SetResource("Madeira",_playerData.GetResource("Madeira") + 10);
+            _playerData.SetResource("Madeira",_playerData.GetResource("Madeira") + NumMadeira);
 			GetComponent<Arvore>().isCortada = true;
 			GetComponent<Ajuda> ().Interagir = false;
 			vAction = false;
