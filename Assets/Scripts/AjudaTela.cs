@@ -13,6 +13,10 @@ public class AjudaTela : MonoBehaviour {
     private string _playername;
 
 	public Text texto;
+    public Text Titulo;
+    public Image Imagem;  
+    public Text TextoWithImage;
+
 	void Start () {
         HelpCanvas = gameObject.transform.GetChild(0).gameObject;
         _player = GameObject.FindWithTag ("Player").GetComponent<Player>();
@@ -31,9 +35,33 @@ public class AjudaTela : MonoBehaviour {
 
 	public void CreatePanel (string value) {
         value = value.Replace("%player%", _playername);
+        string[] tokens = value.Split('|');
+
+        TextoWithImage.gameObject.SetActive(false);
+        Imagem.gameObject.SetActive(false);
+        Titulo.gameObject.SetActive(false);
+        texto.gameObject.SetActive(true);
+
+        if (tokens.Length >= 3) {
+            Titulo.gameObject.SetActive(true);
+            Titulo.text = tokens[0];
+            texto.text = tokens[2];
+            Texture2D texture = Resources.Load("Ajuda/ajuda-" + tokens[1]) as Texture2D;
+            if (texture != null) {
+                Imagem.gameObject.SetActive(true);
+                Imagem.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+                value = tokens[2];
+                TextoWithImage.text = value;
+                TextoWithImage.gameObject.SetActive(true);
+                texto.gameObject.SetActive(false);
+            }
+        } else {
+            texto.text = value;
+        }
+
         _player.Paused = true;
         HelpCanvas.SetActive (true);
-		texto.text = value;
+		
 		//HelpPanel.GetComponent<Text> ().text = value;
 	}
 

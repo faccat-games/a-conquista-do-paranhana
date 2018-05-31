@@ -44,7 +44,7 @@ public class Noite : MonoBehaviour {
 			*/
 		isNoite = (Boolean.Parse (value)) ? false : true;
 		if (isNoite != _isNoite) {
-			background.GetComponent<Image> ().color = new Color (0.0f, 0.0f, 0.0f, (isNoite) ? 0.50f : 0.0f);
+			background.GetComponent<Image> ().color = new Color (0.0f, 0.0f, 0.0f, (isNoite) ? 0.20f : 0.0f);
 			iconeLua.SetActive (isNoite);
             torch.SetActive(isNoite);
 			_isNoite = isNoite;

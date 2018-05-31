@@ -36,11 +36,13 @@ public class InteracaoObjeto : MonoBehaviour {
         set { _actionRequired = value; }
     }
 
-	void FixedUpdate(){
+	void Update(){
         if (Interagir && InteractingWithPlayer && Input.GetKeyDown (KeyCode.Space)) {
             ActionRequired = true;
 			//sr.color = new Color (1, 0, 0, 1);
 			//Debug.Log ("Item pego");
-		}
+        } else {
+            ActionRequired = false;
+        }
 	}
 }
