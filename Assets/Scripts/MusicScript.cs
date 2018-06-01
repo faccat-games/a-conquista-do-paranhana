@@ -7,7 +7,7 @@ public class MusicScript : MonoBehaviour {
 
 	public Object[] myPlaylist;
 	public AudioSource _audio;
-	Scene  thisScene;
+	private Scene  thisScene;
     public Timer _timer;
 
     public AudioSource nightSongs;

@@ -76,7 +76,11 @@ public class Movimento : MonoBehaviour {
 
 		if (isMove) {
 			Move ();
-		}
+        } else {
+            myAnimator.SetBool("walkUp", false);
+            myAnimator.SetBool("walkDown", false);
+            myAnimator.SetBool("walkRight", false);
+        }
 	}
 
 	void Move(){

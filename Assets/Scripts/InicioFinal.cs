@@ -57,6 +57,7 @@ public class InicioFinal : MonoBehaviour {
 			_passdefase.checkCondition = _passdefase.proximaFase = false;
 			//GetComponent<PassaDeFase> ().proximaFase = false;
 			isInicio = false;
+            EventManager.TriggerEvent("mostrarAjudaTela", TextoFinal);
 		}
 
 		//if (HelpPanel.activeSelf == true) {

@@ -12,6 +12,7 @@ public class Noite : MonoBehaviour {
 	private bool _isNoite = false;
 	public GameObject iconeLua;
     public GameObject torch;
+    public bool usarIluminacao = false;
 
 	void Start () {
 		EventManager.StartListening ("newDayCicle", UpdateBackground);
@@ -44,9 +45,11 @@ public class Noite : MonoBehaviour {
 			*/
 		isNoite = (Boolean.Parse (value)) ? false : true;
 		if (isNoite != _isNoite) {
-			background.GetComponent<Image> ().color = new Color (0.0f, 0.0f, 0.0f, (isNoite) ? 0.20f : 0.0f);
+			background.GetComponent<Image> ().color = new Color (0.0f, 0.0f, 0.0f, (isNoite) ? 0.70f : 0.0f);
 			iconeLua.SetActive (isNoite);
-            torch.SetActive(isNoite);
+            if (usarIluminacao) {
+                torch.SetActive(isNoite);
+            }
 			_isNoite = isNoite;
 		}
 	}

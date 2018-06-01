@@ -40,7 +40,7 @@ public class InteracaoNPC : MonoBehaviour {
 
 	private Ajuda _ajuda;
 
-	private bool isVisible;
+	//private bool isVisible;
 
     private string _dialog;
     private int _oriPhrasesLength;
@@ -96,9 +96,10 @@ public class InteracaoNPC : MonoBehaviour {
 
 	void Update(){ 
 
-        //if (!_interactingWithPlayer) {
-        //    return;
-        //}
+        if (!_interactingWithPlayer) {
+            return;
+        }
+        /*
         isVisible = GetComponent<SpriteRenderer> ().color.a.Equals(0.0f) ? false : true; 
 
 		if (!isVisible) {
@@ -108,7 +109,7 @@ public class InteracaoNPC : MonoBehaviour {
 			talkBalloon.SetActive (false);
 			indexPhrase = 0;
             InteractingWithPlayer = false;
-		}
+		}*/
 
         if (Interagir) {
             if (InteractingWithPlayer && Input.GetKeyDown (KeyCode.Space) && indexPhrase <= interacaoPhrases.Length - 1) {

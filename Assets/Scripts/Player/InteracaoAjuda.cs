@@ -6,7 +6,7 @@ public class InteracaoAjuda : MonoBehaviour {
 	private float timer;
 	private bool showDialog = false;
 	private Collider2D _other;
-	public float TempoDialogo = 1.2f;
+	public float TempoDialogo = 1.0f;
 	// Use this for initialization
 	void Start () {
 		//Debug.Log (gameObject.name);

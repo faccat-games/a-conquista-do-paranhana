@@ -100,8 +100,8 @@ public class Timer : MonoBehaviour {
             }
 
 			if (newDay != _newDay) {
-				if (!newDay) {
-                    EventManager.TriggerEvent ("newPlayerDialog",mensagemNoite);
+				if (!newDay) {                                       
+                    EventManager.TriggerEvent("dormir",mensagemNoite);
 				}
 				EventManager.TriggerEvent ("newDayCicle", newDay.ToString());
 				_newDay = newDay;

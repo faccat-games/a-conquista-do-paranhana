@@ -26,6 +26,7 @@ public class Sleep : MonoBehaviour {
         _player = GameObject.FindWithTag("Player").GetComponent<Player>();
 		_sleepPanel = GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<SleepPanel> ();
 		//_fadeImage = _sleepPanel.GetComponentInChildren<Image> ();
+        EventManager.StartListening("dormir", MoveAndSleep);
 	}
 
 	// Update is called once per frame
@@ -82,6 +83,12 @@ public class Sleep : MonoBehaviour {
 		//_fadeImage.CrossFadeAlpha (0.0f, 2.5f, false);
 	}
 
+    void MoveAndSleep(string msg) {
+        _player.Paused = true;
+        EventManager.TriggerEvent("newPlayerDialog", msg);
+        StartCoroutine(MoveAndSleepCorotine());
+    }
+
 	IEnumerator Fade()
 	{
 		fadeOut();
@@ -93,7 +100,13 @@ public class Sleep : MonoBehaviour {
 		EventManager.TriggerEvent ("newPlayerDialog",mensagemAcordar);
 	}
 
+    IEnumerator MoveAndSleepCorotine()
+    {
+        yield return new WaitForSeconds(5);
+        _player.transform.position = new Vector3(49.15f, 71.95f);
 
+        ConfirmaDormir();
+    }
 
 
 }
