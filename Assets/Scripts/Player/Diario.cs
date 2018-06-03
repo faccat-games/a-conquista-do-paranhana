@@ -20,7 +20,7 @@ public class Diario : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Return)) {
+        if (Input.GetKeyDown (KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) {
 			MostrarDiario = !MostrarDiario; 
 		}
 		DiarioPanel.SetActive (MostrarDiario);

@@ -33,7 +33,7 @@ public class InteracaoAjuda : MonoBehaviour {
 	}
 	void OnTriggerEnter2D (Collider2D other) {
 		//Destroy(other.gameObject);
-		Debug.Log("enter" + other.name);
+		//Debug.Log("enter" + other.name);
 		timer = TempoDialogo;
 		showDialog = true;
 		_other = other;

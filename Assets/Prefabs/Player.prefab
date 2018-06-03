@@ -1576,7 +1576,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 100
-  m_LinearDrag: 10
+  m_LinearDrag: 1000
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -3888,7 +3888,7 @@ MonoBehaviour:
   hora: 6
   CurrentAno: 
   isNight: 0
-  Velocidade: 7
+  Velocidade: 6
   _currentTime: 
   newDay: 1
   mensagemNoite: "Est\xE1 ficando tarde, melhor ir para casa."
