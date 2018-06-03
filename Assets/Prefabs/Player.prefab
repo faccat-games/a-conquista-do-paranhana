@@ -3873,7 +3873,7 @@ MonoBehaviour:
   hora: 6
   CurrentAno: 
   isNight: 0
-  Velocidade: 20
+  Velocidade: 10
   _currentTime: 
   newDay: 1
   mensagemNoite: "Est\xE1 ficando tarde, melhor ir para casa."
