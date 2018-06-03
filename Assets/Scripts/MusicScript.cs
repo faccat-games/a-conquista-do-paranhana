@@ -25,8 +25,12 @@ public class MusicScript : MonoBehaviour {
 	{
 		_audio = GetComponent<AudioSource> ();
 		myPlaylist = Resources.LoadAll ("Music", typeof(AudioClip));
+        GameObject _player = GameObject.FindWithTag("Player");
 
-        _timer = GameObject.FindGameObjectWithTag("Player").GetComponent<Timer>();
+        if (_player != null) {
+            _timer = _player.GetComponent<Timer>();
+        }
+
 
 		if (instance != null && instance != this)
 		{
@@ -54,6 +58,8 @@ public class MusicScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+        if (_timer == null) return;
 
         if (_timer.isNight == false)
         {

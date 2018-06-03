@@ -6,18 +6,19 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour {
 
     public GameObject pauseMenu;
-
+	private Player _player;
 	// Use this for initialization
 	void Start () {
-		
+		_player = GameObject.FindWithTag("Player").GetComponent<Player>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		
         if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale > 0 ) {
             //Time.timeScale = 0;
-            pauseMenu.SetActive(true);
+			pauseMenu.SetActive(true);
+            
         }
 
 
@@ -29,7 +30,7 @@ public class Pause : MonoBehaviour {
     }
 
     public void ReturnToGame() {
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         pauseMenu.SetActive(false);
     }
 
