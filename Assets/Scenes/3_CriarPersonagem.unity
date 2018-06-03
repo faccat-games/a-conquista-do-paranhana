@@ -196,11 +196,57 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
+    - m_Text: Altenhofen
+      m_Image: {fileID: 0}
     - m_Text: Bauer
       m_Image: {fileID: 0}
     - m_Text: Bohn
       m_Image: {fileID: 0}
     - m_Text: Becker
+      m_Image: {fileID: 0}
+    - m_Text: Baum
+      m_Image: {fileID: 0}
+    - m_Text: Clauss
+      m_Image: {fileID: 0}
+    - m_Text: Damm
+      m_Image: {fileID: 0}
+    - m_Text: Dietrich
+      m_Image: {fileID: 0}
+    - m_Text: Dreher
+      m_Image: {fileID: 0}
+    - m_Text: Franz
+      m_Image: {fileID: 0}
+    - m_Text: Fritz
+      m_Image: {fileID: 0}
+    - m_Text: "Gr\xF6ss"
+      m_Image: {fileID: 0}
+    - m_Text: Heck
+      m_Image: {fileID: 0}
+    - m_Text: Kauer
+      m_Image: {fileID: 0}
+    - m_Text: Krug
+      m_Image: {fileID: 0}
+    - m_Text: Lau
+      m_Image: {fileID: 0}
+    - m_Text: Ludwig
+      m_Image: {fileID: 0}
+    - m_Text: Mayer
+      m_Image: {fileID: 0}
+    - m_Text: Mossmann
+      m_Image: {fileID: 0}
+    - m_Text: Schaeffer
+      m_Image: {fileID: 0}
+    - m_Text: Schumacher
+      m_Image: {fileID: 0}
+    - m_Text: Sulzbach
+      m_Image: {fileID: 0}
+    - m_Text: Volkweiss
+      m_Image: {fileID: 0}
+    - m_Text: Weber
+      m_Image: {fileID: 0}
+    - m_Text: Weinmann
+      m_Image: {fileID: 0}
+    - m_Text: Zimmermann
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -522,7 +568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: 
   playerSurname: 
-  initialMoney: 20
+  dinheiroInicial: 20
   itemHand: 0
 --- !u!1 &77892702
 GameObject:
@@ -771,7 +817,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bauer
+  m_Text: Altenhofen
 --- !u!222 &336552374
 CanvasRenderer:
   m_ObjectHideFlags: 0
