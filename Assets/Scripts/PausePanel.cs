@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class PausePanel : MonoBehaviour {
 
     public GameObject pauseMenu;
-    private Player _player;
+    public int MainSceneIndex;
     // Use this for initialization
     void Start()
     {
-        _player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class PausePanel : MonoBehaviour {
     public void ExitToMenu()
     {
         Destroy(GameObject.Find("Musica"));
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(MainSceneIndex);
     }
 
     public void ReturnToGame()
