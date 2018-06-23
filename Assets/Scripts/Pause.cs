@@ -16,7 +16,7 @@ public class Pause : MonoBehaviour {
 	void Update () {
 		
         if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale > 0 ) {
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
 			pauseMenu.SetActive(true);
             
         }
@@ -30,7 +30,7 @@ public class Pause : MonoBehaviour {
     }
 
     public void ReturnToGame() {
-        //Time.timeScale = 1;
+        Time.timeScale = 1;
         pauseMenu.SetActive(false);
     }
 
