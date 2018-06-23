@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1_Inicio.unity
     guid: 3b1e970ac16d63f49a176279bbfbb46f
   - enabled: 1
@@ -24,29 +24,30 @@ EditorBuildSettings:
     path: Assets/Scenes/4_Evento01.unity
     guid: 2f95defef16252648bbc04ae0d0cda4b
   - enabled: 0
-    path: Assets/Scenes/map_02.unity
+    path: Assets/Scenes/_old/map_02.unity
     guid: f54050761521c9246b068616f85407bc
   - enabled: 0
-    path: Assets/Scenes/map_03.unity
+    path: Assets/Scenes/_old/map_03.unity
     guid: ff43e020a6e9d0b43ba72720dd77c965
   - enabled: 0
-    path: Assets/Scenes/map_04.unity
+    path: Assets/Scenes/_old/map_04.unity
     guid: 41d454b00a4914a43a38e8117a8b5e4f
   - enabled: 0
-    path: Assets/Scenes/map_05.unity
+    path: Assets/Scenes/_old/map_05.unity
     guid: 1b246afc79e68b543886cba4a3f70001
   - enabled: 0
-    path: Assets/Scenes/map_06.unity
+    path: Assets/Scenes/_old/map_06.unity
     guid: 335ebb2d828a04748a4018d69c8b9592
   - enabled: 0
-    path: Assets/Scenes/map_07.unity
+    path: Assets/Scenes/_old/map_07.unity
     guid: 0f9d8c3b9b2ceb842abcf322213be2bb
   - enabled: 0
-    path: Assets/Scenes/map_08.unity
+    path: Assets/Scenes/_old/map_08.unity
     guid: b2c1b51229f8bc641bec1d0be2cc3249
   - enabled: 0
-    path: Assets/Scenes/map_09.unity
+    path: Assets/Scenes/_old/map_09.unity
     guid: 29d97d716ee020c438e086cfefe62480
   - enabled: 0
-    path: Assets/Scenes/map_10.unity
+    path: Assets/Scenes/_old/map_10.unity
     guid: a4ca70375673be142b6a14b5a03f32c6
+  m_configObjects: {}

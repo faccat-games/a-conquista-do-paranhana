@@ -7,7 +7,7 @@ public class MusicScript : MonoBehaviour {
 
 	public Object[] myPlaylist;
 	public AudioSource _audio;
-	private Scene  thisScene;
+	//private Scene  thisScene;
     public Timer _timer;
 
     public AudioSource nightSongs;
@@ -47,7 +47,7 @@ public class MusicScript : MonoBehaviour {
 	//Play Gobal End
 
 	void Start(){
-		thisScene = SceneManager.GetActiveScene ();
+		//thisScene = SceneManager.GetActiveScene ();
 	}
 	void RandomPLaylist(){
 
